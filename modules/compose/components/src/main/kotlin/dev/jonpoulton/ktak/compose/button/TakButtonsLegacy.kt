@@ -123,13 +123,13 @@ public fun TakTextButtonLegacy(
 
 @Composable
 public fun TakIconButtonLegacy(
-    modifier: Modifier = Modifier,
-    icon: ImageVector,
-    contentDescription: String,
-    tint: Color = TakColors.Cloud,
-    isDisabled: Boolean = false,
-    isChecked: Boolean = false,
-    onClick: () -> Unit,
+  modifier: Modifier = Modifier,
+  icon: ImageVector,
+  contentDescription: String,
+  tint: Color = TakColors.Cloud,
+  isDisabled: Boolean = false,
+  isChecked: Boolean = false,
+  onClick: () -> Unit,
 ) {
   val interactionSource = remember { MutableInteractionSource() }
   val isPressed by interactionSource.collectIsPressedAsState()

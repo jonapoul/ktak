@@ -35,16 +35,16 @@ import dev.jonpoulton.ktak.compose.preview.TakPreview
 
 @Composable
 public fun TakPrimaryButton(
-    modifier: Modifier = Modifier,
-    text: String,
-    icon: ImageVector? = null,
-    isError: Boolean = false,
-    isDisabled: Boolean = false,
-    colors: TakButtonColors = DefaultTakButtonColors(),
-    textStyle: TextStyle = TakTextStyles.H2,
-    interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
-    shape: Shape = TakButtonRoundedEdges,
-    onClick: () -> Unit,
+  modifier: Modifier = Modifier,
+  text: String,
+  icon: ImageVector? = null,
+  isError: Boolean = false,
+  isDisabled: Boolean = false,
+  colors: TakButtonColors = DefaultTakButtonColors(),
+  textStyle: TextStyle = TakTextStyles.H2,
+  interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
+  shape: Shape = TakButtonRoundedEdges,
+  onClick: () -> Unit,
 ) {
   val isPressed by interactionSource.collectIsPressedAsState()
   val foregroundColor by colors.foregroundColor(!isDisabled, isPressed, isError)

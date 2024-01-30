@@ -24,9 +24,9 @@ import dev.jonpoulton.ktak.core.TakContexts
 import dev.jonpoulton.ktak.plugin.HasDocumentedIntentFilter
 
 public abstract class TakComposeDropDownReceiver(
-    private val contexts: TakContexts,
-    mapView: MapView,
-    protected val viewModelFactory: ViewModelProvider.Factory,
+  private val contexts: TakContexts,
+  mapView: MapView,
+  protected val viewModelFactory: ViewModelProvider.Factory,
 ) : DropDownReceiver(mapView), ViewModelStoreOwner, TakScreenNavigator, HasDocumentedIntentFilter {
   override val viewModelStore: ViewModelStore = ViewModelStore()
 
@@ -97,13 +97,13 @@ public abstract class TakComposeDropDownReceiver(
 
   private fun composeScreen(screen: TakScreen) {
     composeView?.setTakContent(composeContext, colors) {
-        CompositionLocalProvider(
-            LocalViewModelStoreOwner provides this,
-            LocalViewModelFactory provides viewModelFactory,
-            LocalTakContexts provides contexts,
-        ) {
-            screen.Compose()
-        }
+      CompositionLocalProvider(
+        LocalViewModelStoreOwner provides this,
+        LocalViewModelFactory provides viewModelFactory,
+        LocalTakContexts provides contexts,
+      ) {
+        screen.Compose()
+      }
     }
   }
 }

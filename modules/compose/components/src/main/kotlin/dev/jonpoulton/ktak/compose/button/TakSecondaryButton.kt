@@ -34,17 +34,17 @@ import dev.jonpoulton.ktak.compose.preview.TakPreview
 
 @Composable
 public fun TakSecondaryButton(
-    modifier: Modifier = Modifier,
-    text: String,
-    isDisabled: Boolean = false,
-    forceUppercase: Boolean = true,
-    paddingValues: PaddingValues = DefaultPadding,
-    colors: TakSecondaryButtonColors = DefaultTakSecondaryButtonColors(),
-    textStyle: TextStyle = TakTextStyles.H4,
-    fontSize: TextUnit = textStyle.fontSize,
-    interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
-    shape: Shape = TakButtonRoundedEdges,
-    onClick: () -> Unit,
+  modifier: Modifier = Modifier,
+  text: String,
+  isDisabled: Boolean = false,
+  forceUppercase: Boolean = true,
+  paddingValues: PaddingValues = DefaultPadding,
+  colors: TakSecondaryButtonColors = DefaultTakSecondaryButtonColors(),
+  textStyle: TextStyle = TakTextStyles.H4,
+  fontSize: TextUnit = textStyle.fontSize,
+  interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
+  shape: Shape = TakButtonRoundedEdges,
+  onClick: () -> Unit,
 ) {
   val isPressed by interactionSource.collectIsPressedAsState()
   val foregroundColor by colors.foregroundColor(!isDisabled, isPressed)

@@ -21,18 +21,18 @@ public interface TakSliderColors : SliderColors {
 @Stable
 @Immutable
 public data class DefaultTakSliderColors(
-    val primaryThumbColor: Color = TakColors.Sand,
-    override val secondaryThumbColor: Color = TakColors.Ink.copy(alpha = 0.65f),
-    val thumbColorDisabled: Color = TakColors.Ash,
-    val textColorActive: Color = TakColors.Sand,
-    val textColorInactive: Color = TakColors.Ink,
-    val textColorDisabled: Color = TakColors.Ink,
-    val trackColorActive: Color = TakColors.Sand,
-    val trackColorInactive: Color = TakColors.Ink,
-    val trackColorDisabled: Color = TakColors.Ash,
-    val tickColorActive: Color = TakColors.Sand,
-    val tickColorInactive: Color = TakColors.Ink,
-    val tickColorDisabled: Color = TakColors.Ash,
+  val primaryThumbColor: Color = TakColors.Sand,
+  override val secondaryThumbColor: Color = TakColors.Ink.copy(alpha = 0.65f),
+  val thumbColorDisabled: Color = TakColors.Ash,
+  val textColorActive: Color = TakColors.Sand,
+  val textColorInactive: Color = TakColors.Ink,
+  val textColorDisabled: Color = TakColors.Ink,
+  val trackColorActive: Color = TakColors.Sand,
+  val trackColorInactive: Color = TakColors.Ink,
+  val trackColorDisabled: Color = TakColors.Ash,
+  val tickColorActive: Color = TakColors.Sand,
+  val tickColorInactive: Color = TakColors.Ink,
+  val tickColorDisabled: Color = TakColors.Ash,
 ) : TakSliderColors {
   @Composable
   override fun thumbColor(enabled: Boolean): State<Color> = rememberUpdatedState(

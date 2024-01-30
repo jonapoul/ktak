@@ -26,15 +26,15 @@ public interface TakSegmentedControlColors {
 @Stable
 @Immutable
 public data class DefaultTakSegmentedControlColors(
-    val activeBackgroundColor: Color = TakColors.Sand,
-    val inactiveBackgroundColor: Color = Color.Transparent,
-    val disabledBackgroundColor: Color = TakColors.Ash,
-    val activeForegroundColor: Color = TakColors.Ink,
-    val inactiveForegroundColor: Color = TakColors.Sand,
-    val disabledForegroundColor: Color = TakLegacyColors.Gray,
-    val activeBorderColor: Color = Color.Transparent,
-    val inactiveBorderColor: Color = TakColors.Sand,
-    val disabledBorderColor: Color = Color.Transparent,
+  val activeBackgroundColor: Color = TakColors.Sand,
+  val inactiveBackgroundColor: Color = Color.Transparent,
+  val disabledBackgroundColor: Color = TakColors.Ash,
+  val activeForegroundColor: Color = TakColors.Ink,
+  val inactiveForegroundColor: Color = TakColors.Sand,
+  val disabledForegroundColor: Color = TakLegacyColors.Gray,
+  val activeBorderColor: Color = Color.Transparent,
+  val inactiveBorderColor: Color = TakColors.Sand,
+  val disabledBorderColor: Color = Color.Transparent,
 ) : TakSegmentedControlColors {
   @Stable
   @Composable

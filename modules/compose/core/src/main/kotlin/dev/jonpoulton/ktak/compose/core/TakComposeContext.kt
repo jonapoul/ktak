@@ -15,8 +15,8 @@ import dev.jonpoulton.ktak.core.TakContexts
  * the [app]'s application context for non-resource-related work.
  */
 public class TakComposeContext(
-    private val plugin: PluginContext,
-    private val app: AppContext,
+  private val plugin: PluginContext,
+  private val app: AppContext,
 ) : ContextWrapper(plugin) {
   public constructor(contexts: TakContexts) : this(contexts.plugin, contexts.app)
 
@@ -33,8 +33,8 @@ public class TakComposeContext(
    * on the [TakComposeContext]'s application context, so we need to make sure it's pointing to the right place.
    */
   private class TakComposeApplicationContext(
-      private val plugin: PluginContext,
-      app: AppContext,
+    private val plugin: PluginContext,
+    app: AppContext,
   ) : ContextWrapper(app.applicationContext) {
     override fun getResources(): Resources = plugin.resources
   }

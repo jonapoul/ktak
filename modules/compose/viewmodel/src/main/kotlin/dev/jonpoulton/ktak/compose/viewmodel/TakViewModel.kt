@@ -11,12 +11,12 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
 public inline fun <reified VM : ViewModel> takViewModel(
-    viewModelStoreOwner: ViewModelStoreOwner = checkNotNull(LocalViewModelStoreOwner.current) {
+  viewModelStoreOwner: ViewModelStoreOwner = checkNotNull(LocalViewModelStoreOwner.current) {
     "No ViewModelStoreOwner was provided via LocalViewModelStoreOwner"
   },
-    key: String? = null,
-    factory: ViewModelProvider.Factory? = LocalViewModelFactory.current,
-    extras: CreationExtras = if (viewModelStoreOwner is HasDefaultViewModelProviderFactory) {
+  key: String? = null,
+  factory: ViewModelProvider.Factory? = LocalViewModelFactory.current,
+  extras: CreationExtras = if (viewModelStoreOwner is HasDefaultViewModelProviderFactory) {
     viewModelStoreOwner.defaultViewModelCreationExtras
   } else {
     CreationExtras.Empty

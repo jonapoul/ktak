@@ -11,10 +11,10 @@ import androidx.compose.runtime.Composable
  */
 @Composable
 public fun TakTheme(
-    colors: Colors = TakColors.colors,
-    shapes: Shapes = TakShapes,
-    typography: Typography = TakTypography,
-    content: @Composable () -> Unit,
+  colors: Colors = TakColors.colors,
+  shapes: Shapes = TakShapes,
+  typography: Typography = TakTypography,
+  content: @Composable () -> Unit,
 ) {
   MaterialTheme(
     colors = colors,

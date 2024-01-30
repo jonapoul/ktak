@@ -34,12 +34,12 @@ import kotlinx.collections.immutable.persistentListOf
 
 @Composable
 public fun TakSegmentedControl(
-    modifier: Modifier = Modifier,
-    isDisabled: Boolean = false,
-    colors: TakSegmentedControlColors = DefaultTakSegmentedControlColors(),
-    textStyle: TextStyle = TakTextStyles.H4,
-    activeButtonId: TakSegmentedControlButtonId,
-    buttons: ImmutableList<TakSegmentedControlButton>,
+  modifier: Modifier = Modifier,
+  isDisabled: Boolean = false,
+  colors: TakSegmentedControlColors = DefaultTakSegmentedControlColors(),
+  textStyle: TextStyle = TakTextStyles.H4,
+  activeButtonId: TakSegmentedControlButtonId,
+  buttons: ImmutableList<TakSegmentedControlButton>,
 ) {
   Row(
     modifier = Modifier.wrapContentHeight(),
@@ -82,14 +82,14 @@ public class TakSegmentedControlButton(
 @Stable
 @Composable
 private fun RowScope.TakSegmentedControlButton(
-    modifier: Modifier = Modifier,
-    text: String,
-    shape: Shape,
-    isActive: Boolean = false,
-    isDisabled: Boolean = false,
-    colors: TakSegmentedControlColors = DefaultTakSegmentedControlColors(),
-    textStyle: TextStyle = TakTextStyles.H4,
-    onClick: () -> Unit,
+  modifier: Modifier = Modifier,
+  text: String,
+  shape: Shape,
+  isActive: Boolean = false,
+  isDisabled: Boolean = false,
+  colors: TakSegmentedControlColors = DefaultTakSegmentedControlColors(),
+  textStyle: TextStyle = TakTextStyles.H4,
+  onClick: () -> Unit,
 ) {
   val foregroundColor by colors.foregroundColor(!isDisabled, isActive)
   val backgroundColor by colors.backgroundColor(!isDisabled, isActive)

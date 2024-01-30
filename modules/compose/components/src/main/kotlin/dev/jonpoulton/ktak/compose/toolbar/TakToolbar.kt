@@ -58,11 +58,11 @@ public fun TakToolbar(
 
 @Composable
 public fun TakToolbar(
-    title: String,
-    style: TextStyle = TakTypography.h1,
-    navigationButton: (@Composable () -> Unit)? = null,
-    otherButtons: (@Composable RowScope.() -> Unit)? = null,
-    menuOptions: (@Composable ColumnScope.() -> Unit)? = null,
+  title: String,
+  style: TextStyle = TakTypography.h1,
+  navigationButton: (@Composable () -> Unit)? = null,
+  otherButtons: (@Composable RowScope.() -> Unit)? = null,
+  menuOptions: (@Composable ColumnScope.() -> Unit)? = null,
 ) {
   Row(
     modifier = Modifier

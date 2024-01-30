@@ -42,17 +42,17 @@ import kotlinx.collections.immutable.persistentListOf
 
 @Composable
 public fun TakDropdownField(
-    state: MutableState<String?>,
-    options: ImmutableList<String>,
-    hint: String,
-    modifier: Modifier = Modifier,
-    startIcon: ImageVector? = null,
-    enabled: Boolean = true,
-    textStyle: TextStyle = TakTextStyles.H3,
-    error: Boolean = false,
-    colors: TakTextInputColors = DefaultTakTextInputColors(),
-    dimensions: TakTextInputDimensions = DefaultTakTextInputDimensions(),
-    interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
+  state: MutableState<String?>,
+  options: ImmutableList<String>,
+  hint: String,
+  modifier: Modifier = Modifier,
+  startIcon: ImageVector? = null,
+  enabled: Boolean = true,
+  textStyle: TextStyle = TakTextStyles.H3,
+  error: Boolean = false,
+  colors: TakTextInputColors = DefaultTakTextInputColors(),
+  dimensions: TakTextInputDimensions = DefaultTakTextInputDimensions(),
+  interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
 ) {
   val value by state
   require(options.isNotEmpty()) { "Cannot use an empty list for the `options` parameter" }
@@ -141,11 +141,11 @@ public fun TakDropdownField(
 
 @Composable
 private fun TakDropdownFieldItem(
-    option: String,
-    isSelected: Boolean,
-    colors: TakTextInputColors = DefaultTakTextInputColors(),
-    textStyle: TextStyle = TakTextStyles.H3,
-    onSelected: (String) -> Unit,
+  option: String,
+  isSelected: Boolean,
+  colors: TakTextInputColors = DefaultTakTextInputColors(),
+  textStyle: TextStyle = TakTextStyles.H3,
+  onSelected: (String) -> Unit,
 ) {
   val textColor by colors.textColor(enabled = true, pressed = false, error = false)
   val iconColor by colors.borderColor(enabled = true, pressed = false, error = false)

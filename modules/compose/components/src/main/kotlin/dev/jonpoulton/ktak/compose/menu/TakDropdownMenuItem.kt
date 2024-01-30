@@ -24,11 +24,11 @@ import dev.jonpoulton.ktak.compose.preview.TakPreview
 @SuppressLint("ModifierParameter")
 @Composable
 public fun TakDropdownMenuItem(
-    icon: ImageVector,
-    text: String,
-    style: TextStyle = TakTypography.body1,
-    color: Color = Color.White,
-    onClick: () -> Unit,
+  icon: ImageVector,
+  text: String,
+  style: TextStyle = TakTypography.body1,
+  color: Color = Color.White,
+  onClick: () -> Unit,
 ) {
   DropdownMenuItem(onClick = { onClick() }) {
     Icon(

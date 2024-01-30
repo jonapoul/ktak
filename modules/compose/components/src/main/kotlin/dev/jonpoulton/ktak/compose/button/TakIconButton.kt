@@ -88,14 +88,14 @@ private val RoundedShape = RoundedCornerShape(corner = CornerSize(5.dp))
 @Stable
 @Immutable
 public data class DefaultTakIconButtonColors(
-    val normalBackgroundColor: Color = Color.Transparent,
-    val pressedBackgroundColor: Color = TakColors.Ash,
-    val errorBackgroundColor: Color = TakColors.Charcoal,
-    val disabledBackgroundColor: Color = TakColors.Charcoal,
-    val normalForegroundColor: Color = TakColors.Sand,
-    val pressedForegroundColor: Color = TakColors.Cyber,
-    val errorForegroundColor: Color = TakColors.Alert,
-    val disabledForegroundColor: Color = TakColors.Ash,
+  val normalBackgroundColor: Color = Color.Transparent,
+  val pressedBackgroundColor: Color = TakColors.Ash,
+  val errorBackgroundColor: Color = TakColors.Charcoal,
+  val disabledBackgroundColor: Color = TakColors.Charcoal,
+  val normalForegroundColor: Color = TakColors.Sand,
+  val pressedForegroundColor: Color = TakColors.Cyber,
+  val errorForegroundColor: Color = TakColors.Alert,
+  val disabledForegroundColor: Color = TakColors.Ash,
 ) : TakButtonColors {
   @Stable
   @Composable

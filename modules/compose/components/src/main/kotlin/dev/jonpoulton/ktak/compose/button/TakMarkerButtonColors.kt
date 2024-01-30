@@ -22,12 +22,12 @@ public interface TakMarkerButtonColors {
 @Stable
 @Immutable
 public data class DefaultTakMarkerButtonColors(
-    val normalBackgroundColor: Color = TakColors.Ink,
-    val pressedBackgroundColor: Color = TakColors.Ash,
-    val disabledBackgroundColor: Color = TakColors.Ash,
-    val normalBorderColor: Color = TakLegacyColors.PaleSilver,
-    val pressedBorderColor: Color = normalBorderColor,
-    val disabledBorderColor: Color = TakLegacyColors.Gray,
+  val normalBackgroundColor: Color = TakColors.Ink,
+  val pressedBackgroundColor: Color = TakColors.Ash,
+  val disabledBackgroundColor: Color = TakColors.Ash,
+  val normalBorderColor: Color = TakLegacyColors.PaleSilver,
+  val pressedBorderColor: Color = normalBorderColor,
+  val disabledBorderColor: Color = TakLegacyColors.Gray,
 ) : TakMarkerButtonColors {
   @Composable
   override fun backgroundColor(enabled: Boolean, pressed: Boolean): State<Color> = rememberUpdatedState(

@@ -20,8 +20,8 @@ public fun TakComposeView(contexts: TakContexts): ComposeView {
 }
 
 public fun TakComposeView(
-    contexts: TakContexts,
-    content: @Composable () -> Unit,
+  contexts: TakContexts,
+  content: @Composable () -> Unit,
 ): ComposeView = TakComposeView(
   composeContext = TakComposeContext(contexts),
   content = content,
@@ -33,9 +33,9 @@ public fun TakComposeView(pluginContext: PluginContext, appContext: AppContext):
 }
 
 public fun TakComposeView(
-    pluginContext: PluginContext,
-    appContext: AppContext,
-    content: @Composable () -> Unit,
+  pluginContext: PluginContext,
+  appContext: AppContext,
+  content: @Composable () -> Unit,
 ): ComposeView = TakComposeView(
   composeContext = TakComposeContext(pluginContext, appContext),
   content = content,
@@ -56,11 +56,11 @@ public fun TakComposeView(composeContext: TakComposeContext, content: @Composabl
 }
 
 public fun ComposeView.setTakContent(
-    composeContext: TakComposeContext,
-    colors: Colors = TakColors.colors,
-    shapes: @Composable () -> Shapes = { TakShapes },
-    typography: @Composable () -> Typography = { TakTypography },
-    content: @Composable () -> Unit,
+  composeContext: TakComposeContext,
+  colors: Colors = TakColors.colors,
+  shapes: @Composable () -> Shapes = { TakShapes },
+  typography: @Composable () -> Typography = { TakTypography },
+  content: @Composable () -> Unit,
 ) {
   setContent {
     TakTheme(colors, shapes(), typography()) {
@@ -76,11 +76,11 @@ public fun ComposeView.setTakContent(
 }
 
 public fun ComposeView.setTakContent(
-    composeContext: TakComposeContext,
-    colors: Colors = TakColors.colors,
-    shapes: @Composable () -> Shapes = { TakShapes },
-    typography: @Composable () -> Typography = { TakTypography },
-    screen: TakScreen,
+  composeContext: TakComposeContext,
+  colors: Colors = TakColors.colors,
+  shapes: @Composable () -> Shapes = { TakShapes },
+  typography: @Composable () -> Typography = { TakTypography },
+  screen: TakScreen,
 ) {
   setTakContent(composeContext, colors, shapes, typography) {
     screen.Compose()

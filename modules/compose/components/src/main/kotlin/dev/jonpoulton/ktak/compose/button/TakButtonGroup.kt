@@ -21,11 +21,11 @@ import kotlinx.collections.immutable.persistentListOf
 
 @Composable
 public fun TakButtonGroup(
-    modifier: Modifier = Modifier,
-    isDisabled: Boolean = false,
-    colors: TakButtonColors = DefaultTakButtonColors(),
-    textStyle: TextStyle = TakTextStyles.H2,
-    buttons: ImmutableList<TakGroupedButton>,
+  modifier: Modifier = Modifier,
+  isDisabled: Boolean = false,
+  colors: TakButtonColors = DefaultTakButtonColors(),
+  textStyle: TextStyle = TakTextStyles.H2,
+  buttons: ImmutableList<TakGroupedButton>,
 ) {
   Row(
     modifier = Modifier

@@ -21,14 +21,14 @@ public interface TakButtonColors {
 @Stable
 @Immutable
 public data class DefaultTakButtonColors(
-    val normalBackgroundColor: Color = TakColors.Sand,
-    val pressedBackgroundColor: Color = TakColors.Ash,
-    val errorBackgroundColor: Color = TakColors.Alert,
-    val disabledBackgroundColor: Color = TakColors.Ash,
-    val normalForegroundColor: Color = TakColors.Ink,
-    val pressedForegroundColor: Color = normalForegroundColor,
-    val errorForegroundColor: Color = normalForegroundColor,
-    val disabledForegroundColor: Color = TakColors.Stone,
+  val normalBackgroundColor: Color = TakColors.Sand,
+  val pressedBackgroundColor: Color = TakColors.Ash,
+  val errorBackgroundColor: Color = TakColors.Alert,
+  val disabledBackgroundColor: Color = TakColors.Ash,
+  val normalForegroundColor: Color = TakColors.Ink,
+  val pressedForegroundColor: Color = normalForegroundColor,
+  val errorForegroundColor: Color = normalForegroundColor,
+  val disabledForegroundColor: Color = TakColors.Stone,
 ) : TakButtonColors {
   @Stable
   @Composable

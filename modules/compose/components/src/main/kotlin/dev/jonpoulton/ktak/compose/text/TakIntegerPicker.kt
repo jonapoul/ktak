@@ -40,13 +40,13 @@ import dev.jonpoulton.ktak.compose.preview.TakPreview
 
 @Composable
 public fun TakIntegerPicker(
-    state: MutableState<Int>,
-    range: IntRange,
-    modifier: Modifier = Modifier,
-    enabled: Boolean = true,
-    textStyle: TextStyle = TakTextStyles.H1,
-    colors: TakIntegerPickerColors = DefaultTakIntegerPickerColors(),
-    dimensions: TakIntegerPickerDimensions = DefaultTakIntegerPickerDimensions(),
+  state: MutableState<Int>,
+  range: IntRange,
+  modifier: Modifier = Modifier,
+  enabled: Boolean = true,
+  textStyle: TextStyle = TakTextStyles.H1,
+  colors: TakIntegerPickerColors = DefaultTakIntegerPickerColors(),
+  dimensions: TakIntegerPickerDimensions = DefaultTakIntegerPickerDimensions(),
 ) {
   TakIntegerPicker(
     value = state.value,
@@ -62,14 +62,14 @@ public fun TakIntegerPicker(
 
 @Composable
 public fun TakIntegerPicker(
-    value: Int,
-    onValueChanged: (Int) -> Unit,
-    range: IntRange,
-    modifier: Modifier = Modifier,
-    enabled: Boolean = true,
-    textStyle: TextStyle = TakTextStyles.H1,
-    colors: TakIntegerPickerColors = DefaultTakIntegerPickerColors(),
-    dimensions: TakIntegerPickerDimensions = DefaultTakIntegerPickerDimensions(),
+  value: Int,
+  onValueChanged: (Int) -> Unit,
+  range: IntRange,
+  modifier: Modifier = Modifier,
+  enabled: Boolean = true,
+  textStyle: TextStyle = TakTextStyles.H1,
+  colors: TakIntegerPickerColors = DefaultTakIntegerPickerColors(),
+  dimensions: TakIntegerPickerDimensions = DefaultTakIntegerPickerDimensions(),
 ) {
   require(value in range) { "Current value $value is not in the given range $range" }
 

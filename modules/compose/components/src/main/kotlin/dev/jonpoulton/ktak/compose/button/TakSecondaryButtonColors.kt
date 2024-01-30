@@ -26,15 +26,15 @@ public interface TakSecondaryButtonColors {
 @Stable
 @Immutable
 public data class DefaultTakSecondaryButtonColors(
-    val normalBackgroundColor: Color = Color.Transparent,
-    val pressedBackgroundColor: Color = TakColors.Sand,
-    val disabledBackgroundColor: Color = TakColors.Ash,
-    val normalForegroundColor: Color = TakColors.Sand,
-    val pressedForegroundColor: Color = TakColors.Ink,
-    val disabledForegroundColor: Color = TakLegacyColors.Gray,
-    val normalBorderColor: Color = TakColors.Sand,
-    val pressedBorderColor: Color = Color.Transparent,
-    val disabledBorderColor: Color = TakLegacyColors.Gray,
+  val normalBackgroundColor: Color = Color.Transparent,
+  val pressedBackgroundColor: Color = TakColors.Sand,
+  val disabledBackgroundColor: Color = TakColors.Ash,
+  val normalForegroundColor: Color = TakColors.Sand,
+  val pressedForegroundColor: Color = TakColors.Ink,
+  val disabledForegroundColor: Color = TakLegacyColors.Gray,
+  val normalBorderColor: Color = TakColors.Sand,
+  val pressedBorderColor: Color = Color.Transparent,
+  val disabledBorderColor: Color = TakLegacyColors.Gray,
 ) : TakSecondaryButtonColors {
   public constructor(color: Color) : this(
     pressedBackgroundColor = color,

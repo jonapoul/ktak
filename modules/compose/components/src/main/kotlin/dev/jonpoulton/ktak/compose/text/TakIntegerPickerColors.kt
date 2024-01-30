@@ -28,16 +28,16 @@ public interface TakIntegerPickerColors {
 @Stable
 @Immutable
 public data class DefaultTakIntegerPickerColors(
-    override val textBackgroundColor: Color = Color.Transparent,
-    val borderColor: Color = TakColors.Sand,
-    val borderColorDisabled: Color = TakColors.Ash,
-    val buttonBackgroundColor: Color = TakColors.Sand,
-    val buttonBackgroundColorPressed: Color = TakColors.Ash,
-    val buttonBackgroundColorDisabled: Color = TakColors.Charcoal,
-    val buttonForegroundColor: Color = TakColors.Ink,
-    val buttonForegroundColorDisabled: Color = TakColors.Ash,
-    val textForegroundColor: Color = TakColors.Cloud,
-    val textForegroundColorDisabled: Color = TakColors.Ash,
+  override val textBackgroundColor: Color = Color.Transparent,
+  val borderColor: Color = TakColors.Sand,
+  val borderColorDisabled: Color = TakColors.Ash,
+  val buttonBackgroundColor: Color = TakColors.Sand,
+  val buttonBackgroundColorPressed: Color = TakColors.Ash,
+  val buttonBackgroundColorDisabled: Color = TakColors.Charcoal,
+  val buttonForegroundColor: Color = TakColors.Ink,
+  val buttonForegroundColorDisabled: Color = TakColors.Ash,
+  val textForegroundColor: Color = TakColors.Cloud,
+  val textForegroundColorDisabled: Color = TakColors.Ash,
 ) : TakIntegerPickerColors {
   @Composable
   override fun borderColor(enabled: Boolean): State<Color> = rememberUpdatedState(

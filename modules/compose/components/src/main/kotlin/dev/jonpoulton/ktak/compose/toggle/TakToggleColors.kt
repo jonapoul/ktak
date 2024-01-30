@@ -30,17 +30,17 @@ public interface TakToggleLargeColors : TakToggleColors {
 @Stable
 @Immutable
 internal data class DefaultTakToggleSmallColors(
-    val checkedThumbColor: Color = TakColors.Cloud,
-    val checkedTrackColor: Color = TakColors.Gamma,
-    val checkedTrackAlpha: Float = 1f,
-    val uncheckedThumbColor: Color = TakLegacyColors.PaleSilver,
-    val uncheckedTrackColor: Color = TakLegacyColors.TrolleyGrey,
-    val uncheckedTrackAlpha: Float = 1f,
-    val disabledCheckedThumbColor: Color = Color(color = 0xFF505050),
-    val disabledCheckedTrackColor: Color = Color(color = 0xFF404040),
-    val disabledUncheckedThumbColor: Color = Color(color = 0xFF505050),
-    val disabledUncheckedTrackColor: Color = Color(color = 0xFF404040),
-    override val borderColor: Color = Color(color = 0x1A000000), // 10% alpha
+  val checkedThumbColor: Color = TakColors.Cloud,
+  val checkedTrackColor: Color = TakColors.Gamma,
+  val checkedTrackAlpha: Float = 1f,
+  val uncheckedThumbColor: Color = TakLegacyColors.PaleSilver,
+  val uncheckedTrackColor: Color = TakLegacyColors.TrolleyGrey,
+  val uncheckedTrackAlpha: Float = 1f,
+  val disabledCheckedThumbColor: Color = Color(color = 0xFF505050),
+  val disabledCheckedTrackColor: Color = Color(color = 0xFF404040),
+  val disabledUncheckedThumbColor: Color = Color(color = 0xFF505050),
+  val disabledUncheckedTrackColor: Color = Color(color = 0xFF404040),
+  override val borderColor: Color = Color(color = 0x1A000000), // 10% alpha
 ) : TakToggleSmallColors {
   @Composable
   override fun thumbColor(enabled: Boolean, checked: Boolean): State<Color> = rememberUpdatedState(
@@ -64,21 +64,21 @@ internal data class DefaultTakToggleSmallColors(
 @Stable
 @Immutable
 public data class DefaultTakToggleLargeColors(
-    val checkedThumbColor: Color = TakColors.Cloud,
-    val checkedTrackColor: Color = TakColors.Gamma,
-    val checkedTrackAlpha: Float = 1f,
-    val uncheckedThumbColor: Color = TakLegacyColors.PaleSilver,
-    val uncheckedTrackColor: Color = TakLegacyColors.TrolleyGrey,
-    val uncheckedTrackAlpha: Float = 1f,
-    val disabledCheckedThumbColor: Color = Color(color = 0xFF505050),
-    val disabledCheckedTrackColor: Color = Color(color = 0xFF404040),
-    val disabledUncheckedThumbColor: Color = Color(color = 0xFF505050),
-    val disabledUncheckedTrackColor: Color = Color(color = 0xFF404040),
-    val checkedTextColor: Color = Color(color = 0xFF808080),
-    val uncheckedTextColor: Color = Color(color = 0xFF676458),
-    val disabledCheckedTextColor: Color = TakLegacyColors.DarkGray,
-    val disabledUncheckedTextColor: Color = TakLegacyColors.DarkGray,
-    override val borderColor: Color = Color(color = 0x1A000000), // 10% alpha
+  val checkedThumbColor: Color = TakColors.Cloud,
+  val checkedTrackColor: Color = TakColors.Gamma,
+  val checkedTrackAlpha: Float = 1f,
+  val uncheckedThumbColor: Color = TakLegacyColors.PaleSilver,
+  val uncheckedTrackColor: Color = TakLegacyColors.TrolleyGrey,
+  val uncheckedTrackAlpha: Float = 1f,
+  val disabledCheckedThumbColor: Color = Color(color = 0xFF505050),
+  val disabledCheckedTrackColor: Color = Color(color = 0xFF404040),
+  val disabledUncheckedThumbColor: Color = Color(color = 0xFF505050),
+  val disabledUncheckedTrackColor: Color = Color(color = 0xFF404040),
+  val checkedTextColor: Color = Color(color = 0xFF808080),
+  val uncheckedTextColor: Color = Color(color = 0xFF676458),
+  val disabledCheckedTextColor: Color = TakLegacyColors.DarkGray,
+  val disabledUncheckedTextColor: Color = TakLegacyColors.DarkGray,
+  override val borderColor: Color = Color(color = 0x1A000000), // 10% alpha
 ) : TakToggleLargeColors {
   @Composable
   override fun thumbColor(enabled: Boolean, checked: Boolean): State<Color> = rememberUpdatedState(

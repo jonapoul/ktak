@@ -32,18 +32,18 @@ import dev.jonpoulton.ktak.compose.preview.TakPreview
 
 @Composable
 public fun TakTextInput(
-    state: MutableState<String>,
-    hint: String,
-    modifier: Modifier = Modifier,
-    startIcon: ImageVector? = null,
-    endIcon: ImageVector? = null,
-    enabled: Boolean = true,
-    readOnly: Boolean = false,
-    textStyle: TextStyle = TakTextStyles.H3,
-    error: Boolean = false,
-    colors: TakTextInputColors = DefaultTakTextInputColors(),
-    dimensions: TakTextInputDimensions = DefaultTakTextInputDimensions(),
-    interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
+  state: MutableState<String>,
+  hint: String,
+  modifier: Modifier = Modifier,
+  startIcon: ImageVector? = null,
+  endIcon: ImageVector? = null,
+  enabled: Boolean = true,
+  readOnly: Boolean = false,
+  textStyle: TextStyle = TakTextStyles.H3,
+  error: Boolean = false,
+  colors: TakTextInputColors = DefaultTakTextInputColors(),
+  dimensions: TakTextInputDimensions = DefaultTakTextInputDimensions(),
+  interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
 ) {
   TakTextInput(
     value = state.value,
@@ -64,19 +64,19 @@ public fun TakTextInput(
 
 @Composable
 public fun TakTextInput(
-    value: String,
-    onValueChanged: (String) -> Unit,
-    hint: String,
-    modifier: Modifier = Modifier,
-    startIcon: ImageVector? = null,
-    endIcon: ImageVector? = null,
-    enabled: Boolean = true,
-    readOnly: Boolean = false,
-    textStyle: TextStyle = TakTextStyles.H3,
-    error: Boolean = false,
-    colors: TakTextInputColors = DefaultTakTextInputColors(),
-    dimensions: TakTextInputDimensions = DefaultTakTextInputDimensions(),
-    interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
+  value: String,
+  onValueChanged: (String) -> Unit,
+  hint: String,
+  modifier: Modifier = Modifier,
+  startIcon: ImageVector? = null,
+  endIcon: ImageVector? = null,
+  enabled: Boolean = true,
+  readOnly: Boolean = false,
+  textStyle: TextStyle = TakTextStyles.H3,
+  error: Boolean = false,
+  colors: TakTextInputColors = DefaultTakTextInputColors(),
+  dimensions: TakTextInputDimensions = DefaultTakTextInputDimensions(),
+  interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
 ) {
   val entered = value.isNotBlank()
   val pressed by interactionSource.collectIsPressedAsState()
