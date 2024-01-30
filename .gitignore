@@ -1,0 +1,15 @@
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Keystore files
+*.keystore
+*.jks
+
+# Ignore all IDEA files, except those excluded below
+.idea/*
+# Detekt plugin configuration (Tools -> Detekt)
+!.idea/detekt.xml
