@@ -1,6 +1,5 @@
 package dev.jonpoulton.ktak.compose.menu
 
-import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -21,7 +20,6 @@ import dev.jonpoulton.ktak.compose.icons.TakIcons
 import dev.jonpoulton.ktak.compose.icons.utility.Walking
 import dev.jonpoulton.ktak.compose.preview.TakPreview
 
-@SuppressLint("ModifierParameter")
 @Composable
 public fun TakDropdownMenuItem(
   icon: ImageVector,
