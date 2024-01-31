@@ -29,6 +29,6 @@ dependencies {
     implementation("dev.jonpoulton.ktak:compose-icons:{version}")
     implementation("dev.jonpoulton.ktak:compose-plugin:{version}")
     implementation("dev.jonpoulton.ktak:compose-viewmodel:{version}")
-    compileOnly("dev.jonpoulton.ktak:compose-preview:{version}") // for previews only, not runtime
+    implementation("dev.jonpoulton.ktak:compose-preview:{version}")
 }
 ```

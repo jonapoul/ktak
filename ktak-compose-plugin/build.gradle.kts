@@ -15,9 +15,9 @@ android {
 }
 
 dependencies {
-  api(projects.modules.compose.core)
-  api(projects.modules.compose.components)
-  api(projects.modules.compose.viewmodel)
-  api(projects.modules.plugin)
+  api(projects.ktakComposeCore)
+  api(projects.ktakComposeComponents)
+  api(projects.ktakComposeViewmodel)
+  api(projects.ktakPlugin)
   api(libs.androidx.lifecycle.viewmodelCompose)
 }

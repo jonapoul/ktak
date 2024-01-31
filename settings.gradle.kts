@@ -21,17 +21,17 @@ dependencyResolutionManagement {
 
 includeBuild("build-logic")
 
-include(":modules:compose:components")
-include(":modules:compose:core")
-include(":modules:compose:icons")
-include(":modules:compose:plugin")
-include(":modules:compose:preview")
-include(":modules:compose:viewmodel")
-include(":modules:core")
-include(":modules:dagger")
-include(":modules:plugin")
-include(":modules:res")
-include(":modules:ui")
+include(":ktak-compose-components")
+include(":ktak-compose-core")
+include(":ktak-compose-icons")
+include(":ktak-compose-plugin")
+include(":ktak-compose-preview")
+include(":ktak-compose-viewmodel")
+include(":ktak-core")
+include(":ktak-dagger")
+include(":ktak-plugin")
+include(":ktak-res")
+include(":ktak-ui")
 
 // https://docs.gradle.org/current/userguide/declaring_dependencies.html#sec:type-safe-project-accessors
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")

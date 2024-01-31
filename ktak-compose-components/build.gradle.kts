@@ -14,13 +14,13 @@ android {
 }
 
 dependencies {
-  api(projects.modules.compose.core)
+  api(projects.ktakComposeCore)
   implementation(libs.androidx.compose.material.icons)
   implementation(libs.androidx.compose.ui.util)
   implementation(libs.kotlinx.immutable)
 
   // only used for previews
   compileOnly(libs.alakazam.kotlin.core)
-  compileOnly(projects.modules.compose.icons)
-  compileOnly(projects.modules.compose.preview)
+  compileOnly(projects.ktakComposeIcons)
+  compileOnly(projects.ktakComposePreview)
 }

@@ -1,4 +1,4 @@
-@file:Suppress("UnstableApiUsage")
+@file:Suppress("UnstableApiUsage", "DSL_SCOPE_VIOLATION")
 
 plugins {
   kotlin("android")
@@ -10,14 +10,15 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.ktak.compose.preview"
+  namespace = "dev.jonpoulton.ktak.compose.icons"
 
   buildFeatures {
-    androidResources = true
     resValues = true
+    androidResources = true
   }
 }
 
 dependencies {
-  implementation(projects.modules.compose.core)
+  api(projects.ktakComposeCore)
+  compileOnly(projects.ktakComposePreview)
 }

@@ -14,7 +14,7 @@ android {
 }
 
 dependencies {
-  api(projects.modules.core)
-  implementation(projects.modules.res)
+  api(projects.ktakCore)
+  implementation(projects.ktakRes)
   implementation(libs.androidx.compose.ui.fonts)
 }

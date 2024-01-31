@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 plugins {
   kotlin("android")
   id("convention-android")
@@ -9,10 +11,13 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.ktak.plugin"
+  namespace = "dev.jonpoulton.ktak.ui"
+
+  buildFeatures {
+    resValues = true
+  }
 }
 
 dependencies {
-  api(projects.modules.core)
-  implementation(libs.timber)
+  api(projects.ktakCore)
 }

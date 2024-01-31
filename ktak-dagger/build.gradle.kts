@@ -13,9 +13,9 @@ android {
 }
 
 dependencies {
-  api(projects.modules.plugin)
+  api(projects.ktakPlugin)
 
-  compileOnly(projects.modules.core)
+  compileOnly(projects.ktakCore)
   compileOnly(libs.alakazam.android.core)
   compileOnly(libs.alakazam.kotlin.core)
   compileOnly(libs.alakazam.kotlin.time)
