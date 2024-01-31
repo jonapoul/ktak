@@ -28,7 +28,7 @@ val debugImplementation by configurations
 dependencies {
   implementation(libs.alakazam.android.compose)
   implementation(platform(libs.androidx.compose.bom))
-  implementation(libs.androidx.compose.foundation.core)
+  implementation(libs.androidx.compose.foundation)
   implementation(libs.androidx.compose.material.core)
   implementation(libs.androidx.compose.ui.core)
   compileOnly(libs.androidx.compose.ui.preview)

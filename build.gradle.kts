@@ -19,16 +19,4 @@ plugins {
 
   // convention-test.gradle.kts
   alias(libs.plugins.kover)
-
-  // Other
-  alias(libs.plugins.versions)
 }
-
-// Dependency versions config
-tasks.dependencyUpdates.configure {
-  rejectVersionIf {
-    !candidate.version.isStable() && currentVersion.isStable()
-  }
-}
-
-fun String.isStable(): Boolean = listOf("alpha", "beta", "rc").none { toLowerCase().contains(it) }
