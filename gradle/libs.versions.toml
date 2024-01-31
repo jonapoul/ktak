@@ -24,7 +24,6 @@ androidx-coreKtx = "1.2.0"
 androidx-lifecycle = "2.6.0"
 atak-sdk = "5.0.0.17"
 dagger = "2.50"
-desugaring = "1.1.5"
 flowpreferences = "1.9.1"
 kotlinx-coroutines = "1.6.4"
 kotlinx-datetime = "0.4.0"
@@ -73,7 +72,6 @@ androidx-lifecycle-viewmodelCompose = { module = "androidx.lifecycle:lifecycle-v
 atak-sdk = { module = "com.atakmap.civ.common:api", version.ref = "atak-sdk" }
 dagger-core = { module = "com.google.dagger:dagger", version.ref = "dagger" }
 dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger" }
-desugaring = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugaring" }
 flowpreferences = { module = "com.fredporciuncula:flow-preferences", version.ref = "flowpreferences" }
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
