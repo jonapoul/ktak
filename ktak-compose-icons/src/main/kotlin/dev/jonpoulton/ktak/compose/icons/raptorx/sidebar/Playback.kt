@@ -10,9 +10,9 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.group
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.ktak.compose.icons.PreviewIcon
 import dev.jonpoulton.ktak.compose.icons.RaptorXSidebarTakIcons
+import dev.jonpoulton.ktak.compose.preview.PreviewDark
 
 public val RaptorXSidebarTakIcons.Playback: ImageVector
   get() {

@@ -83,7 +83,7 @@ import kotlin.math.roundToInt
 import kotlin.math.sign
 
 /**
- * Most of this file has been copypasted from private/internal functions in [androidx.compose.material], since we need
+ * Most of this file has been copypasted from private functions in [androidx.compose.material], since we need
  * access to them. Fuck off Google
  */
 

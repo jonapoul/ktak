@@ -9,9 +9,9 @@ import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.ktak.compose.icons.MarkersTakIcons
 import dev.jonpoulton.ktak.compose.icons.PreviewIcon
+import dev.jonpoulton.ktak.compose.preview.PreviewDark
 
 public val MarkersTakIcons.Maroon: ImageVector
   get() {

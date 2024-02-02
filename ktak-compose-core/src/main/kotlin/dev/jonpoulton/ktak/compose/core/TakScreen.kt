@@ -6,31 +6,26 @@ public interface TakScreen {
   @Composable
   public fun Compose()
 
-  public interface Dimensions {
-    public val lwFraction: Double
-    public val lhFraction: Double
-    public val pwFraction: Double
-    public val phFraction: Double
+  public data class Dimensions(
+    val lwFraction: Double,
+    val lhFraction: Double,
+    val pwFraction: Double,
+    val phFraction: Double,
+  )
+
+  public companion object {
+    public val HalfScreen: Dimensions = Dimensions(
+      lwFraction = 0.5,
+      lhFraction = 1.0,
+      pwFraction = 1.0,
+      phFraction = 0.5,
+    )
+
+    public val FullScreen: Dimensions = Dimensions(
+      lwFraction = 1.0,
+      lhFraction = 1.0,
+      pwFraction = 1.0,
+      phFraction = 1.0,
+    )
   }
 }
-
-public object HalfScreen : TakScreen.Dimensions {
-  override val lwFraction: Double = 0.5
-  override val lhFraction: Double = 1.0
-  override val pwFraction: Double = 1.0
-  override val phFraction: Double = 0.5
-}
-
-public object FullScreen : TakScreen.Dimensions {
-  override val lwFraction: Double = 1.0
-  override val lhFraction: Double = 1.0
-  override val pwFraction: Double = 1.0
-  override val phFraction: Double = 1.0
-}
-
-public data class TakScreenDimensions(
-  override val lwFraction: Double,
-  override val lhFraction: Double,
-  override val pwFraction: Double,
-  override val phFraction: Double,
-) : TakScreen.Dimensions

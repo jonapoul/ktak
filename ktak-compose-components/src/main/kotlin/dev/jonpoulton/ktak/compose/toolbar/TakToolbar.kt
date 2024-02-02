@@ -31,13 +31,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.alakazam.android.ui.compose.EmptyCallback
-import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.ktak.compose.button.TakIconButtonLegacy
 import dev.jonpoulton.ktak.compose.core.TakColors
 import dev.jonpoulton.ktak.compose.core.TakLegacyColors
 import dev.jonpoulton.ktak.compose.core.TakTypography
 import dev.jonpoulton.ktak.compose.menu.TakDropdownMenuItem
+import dev.jonpoulton.ktak.compose.preview.PreviewCallback
+import dev.jonpoulton.ktak.compose.preview.PreviewDark
 import dev.jonpoulton.ktak.compose.preview.TakPreview
 
 @Composable
@@ -136,16 +136,16 @@ public enum class TakToolbarNavigationButton(
 private fun PreviewFullWithClose() = TakPreview {
   TakToolbar(
     navigationButton = TakToolbarNavigationButton.Close,
-    onClickNavigate = EmptyCallback,
+    onClickNavigate = PreviewCallback,
     title = "Full Toolbar",
     otherButtons = {
-      TakIconButtonLegacy(icon = Icons.Filled.Settings, contentDescription = "Settings", onClick = EmptyCallback)
-      TakIconButtonLegacy(icon = Icons.Filled.Edit, contentDescription = "Edit", onClick = EmptyCallback)
+      TakIconButtonLegacy(icon = Icons.Filled.Settings, contentDescription = "Settings", onClick = PreviewCallback)
+      TakIconButtonLegacy(icon = Icons.Filled.Edit, contentDescription = "Edit", onClick = PreviewCallback)
     },
     menuOptions = {
-      TakDropdownMenuItem(icon = Icons.Filled.Deblur, text = "Deblur", onClick = EmptyCallback)
-      TakDropdownMenuItem(icon = Icons.Filled.Delete, text = "Delete", onClick = EmptyCallback)
-      TakDropdownMenuItem(icon = Icons.Filled.Dangerous, text = "Dangerous", onClick = EmptyCallback)
+      TakDropdownMenuItem(icon = Icons.Filled.Deblur, text = "Deblur", onClick = PreviewCallback)
+      TakDropdownMenuItem(icon = Icons.Filled.Delete, text = "Delete", onClick = PreviewCallback)
+      TakDropdownMenuItem(icon = Icons.Filled.Dangerous, text = "Dangerous", onClick = PreviewCallback)
     },
   )
 }
@@ -155,7 +155,7 @@ private fun PreviewFullWithClose() = TakPreview {
 private fun PreviewMinimal() = TakPreview {
   TakToolbar(
     navigationButton = TakToolbarNavigationButton.Back,
-    onClickNavigate = EmptyCallback,
+    onClickNavigate = PreviewCallback,
     title = "Minimal Toolbar",
     otherButtons = null,
     menuOptions = null,
@@ -169,8 +169,8 @@ private fun PreviewWithNoNavButton() = TakPreview {
     title = "No nav button",
     otherButtons = null,
     menuOptions = {
-      TakDropdownMenuItem(icon = Icons.Filled.Deblur, text = "Deblur", onClick = EmptyCallback)
-      TakDropdownMenuItem(icon = Icons.Filled.Dangerous, text = "Dangerous", onClick = EmptyCallback)
+      TakDropdownMenuItem(icon = Icons.Filled.Deblur, text = "Deblur", onClick = PreviewCallback)
+      TakDropdownMenuItem(icon = Icons.Filled.Dangerous, text = "Dangerous", onClick = PreviewCallback)
     },
   )
 }
@@ -199,6 +199,6 @@ private fun PreviewMenuItem() = TakPreview {
   TakDropdownMenuItem(
     icon = Icons.Filled.Edit,
     text = "Some Text",
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
   )
 }

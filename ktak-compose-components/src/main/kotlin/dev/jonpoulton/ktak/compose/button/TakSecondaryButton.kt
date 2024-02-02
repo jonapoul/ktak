@@ -25,11 +25,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.jonpoulton.alakazam.android.ui.compose.EmptyCallback
-import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.alakazam.kotlin.core.ifTrue
 import dev.jonpoulton.ktak.compose.core.TakColors
 import dev.jonpoulton.ktak.compose.core.TakTextStyles
+import dev.jonpoulton.ktak.compose.preview.PreviewCallback
+import dev.jonpoulton.ktak.compose.preview.PreviewDark
 import dev.jonpoulton.ktak.compose.preview.TakPreview
 
 @Composable
@@ -82,7 +82,7 @@ private val DefaultPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)
 private fun RegularWithIcon() = TakPreview {
   TakSecondaryButton(
     text = "Confirm",
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
   )
 }
 
@@ -92,7 +92,7 @@ private fun WithoutForcedUppercase() = TakPreview {
   TakSecondaryButton(
     text = "Confirm",
     forceUppercase = false,
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
   )
 }
 
@@ -102,7 +102,7 @@ private fun NoPadding() = TakPreview {
   TakSecondaryButton(
     text = "Confirm",
     paddingValues = PaddingValues(4.dp),
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
   )
 }
 
@@ -114,7 +114,7 @@ private fun SpecificSize() = TakPreview {
     modifier = Modifier.height(10.dp),
     paddingValues = PaddingValues(2.dp),
     fontSize = 8.sp,
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
   )
 }
 
@@ -124,7 +124,7 @@ private fun RegularWithPadding() = TakPreview {
   TakSecondaryButton(
     modifier = Modifier.padding(8.dp),
     text = "Confirm",
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
   )
 }
 
@@ -134,7 +134,7 @@ private fun DifferentColor() = TakPreview {
   TakSecondaryButton(
     text = "Confirm",
     colors = DefaultTakSecondaryButtonColors(TakColors.Cyber),
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
   )
 }
 
@@ -143,7 +143,7 @@ private fun DifferentColor() = TakPreview {
 private fun Disabled() = TakPreview {
   TakSecondaryButton(
     text = "Confirm",
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
     isDisabled = true,
   )
 }

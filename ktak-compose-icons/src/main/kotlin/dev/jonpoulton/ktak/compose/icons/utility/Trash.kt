@@ -10,10 +10,10 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.group
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.ktak.compose.core.TakLegacyColors
 import dev.jonpoulton.ktak.compose.icons.PreviewIcon
 import dev.jonpoulton.ktak.compose.icons.UtilityTakIcons
+import dev.jonpoulton.ktak.compose.preview.PreviewDark
 
 public val UtilityTakIcons.Trash: ImageVector
   get() {

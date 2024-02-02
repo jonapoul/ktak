@@ -10,8 +10,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.ktak.compose.core.TakColors
+import dev.jonpoulton.ktak.compose.preview.PreviewDark
 import dev.jonpoulton.ktak.compose.preview.TakPreview
 
 @Composable

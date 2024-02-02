@@ -24,12 +24,12 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.alakazam.android.ui.compose.EmptyCallback
-import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.ktak.compose.core.TakTextStyles
 import dev.jonpoulton.ktak.compose.icons.TakIcons
 import dev.jonpoulton.ktak.compose.icons.input.Message
 import dev.jonpoulton.ktak.compose.icons.utility.Walking
+import dev.jonpoulton.ktak.compose.preview.PreviewCallback
+import dev.jonpoulton.ktak.compose.preview.PreviewDark
 import dev.jonpoulton.ktak.compose.preview.TakPreview
 
 @Composable
@@ -171,7 +171,7 @@ private fun StartIcon() = TakPreview {
     state = state,
     hint = "Walking",
     startIcon = TakIcons.Utility.Walking,
-    onClickSend = EmptyCallback,
+    onClickSend = PreviewCallback,
   )
 }
 
@@ -183,7 +183,7 @@ private fun EmptySearch() = TakPreview {
     modifier = Modifier.width(200.dp),
     state = state,
     hint = "Search",
-    onClickSend = EmptyCallback,
+    onClickSend = PreviewCallback,
   )
 }
 
@@ -195,7 +195,7 @@ private fun FilledSearch() = TakPreview {
     modifier = Modifier.width(200.dp),
     state = state,
     hint = "Search",
-    onClickSend = EmptyCallback,
+    onClickSend = PreviewCallback,
   )
 }
 
@@ -208,7 +208,7 @@ private fun ErrorSearch() = TakPreview {
     state = state,
     hint = "Search",
     error = true,
-    onClickSend = EmptyCallback,
+    onClickSend = PreviewCallback,
   )
 }
 
@@ -221,6 +221,6 @@ private fun ErrorEmpty() = TakPreview {
     state = state,
     hint = "Search",
     error = true,
-    onClickSend = EmptyCallback,
+    onClickSend = PreviewCallback,
   )
 }

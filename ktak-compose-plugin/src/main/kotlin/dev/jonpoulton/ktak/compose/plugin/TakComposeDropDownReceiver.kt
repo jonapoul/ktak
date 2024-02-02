@@ -11,7 +11,6 @@ import androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner
 import com.atakmap.android.dropdown.DropDown
 import com.atakmap.android.dropdown.DropDownReceiver
 import com.atakmap.android.maps.MapView
-import dev.jonpoulton.ktak.compose.core.HalfScreen
 import dev.jonpoulton.ktak.compose.core.LocalTakContexts
 import dev.jonpoulton.ktak.compose.core.TakColors
 import dev.jonpoulton.ktak.compose.core.TakComposeContext
@@ -33,8 +32,8 @@ public abstract class TakComposeDropDownReceiver(
   protected open val colors: Colors = TakColors.colors
   protected val navStack: MutableList<TakScreen> = arrayListOf()
 
-  private val composeContext = TakComposeContext(contexts)
-  private var composeView: ComposeView? = null
+  protected val composeContext: TakComposeContext = TakComposeContext(contexts)
+  protected var composeView: ComposeView? = null
 
   @CallSuper
   override fun disposeImpl() {
@@ -42,7 +41,7 @@ public abstract class TakComposeDropDownReceiver(
   }
 
   protected fun showDropDown(
-    dimensions: TakScreen.Dimensions = HalfScreen,
+    dimensions: TakScreen.Dimensions = TakScreen.HalfScreen,
     ignoreBackButton: Boolean = false,
     switchable: Boolean = false,
     stateListener: DropDown.OnStateListener? = null,
@@ -95,7 +94,7 @@ public abstract class TakComposeDropDownReceiver(
     return true // ignore the signal
   }
 
-  private fun composeScreen(screen: TakScreen) {
+  protected fun composeScreen(screen: TakScreen) {
     composeView?.setTakContent(composeContext, colors) {
       CompositionLocalProvider(
         LocalViewModelStoreOwner provides this,

@@ -13,11 +13,11 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.jonpoulton.alakazam.android.ui.compose.EmptyCallback
-import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.ktak.compose.core.TakTypography
 import dev.jonpoulton.ktak.compose.icons.TakIcons
 import dev.jonpoulton.ktak.compose.icons.utility.Walking
+import dev.jonpoulton.ktak.compose.preview.PreviewCallback
+import dev.jonpoulton.ktak.compose.preview.PreviewDark
 import dev.jonpoulton.ktak.compose.preview.TakPreview
 
 @Composable
@@ -60,6 +60,6 @@ private fun Preview() = TakPreview {
   TakDropdownMenuItem(
     icon = TakIcons.Utility.Walking,
     text = "Something",
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
   )
 }

@@ -14,12 +14,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.alakazam.android.ui.compose.EmptyCallback
-import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.ktak.compose.icons.TakIcons
 import dev.jonpoulton.ktak.compose.icons.markers.Blue
 import dev.jonpoulton.ktak.compose.icons.markers.Neutral
 import dev.jonpoulton.ktak.compose.icons.markers.Purple
+import dev.jonpoulton.ktak.compose.preview.PreviewCallback
+import dev.jonpoulton.ktak.compose.preview.PreviewDark
 import dev.jonpoulton.ktak.compose.preview.TakPreview
 
 @Composable
@@ -53,7 +53,7 @@ public fun TakMarkerButton(
 private fun Purple() = TakPreview {
   TakMarkerButton(
     markerIcon = TakIcons.Markers.Purple,
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
   )
 }
 
@@ -62,7 +62,7 @@ private fun Purple() = TakPreview {
 private fun Blue() = TakPreview {
   TakMarkerButton(
     markerIcon = TakIcons.Markers.Blue,
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
   )
 }
 
@@ -71,6 +71,6 @@ private fun Blue() = TakPreview {
 private fun Neutral() = TakPreview {
   TakMarkerButton(
     markerIcon = TakIcons.Markers.Neutral,
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
   )
 }

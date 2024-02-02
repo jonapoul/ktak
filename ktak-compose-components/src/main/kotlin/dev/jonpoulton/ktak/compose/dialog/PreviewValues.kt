@@ -5,23 +5,23 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import dev.jonpoulton.alakazam.android.ui.compose.EmptyCallback
 import dev.jonpoulton.ktak.compose.core.TakColors
 import dev.jonpoulton.ktak.compose.icons.TakIcons
 import dev.jonpoulton.ktak.compose.icons.utility.Walking
+import dev.jonpoulton.ktak.compose.preview.PreviewCallback
 
 internal val PreviewPositiveButton = TakDialogPositiveButton(
-  onClick = EmptyCallback
+  onClick = PreviewCallback
 )
 
 internal val PreviewNeutralButton = TakDialogNeutralButton(
   text = "FOOBAR",
   icon = TakIcons.Utility.Walking,
-  onClick = EmptyCallback
+  onClick = PreviewCallback
 )
 
 internal val PreviewNegativeButton = TakDialogNegativeButton(
-  onClick = EmptyCallback
+  onClick = PreviewCallback
 )
 
 @Composable

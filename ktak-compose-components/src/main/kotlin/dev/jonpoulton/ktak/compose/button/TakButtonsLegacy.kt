@@ -37,10 +37,10 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.alakazam.android.ui.compose.EmptyCallback
-import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.alakazam.kotlin.core.ifTrue
 import dev.jonpoulton.ktak.compose.core.TakColors
+import dev.jonpoulton.ktak.compose.preview.PreviewCallback
+import dev.jonpoulton.ktak.compose.preview.PreviewDark
 import dev.jonpoulton.ktak.compose.preview.TakPreview
 
 @Composable
@@ -204,7 +204,7 @@ private fun PreviewTakIconButton(
     contentDescription = "Swap",
     isChecked = isChecked,
     isDisabled = isDisabled,
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
   )
 }
 
@@ -219,7 +219,7 @@ private fun RegularTextEndIconPreview() = TakPreview {
     modifier = Modifier,
     text = "Click me",
     endIcon = Icons.Filled.SwapHoriz,
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
   )
 }
 
@@ -229,7 +229,7 @@ private fun TinyTextButton() = TakPreview {
   TakTextButtonLegacy(
     modifier = Modifier,
     text = "A",
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
   )
 }
 
@@ -239,7 +239,7 @@ private fun RegularTextButton() = TakPreview {
   TakTextButtonLegacy(
     modifier = Modifier,
     text = "Click me",
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
   )
 }
 
@@ -251,7 +251,7 @@ private fun RegularTextPreviewFullWidth() = TakPreview {
     text = "Click me",
     icon = Icons.Filled.SwapHoriz,
     tint = Color.White,
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
   )
 }
 
@@ -263,7 +263,7 @@ private fun RegularTextPreviewWithMargin() = TakPreview {
     text = "Click me",
     icon = Icons.Filled.SwapHoriz,
     tint = Color.White,
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
   )
 }
 
@@ -287,6 +287,6 @@ private fun PreviewTakTextButton(
     tint = Color.White,
     isChecked = isChecked,
     isDisabled = isDisabled,
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
   )
 }

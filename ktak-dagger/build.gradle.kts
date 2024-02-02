@@ -16,9 +16,7 @@ dependencies {
   api(projects.ktakPlugin)
 
   compileOnly(projects.ktakCore)
-  compileOnly(libs.alakazam.android.core)
   compileOnly(libs.alakazam.kotlin.core)
-  compileOnly(libs.alakazam.kotlin.time)
   compileOnly(libs.flowpreferences)
 
   implementation(libs.dagger.core)

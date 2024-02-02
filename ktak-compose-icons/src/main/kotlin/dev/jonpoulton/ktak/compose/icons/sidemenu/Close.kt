@@ -11,10 +11,10 @@ import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.ktak.compose.core.TakColors
 import dev.jonpoulton.ktak.compose.icons.PreviewIcon
 import dev.jonpoulton.ktak.compose.icons.SideMenuTakIcons
+import dev.jonpoulton.ktak.compose.preview.PreviewDark
 
 public fun SideMenuTakIcons.Close(strokeWidth: Float): ImageVector {
   return ImageVector.Builder(

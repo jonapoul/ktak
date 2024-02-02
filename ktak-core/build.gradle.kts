@@ -13,6 +13,5 @@ android {
 }
 
 dependencies {
-  implementation(libs.alakazam.android.core)
   implementation(libs.alakazam.kotlin.core)
 }

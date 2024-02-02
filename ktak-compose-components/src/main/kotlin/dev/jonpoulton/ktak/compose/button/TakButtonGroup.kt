@@ -12,9 +12,9 @@ import androidx.compose.runtime.Stable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.alakazam.android.ui.compose.EmptyCallback
-import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.ktak.compose.core.TakTextStyles
+import dev.jonpoulton.ktak.compose.preview.PreviewCallback
+import dev.jonpoulton.ktak.compose.preview.PreviewDark
 import dev.jonpoulton.ktak.compose.preview.TakPreview
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
@@ -82,7 +82,7 @@ private fun OneButton() = TakPreview {
       modifier = Modifier,
       isDisabled = false,
       buttons = persistentListOf(
-        TakGroupedButton(text = "ABCD", onClick = EmptyCallback),
+        TakGroupedButton(text = "ABCD", onClick = PreviewCallback),
       ),
     )
   }
@@ -96,8 +96,8 @@ private fun TwoButtons() = TakPreview {
       modifier = Modifier,
       isDisabled = false,
       buttons = persistentListOf(
-        TakGroupedButton(text = "ABCD", onClick = EmptyCallback),
-        TakGroupedButton(text = "1234", onClick = EmptyCallback),
+        TakGroupedButton(text = "ABCD", onClick = PreviewCallback),
+        TakGroupedButton(text = "1234", onClick = PreviewCallback),
       ),
     )
   }
@@ -111,9 +111,9 @@ private fun ThreeButtons() = TakPreview {
       modifier = Modifier,
       isDisabled = false,
       buttons = persistentListOf(
-        TakGroupedButton(text = "ABCD", onClick = EmptyCallback),
-        TakGroupedButton(text = "1234", onClick = EmptyCallback),
-        TakGroupedButton(text = "WXYZ", onClick = EmptyCallback),
+        TakGroupedButton(text = "ABCD", onClick = PreviewCallback),
+        TakGroupedButton(text = "1234", onClick = PreviewCallback),
+        TakGroupedButton(text = "WXYZ", onClick = PreviewCallback),
       ),
     )
   }
@@ -127,10 +127,10 @@ private fun FourButtons() = TakPreview {
       modifier = Modifier,
       isDisabled = false,
       buttons = persistentListOf(
-        TakGroupedButton(text = "ABCD", onClick = EmptyCallback),
-        TakGroupedButton(text = "EFGH", onClick = EmptyCallback),
-        TakGroupedButton(text = "1234", onClick = EmptyCallback),
-        TakGroupedButton(text = "5678", onClick = EmptyCallback),
+        TakGroupedButton(text = "ABCD", onClick = PreviewCallback),
+        TakGroupedButton(text = "EFGH", onClick = PreviewCallback),
+        TakGroupedButton(text = "1234", onClick = PreviewCallback),
+        TakGroupedButton(text = "5678", onClick = PreviewCallback),
       ),
     )
   }

@@ -18,11 +18,11 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.alakazam.android.ui.compose.EmptyCallback
-import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.ktak.compose.icons.TakIcons
 import dev.jonpoulton.ktak.compose.icons.utility.Add
 import dev.jonpoulton.ktak.compose.icons.utility.Watercraft
+import dev.jonpoulton.ktak.compose.preview.PreviewCallback
+import dev.jonpoulton.ktak.compose.preview.PreviewDark
 import dev.jonpoulton.ktak.compose.preview.TakPreview
 import dev.jonpoulton.ktak.compose.text.DefaultTakTextInputColors
 import dev.jonpoulton.ktak.compose.text.TakTextInput
@@ -136,7 +136,7 @@ private fun PreviewWithIcon() = TakPreview {
     hint = "This is a hint",
     title = "Hello world",
     textIcon = TakIcons.Utility.Watercraft,
-    positiveButton = TakDialogPositiveButton(text = "Save", icon = TakIcons.Utility.Add, onClick = EmptyCallback),
+    positiveButton = TakDialogPositiveButton(text = "Save", icon = TakIcons.Utility.Add, onClick = PreviewCallback),
   )
 }
 
@@ -152,6 +152,6 @@ private fun PreviewWithError() = TakPreview {
     description = "Something is wrong!",
     error = true,
     textIcon = TakIcons.Utility.Watercraft,
-    positiveButton = TakDialogPositiveButton(text = "Save", icon = TakIcons.Utility.Add, onClick = EmptyCallback),
+    positiveButton = TakDialogPositiveButton(text = "Save", icon = TakIcons.Utility.Add, onClick = PreviewCallback),
   )
 }

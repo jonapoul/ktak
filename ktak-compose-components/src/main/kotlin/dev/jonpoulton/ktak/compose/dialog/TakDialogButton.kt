@@ -24,7 +24,6 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.ktak.compose.button.DefaultTakButtonColors
 import dev.jonpoulton.ktak.compose.button.TakButtonColors
 import dev.jonpoulton.ktak.compose.core.TakColors
@@ -32,6 +31,7 @@ import dev.jonpoulton.ktak.compose.core.TakFonts
 import dev.jonpoulton.ktak.compose.icons.TakIcons
 import dev.jonpoulton.ktak.compose.icons.sidemenu.Close
 import dev.jonpoulton.ktak.compose.icons.sidemenu.Confirm
+import dev.jonpoulton.ktak.compose.preview.PreviewDark
 import dev.jonpoulton.ktak.compose.preview.TakPreview
 
 @Immutable

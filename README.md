@@ -32,3 +32,7 @@ dependencies {
     implementation("dev.jonpoulton.ktak:compose-preview:{version}")
 }
 ```
+
+## TODO
+- Fix janky icons
+- Navigation

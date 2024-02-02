@@ -26,14 +26,14 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.alakazam.android.ui.compose.EmptyCallback
-import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.ktak.compose.core.TakColors
 import dev.jonpoulton.ktak.compose.core.TakToast
 import dev.jonpoulton.ktak.compose.icons.TakIcons
 import dev.jonpoulton.ktak.compose.icons.sidemenu.Add
 import dev.jonpoulton.ktak.compose.icons.sidemenu.Alpha
 import dev.jonpoulton.ktak.compose.icons.sidemenu.Settings
+import dev.jonpoulton.ktak.compose.preview.PreviewCallback
+import dev.jonpoulton.ktak.compose.preview.PreviewDark
 import dev.jonpoulton.ktak.compose.preview.TakPreview
 
 @Composable
@@ -128,7 +128,7 @@ private fun Add() = TakPreview {
   TakIconButton(
     icon = TakIcons.SideMenu.Add,
     contentDescription = "",
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
   )
 }
 
@@ -138,7 +138,7 @@ private fun Alpha() = TakPreview {
   TakIconButton(
     icon = TakIcons.SideMenu.Alpha,
     contentDescription = "",
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
   )
 }
 
@@ -148,7 +148,7 @@ private fun Settings() = TakPreview {
   TakIconButton(
     icon = TakIcons.SideMenu.Settings,
     contentDescription = "",
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
   )
 }
 
@@ -158,7 +158,7 @@ private fun SettingsError() = TakPreview {
   TakIconButton(
     icon = TakIcons.SideMenu.Settings,
     contentDescription = "",
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
     isError = true,
   )
 }
@@ -169,7 +169,7 @@ private fun SettingsDisabled() = TakPreview {
   TakIconButton(
     icon = TakIcons.SideMenu.Settings,
     contentDescription = "",
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
     isDisabled = true,
   )
 }

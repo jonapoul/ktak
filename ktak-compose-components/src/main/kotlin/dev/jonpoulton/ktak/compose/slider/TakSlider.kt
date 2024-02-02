@@ -1,3 +1,10 @@
+@file:Suppress(
+  // https://publicobject.com/2024/01/30/internal-visibility/
+  "CANNOT_OVERRIDE_INVISIBLE_MEMBER",
+  "INVISIBLE_MEMBER",
+  "INVISIBLE_REFERENCE",
+)
+
 package dev.jonpoulton.ktak.compose.slider
 
 import androidx.compose.foundation.focusable
@@ -22,7 +29,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
+import dev.jonpoulton.ktak.compose.preview.PreviewDark
 import dev.jonpoulton.ktak.compose.preview.TakPreview
 import kotlinx.coroutines.launch
 import kotlin.math.max

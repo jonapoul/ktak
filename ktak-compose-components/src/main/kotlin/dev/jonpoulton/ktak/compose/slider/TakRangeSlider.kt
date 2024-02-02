@@ -1,4 +1,12 @@
-@file:Suppress("LongMethod", "LongParameterList")
+@file:Suppress(
+  "LongMethod",
+  "LongParameterList",
+
+  // https://publicobject.com/2024/01/30/internal-visibility/
+  "CANNOT_OVERRIDE_INVISIBLE_MEMBER",
+  "INVISIBLE_MEMBER",
+  "INVISIBLE_REFERENCE",
+)
 
 package dev.jonpoulton.ktak.compose.slider
 
@@ -27,8 +35,8 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.ktak.compose.core.TakTypography
+import dev.jonpoulton.ktak.compose.preview.PreviewDark
 import dev.jonpoulton.ktak.compose.preview.TakPreview
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.coroutines.launch

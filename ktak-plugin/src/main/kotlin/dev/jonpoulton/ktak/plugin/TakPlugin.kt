@@ -1,6 +1,5 @@
 package dev.jonpoulton.ktak.plugin
 
-import androidx.annotation.CallSuper
 import com.atakmap.android.maps.MapView
 import dev.jonpoulton.ktak.core.AppContext
 import dev.jonpoulton.ktak.core.PluginContext
@@ -17,23 +16,11 @@ public abstract class TakPlugin(serviceController: IServiceController) : IPlugin
 
   protected open val timberTree: Timber.Tree? = null
 
-  protected open fun startDI() {
-    // No-op by default
-  }
-
-  protected open fun stopDI() {
-    // No-op by default
-  }
-
-  @CallSuper
   override fun onStart() {
     timberTree?.let(Timber::plant)
-    startDI()
   }
 
-  @CallSuper
   override fun onStop() {
-    stopDI()
     timberTree?.let(Timber::uproot)
   }
 }

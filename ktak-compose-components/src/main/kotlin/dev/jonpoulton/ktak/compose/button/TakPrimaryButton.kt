@@ -28,9 +28,9 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.alakazam.android.ui.compose.EmptyCallback
-import dev.jonpoulton.alakazam.android.ui.compose.PreviewDark
 import dev.jonpoulton.ktak.compose.core.TakTextStyles
+import dev.jonpoulton.ktak.compose.preview.PreviewCallback
+import dev.jonpoulton.ktak.compose.preview.PreviewDark
 import dev.jonpoulton.ktak.compose.preview.TakPreview
 
 @Composable
@@ -92,7 +92,7 @@ private fun RegularWithIcon() = TakPreview {
   TakPrimaryButton(
     text = "Confirm",
     icon = Icons.Filled.SwapHoriz,
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
   )
 }
 
@@ -102,7 +102,7 @@ private fun RegularWithoutIcon() = TakPreview {
   TakPrimaryButton(
     text = "Confirm",
     icon = null,
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
   )
 }
 
@@ -113,7 +113,7 @@ private fun RegularWithPadding() = TakPreview {
     modifier = Modifier.padding(8.dp),
     text = "Confirm",
     icon = Icons.Filled.SwapHoriz,
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
   )
 }
 
@@ -123,7 +123,7 @@ private fun Errored() = TakPreview {
   TakPrimaryButton(
     text = "Confirm",
     icon = Icons.Filled.SwapHoriz,
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
     isError = true,
   )
 }
@@ -134,7 +134,7 @@ private fun Disabled() = TakPreview {
   TakPrimaryButton(
     text = "Confirm",
     icon = Icons.Filled.SwapHoriz,
-    onClick = EmptyCallback,
+    onClick = PreviewCallback,
     isDisabled = true,
   )
 }
