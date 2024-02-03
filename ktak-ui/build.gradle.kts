@@ -20,4 +20,5 @@ android {
 
 dependencies {
   api(projects.ktakCore)
+  implementation(libs.timber)
 }
