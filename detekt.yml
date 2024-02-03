@@ -26,10 +26,12 @@ style:
     ignoreAnnotated:
       - 'Preview'
       - 'PreviewDark'
+      - 'PreviewTakLandscape'
   UnusedPrivateMember:
     ignoreAnnotated:
       - 'Preview'
       - 'PreviewDark'
+      - 'PreviewTakLandscape'
   ForbiddenComment:
     active: false
 
