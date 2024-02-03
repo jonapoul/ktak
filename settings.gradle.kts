@@ -30,6 +30,7 @@ include(":ktak-compose-viewmodel")
 include(":ktak-core")
 include(":ktak-dagger")
 include(":ktak-plugin")
+include(":ktak-poolingcontainer")
 include(":ktak-res")
 include(":ktak-ui")
 
