@@ -1,30 +1,30 @@
 <resources>
 
-  <style name="Theme.Alakazam.Atak" parent="@android:style/Theme.Holo">
-    <item name="android:buttonStyle">@style/Theme.Alakazam.Atak.Button</item>
-    <item name="android:imageButtonStyle">@style/Theme.Alakazam.Atak.ImageButton</item>
-    <item name="android:buttonStyleToggle">@style/Theme.Alakazam.Atak.Button</item>
-    <item name="android:spinnerStyle">@style/Theme.Alakazam.Atak.Spinner</item>
-    <item name="android:spinnerItemStyle">@style/Theme.Alakazam.Atak.Spinner.Item</item>
-    <item name="android:editTextStyle">@style/Theme.Alakazam.Atak.EditText</item>
+  <style name="Theme.Ktak" parent="@android:style/Theme.Holo">
+    <item name="android:buttonStyle">@style/Theme.Ktak.Button</item>
+    <item name="android:imageButtonStyle">@style/Theme.Ktak.ImageButton</item>
+    <item name="android:buttonStyleToggle">@style/Theme.Ktak.Button</item>
+    <item name="android:spinnerStyle">@style/Theme.Ktak.Spinner</item>
+    <item name="android:spinnerItemStyle">@style/Theme.Ktak.Spinner.Item</item>
+    <item name="android:editTextStyle">@style/Theme.Ktak.EditText</item>
     <item name="android:colorControlNormal">@color/white</item>
   </style>
 
-  <style name="Theme.Alakazam.Atak.Spinner" parent="@android:style/Widget.Spinner">
+  <style name="Theme.Ktak.Spinner" parent="@android:style/Widget.Spinner">
     <item name="android:spinnerMode">dialog</item>
   </style>
 
-  <style name="Theme.Alakazam.Atak.EditText" parent="@android:style/Widget.EditText">
+  <style name="Theme.Ktak.EditText" parent="@android:style/Widget.EditText">
     <!-- Default to non-multi-line edit texts? Probably should do this field-by-field, but we've missed a LOT of them!  -->
     <!-- <item name="inputType">text</item> -->
     <item name="android:imeOptions">flagNoFullscreen</item>
   </style>
 
-  <style name="Theme.Alakazam.Atak.Spinner.Item" parent="@style/Theme.Alakazam.Atak">
+  <style name="Theme.Ktak.Spinner.Item" parent="@style/Theme.Ktak">
     <item name="android:textColor">@android:color/black</item>
   </style>
 
-  <style name="Theme.Alakazam.Atak.Button" parent="@android:style/Widget.Button">
+  <style name="Theme.Ktak.Button" parent="@android:style/Widget.Button">
     <item name="android:background">@drawable/button_selector</item>
     <item name="android:shadowColor">@color/darker_grey</item>
     <item name="android:shadowDy">1</item>
@@ -37,7 +37,7 @@
     <item name="android:padding">6dp</item>
   </style>
 
-  <style name="Theme.Alakazam.Atak.ImageButton" parent="@android:style/Widget.ImageButton">
+  <style name="Theme.Ktak.ImageButton" parent="@android:style/Widget.ImageButton">
     <item name="android:background">@drawable/button_selector</item>
     <item name="android:shadowColor">@color/darker_grey</item>
     <item name="android:shadowDy">1</item>
