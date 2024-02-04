@@ -36,6 +36,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import dev.jonpoulton.alakazam.kotlin.core.ifTrue
 import dev.jonpoulton.ktak.compose.core.TakColors
@@ -129,6 +130,7 @@ public fun TakIconButtonLegacy(
   tint: Color = TakColors.Cloud,
   isDisabled: Boolean = false,
   isChecked: Boolean = false,
+  iconSize: Dp = IconSize,
   onClick: () -> Unit,
 ) {
   val interactionSource = remember { MutableInteractionSource() }
@@ -147,7 +149,7 @@ public fun TakIconButtonLegacy(
       imageVector = icon,
       contentDescription = contentDescription,
       tint = contentColour(isDisabled, tint),
-      modifier = Modifier.size(IconSize),
+      modifier = Modifier.size(iconSize),
     )
   }
 }
