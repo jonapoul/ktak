@@ -6,6 +6,7 @@ plugins {
 
   // convention-android.gradle.kts
   alias(libs.plugins.agp) apply false
+  alias(libs.plugins.androidCacheFix) apply false
 
   // convention-publish.gradle.kts
   alias(libs.plugins.dokka) apply false
