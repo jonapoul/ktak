@@ -24,7 +24,7 @@ public object TakNativeLoader {
           .nativeLibraryDir
         nativeLibraryDir = nativeDir
       } catch (e: Exception) {
-        Timber.e(e)
+          Timber.e(e)
         error("Native library loading will fail, unable to grab the nativeLibraryDir from ${pluginContext.packageName}")
       }
     }

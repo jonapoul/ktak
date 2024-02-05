@@ -33,7 +33,9 @@ public class TakAlertDialogBuilder : AlertDialog.Builder {
   }
 
   override fun setView(@LayoutRes layoutResId: Int): TakAlertDialogBuilder =
-    super.setView(LayoutInflater.from(pluginContext).inflate(layoutResId, null, false)) as TakAlertDialogBuilder
+    super.setView(
+        LayoutInflater.from(pluginContext)
+            .inflate(layoutResId, null, false)) as TakAlertDialogBuilder
 
   override fun setView(view: View?): TakAlertDialogBuilder =
     super.setView(view) as TakAlertDialogBuilder
@@ -51,8 +53,8 @@ public class TakAlertDialogBuilder : AlertDialog.Builder {
     super.setIcon(ContextCompat.getDrawable(pluginContext, iconId)) as TakAlertDialogBuilder
 
   public fun setSimplePositiveButton(
-    @StringRes text: Int = android.R.string.ok,
-    onClick: (() -> Unit)? = null,
+      @StringRes text: Int = android.R.string.ok,
+      onClick: (() -> Unit)? = null,
   ): TakAlertDialogBuilder {
     val string = pluginContext.getString(text)
     return if (onClick == null) {
@@ -63,8 +65,8 @@ public class TakAlertDialogBuilder : AlertDialog.Builder {
   }
 
   public fun setSimpleNegativeButton(
-    @StringRes text: Int = android.R.string.cancel,
-    onClick: (() -> Unit)? = null,
+      @StringRes text: Int = android.R.string.cancel,
+      onClick: (() -> Unit)? = null,
   ): TakAlertDialogBuilder {
     val string = pluginContext.getString(text)
     return if (onClick == null) {
@@ -75,8 +77,8 @@ public class TakAlertDialogBuilder : AlertDialog.Builder {
   }
 
   public fun setSimpleNeutralButton(
-    @StringRes text: Int,
-    onClick: (() -> Unit)? = null,
+      @StringRes text: Int,
+      onClick: (() -> Unit)? = null,
   ): TakAlertDialogBuilder {
     val string = pluginContext.getString(text)
     return if (onClick == null) {

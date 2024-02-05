@@ -17,10 +17,10 @@ public abstract class TakPlugin(serviceController: IServiceController) : IPlugin
   protected open val timberTree: Timber.Tree? = null
 
   override fun onStart() {
-    timberTree?.let(Timber::plant)
+    timberTree?.let(Timber.Forest::plant)
   }
 
   override fun onStop() {
-    timberTree?.let(Timber::uproot)
+    timberTree?.let(Timber.Forest::uproot)
   }
 }

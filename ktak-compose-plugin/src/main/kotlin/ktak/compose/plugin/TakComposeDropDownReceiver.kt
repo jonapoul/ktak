@@ -23,9 +23,9 @@ import ktak.core.TakContexts
 import ktak.plugin.HasDocumentedIntentFilter
 
 public abstract class TakComposeDropDownReceiver(
-  private val contexts: TakContexts,
-  mapView: MapView,
-  protected val viewModelFactory: ViewModelProvider.Factory,
+    private val contexts: TakContexts,
+    mapView: MapView,
+    protected val viewModelFactory: ViewModelProvider.Factory,
 ) : DropDownReceiver(mapView), ViewModelStoreOwner, TakScreenNavigator, HasDocumentedIntentFilter {
   override val viewModelStore: ViewModelStore = ViewModelStore()
 
@@ -41,11 +41,11 @@ public abstract class TakComposeDropDownReceiver(
   }
 
   protected fun showDropDown(
-    dimensions: TakScreen.Dimensions = TakScreen.HalfScreen,
-    ignoreBackButton: Boolean = false,
-    switchable: Boolean = false,
-    stateListener: DropDown.OnStateListener? = null,
-    screen: TakScreen,
+      dimensions: TakScreen.Dimensions = TakScreen.HalfScreen,
+      ignoreBackButton: Boolean = false,
+      switchable: Boolean = false,
+      stateListener: DropDown.OnStateListener? = null,
+      screen: TakScreen,
   ) {
     navStack.add(screen)
     composeView = TakComposeView(composeContext)
@@ -96,13 +96,13 @@ public abstract class TakComposeDropDownReceiver(
 
   protected fun composeScreen(screen: TakScreen) {
     composeView?.setTakContent(composeContext, colors) {
-      CompositionLocalProvider(
-        LocalViewModelStoreOwner provides this,
-        LocalViewModelFactory provides viewModelFactory,
-        LocalTakContexts provides contexts,
-      ) {
-        screen.Compose()
-      }
+        CompositionLocalProvider(
+            LocalViewModelStoreOwner provides this,
+            LocalViewModelFactory provides viewModelFactory,
+            LocalTakContexts provides contexts,
+        ) {
+            screen.Compose()
+        }
     }
   }
 }

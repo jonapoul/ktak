@@ -12,8 +12,8 @@ import ktak.core.toast
 
 @SuppressLint("AppCompatCustomView")
 public class LongPressableImageToggleButton @JvmOverloads constructor(
-  context: Context,
-  attrs: AttributeSet? = null,
+    context: Context,
+    attrs: AttributeSet? = null,
 ) : ToggleButton(context, attrs) {
   init {
     /* Show toast on long press */
