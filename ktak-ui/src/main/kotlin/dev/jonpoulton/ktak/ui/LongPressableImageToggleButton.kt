@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.ui
+package ktak.ui
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -7,8 +7,8 @@ import android.widget.ToggleButton
 import androidx.annotation.DrawableRes
 import androidx.core.content.withStyledAttributes
 import com.atakmap.android.maps.MapView
-import dev.jonpoulton.ktak.core.PluginContext
-import dev.jonpoulton.ktak.core.toast
+import ktak.core.PluginContext
+import ktak.core.toast
 
 @SuppressLint("AppCompatCustomView")
 public class LongPressableImageToggleButton @JvmOverloads constructor(

@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.icons.sidemenu
+package ktak.compose.icons.sidemenu
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
@@ -9,10 +9,10 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.group
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.ktak.compose.core.TakColors
-import dev.jonpoulton.ktak.compose.icons.PreviewIcon
-import dev.jonpoulton.ktak.compose.icons.SideMenuTakIcons
-import dev.jonpoulton.ktak.compose.preview.PreviewDark
+import ktak.compose.core.TakColors
+import ktak.compose.icons.PreviewIcon
+import ktak.compose.icons.SideMenuTakIcons
+import ktak.compose.preview.PreviewDark
 
 public val SideMenuTakIcons.Survey: ImageVector
   get() {

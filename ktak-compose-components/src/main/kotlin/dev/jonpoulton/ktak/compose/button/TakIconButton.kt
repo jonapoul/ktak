@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.button
+package ktak.compose.button
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -26,15 +26,15 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.ktak.compose.core.TakColors
-import dev.jonpoulton.ktak.compose.core.TakToast
-import dev.jonpoulton.ktak.compose.icons.TakIcons
-import dev.jonpoulton.ktak.compose.icons.sidemenu.Add
-import dev.jonpoulton.ktak.compose.icons.sidemenu.Alpha
-import dev.jonpoulton.ktak.compose.icons.sidemenu.Settings
-import dev.jonpoulton.ktak.compose.preview.PreviewCallback
-import dev.jonpoulton.ktak.compose.preview.PreviewDark
-import dev.jonpoulton.ktak.compose.preview.TakPreview
+import ktak.compose.core.TakColors
+import ktak.compose.core.TakToast
+import ktak.compose.icons.TakIcons
+import ktak.compose.icons.sidemenu.Add
+import ktak.compose.icons.sidemenu.Alpha
+import ktak.compose.icons.sidemenu.Settings
+import ktak.compose.preview.PreviewCallback
+import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.TakPreview
 
 @Composable
 public fun TakIconButton(

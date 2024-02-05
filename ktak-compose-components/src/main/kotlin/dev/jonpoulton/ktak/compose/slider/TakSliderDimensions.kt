@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.slider
+package ktak.compose.slider
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.Stable

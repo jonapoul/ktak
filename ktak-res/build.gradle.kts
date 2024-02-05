@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.ktak.res"
+  namespace = "ktak.res"
 
   buildFeatures {
     resValues = true

@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.text
+package ktak.compose.text
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.runtime.Immutable

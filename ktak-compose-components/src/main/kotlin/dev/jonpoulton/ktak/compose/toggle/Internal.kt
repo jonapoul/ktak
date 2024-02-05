@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.toggle
+package ktak.compose.toggle
 
 import androidx.compose.animation.core.animateIntOffsetAsState
 import androidx.compose.foundation.background
@@ -27,8 +27,8 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.jonpoulton.ktak.compose.core.TakColors
-import dev.jonpoulton.ktak.compose.core.TakFonts
+import ktak.compose.core.TakColors
+import ktak.compose.core.TakFonts
 import kotlin.math.roundToInt
 
 @Composable

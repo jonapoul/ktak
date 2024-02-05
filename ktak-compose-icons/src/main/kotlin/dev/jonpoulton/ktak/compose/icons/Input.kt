@@ -1,12 +1,12 @@
 @file:Suppress("MatchingDeclarationName")
 
-package dev.jonpoulton.ktak.compose.icons
+package ktak.compose.icons
 
 import android.content.res.Configuration
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import dev.jonpoulton.ktak.compose.icons.input.Message
-import dev.jonpoulton.ktak.compose.icons.input.Search
+import ktak.compose.icons.input.Message
+import ktak.compose.icons.input.Search
 
 /**
  * A standardized set of icons to be utilized within text and select inputs.

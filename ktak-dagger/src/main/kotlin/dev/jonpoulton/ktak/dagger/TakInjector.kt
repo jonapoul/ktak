@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.dagger
+package ktak.dagger
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

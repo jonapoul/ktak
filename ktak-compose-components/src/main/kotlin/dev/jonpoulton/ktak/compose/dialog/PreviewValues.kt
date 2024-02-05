@@ -1,14 +1,14 @@
-package dev.jonpoulton.ktak.compose.dialog
+package ktak.compose.dialog
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import dev.jonpoulton.ktak.compose.core.TakColors
-import dev.jonpoulton.ktak.compose.icons.TakIcons
-import dev.jonpoulton.ktak.compose.icons.utility.Walking
-import dev.jonpoulton.ktak.compose.preview.PreviewCallback
+import ktak.compose.core.TakColors
+import ktak.compose.icons.TakIcons
+import ktak.compose.icons.utility.Walking
+import ktak.compose.preview.PreviewCallback
 
 internal val PreviewPositiveButton = TakDialogPositiveButton(
   onClick = PreviewCallback

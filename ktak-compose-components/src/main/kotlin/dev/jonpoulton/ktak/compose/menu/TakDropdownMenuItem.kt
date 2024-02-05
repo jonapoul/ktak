@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.menu
+package ktak.compose.menu
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.size
@@ -13,12 +13,12 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.jonpoulton.ktak.compose.core.TakTypography
-import dev.jonpoulton.ktak.compose.icons.TakIcons
-import dev.jonpoulton.ktak.compose.icons.utility.Walking
-import dev.jonpoulton.ktak.compose.preview.PreviewCallback
-import dev.jonpoulton.ktak.compose.preview.PreviewDark
-import dev.jonpoulton.ktak.compose.preview.TakPreview
+import ktak.compose.core.TakTypography
+import ktak.compose.icons.TakIcons
+import ktak.compose.icons.utility.Walking
+import ktak.compose.preview.PreviewCallback
+import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.TakPreview
 
 @Composable
 public fun TakDropdownMenuItem(

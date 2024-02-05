@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.button
+package ktak.compose.button
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -38,10 +38,10 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.ktak.compose.core.TakColors
-import dev.jonpoulton.ktak.compose.preview.PreviewCallback
-import dev.jonpoulton.ktak.compose.preview.PreviewDark
-import dev.jonpoulton.ktak.compose.preview.TakPreview
+import ktak.compose.core.TakColors
+import ktak.compose.preview.PreviewCallback
+import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.TakPreview
 
 @Composable
 public fun TakTextButtonLegacy(

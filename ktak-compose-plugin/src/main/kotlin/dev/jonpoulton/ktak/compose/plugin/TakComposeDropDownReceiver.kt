@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.plugin
+package ktak.compose.plugin
 
 import androidx.annotation.CallSuper
 import androidx.compose.material.Colors
@@ -11,16 +11,16 @@ import androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner
 import com.atakmap.android.dropdown.DropDown
 import com.atakmap.android.dropdown.DropDownReceiver
 import com.atakmap.android.maps.MapView
-import dev.jonpoulton.ktak.compose.core.LocalTakContexts
-import dev.jonpoulton.ktak.compose.core.TakColors
-import dev.jonpoulton.ktak.compose.core.TakComposeContext
-import dev.jonpoulton.ktak.compose.core.TakComposeView
-import dev.jonpoulton.ktak.compose.core.TakScreen
-import dev.jonpoulton.ktak.compose.core.TakScreenNavigator
-import dev.jonpoulton.ktak.compose.core.setTakContent
-import dev.jonpoulton.ktak.compose.viewmodel.LocalViewModelFactory
-import dev.jonpoulton.ktak.core.TakContexts
-import dev.jonpoulton.ktak.plugin.HasDocumentedIntentFilter
+import ktak.compose.core.LocalTakContexts
+import ktak.compose.core.TakColors
+import ktak.compose.core.TakComposeContext
+import ktak.compose.core.TakComposeView
+import ktak.compose.core.TakScreen
+import ktak.compose.core.TakScreenNavigator
+import ktak.compose.core.setTakContent
+import ktak.compose.viewmodel.LocalViewModelFactory
+import ktak.core.TakContexts
+import ktak.plugin.HasDocumentedIntentFilter
 
 public abstract class TakComposeDropDownReceiver(
   private val contexts: TakContexts,

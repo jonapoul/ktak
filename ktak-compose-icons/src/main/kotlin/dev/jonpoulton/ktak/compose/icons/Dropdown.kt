@@ -1,28 +1,28 @@
 @file:Suppress("MatchingDeclarationName")
 
-package dev.jonpoulton.ktak.compose.icons
+package ktak.compose.icons
 
 import android.content.res.Configuration
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import dev.jonpoulton.ktak.compose.icons.dropdown.AddHostile
-import dev.jonpoulton.ktak.compose.icons.dropdown.Circle
-import dev.jonpoulton.ktak.compose.icons.dropdown.Freeform
-import dev.jonpoulton.ktak.compose.icons.dropdown.HostileGoTo
-import dev.jonpoulton.ktak.compose.icons.dropdown.HostileManager
-import dev.jonpoulton.ktak.compose.icons.dropdown.HostileSpi
-import dev.jonpoulton.ktak.compose.icons.dropdown.Lasso
-import dev.jonpoulton.ktak.compose.icons.dropdown.Polygon
-import dev.jonpoulton.ktak.compose.icons.dropdown.RAndBBullseye
-import dev.jonpoulton.ktak.compose.icons.dropdown.RAndBCircle
-import dev.jonpoulton.ktak.compose.icons.dropdown.RAndBDynamicLine
-import dev.jonpoulton.ktak.compose.icons.dropdown.RAndBLine
-import dev.jonpoulton.ktak.compose.icons.dropdown.RotationLock
-import dev.jonpoulton.ktak.compose.icons.dropdown.RotationLockAlt
-import dev.jonpoulton.ktak.compose.icons.dropdown.Square
-import dev.jonpoulton.ktak.compose.icons.dropdown.ThreeDimensional
-import dev.jonpoulton.ktak.compose.icons.dropdown.ThreeDimensionalLock
-import dev.jonpoulton.ktak.compose.icons.dropdown.ThreeDimensionalLockAlt
+import ktak.compose.icons.dropdown.AddHostile
+import ktak.compose.icons.dropdown.Circle
+import ktak.compose.icons.dropdown.Freeform
+import ktak.compose.icons.dropdown.HostileGoTo
+import ktak.compose.icons.dropdown.HostileManager
+import ktak.compose.icons.dropdown.HostileSpi
+import ktak.compose.icons.dropdown.Lasso
+import ktak.compose.icons.dropdown.Polygon
+import ktak.compose.icons.dropdown.RAndBBullseye
+import ktak.compose.icons.dropdown.RAndBCircle
+import ktak.compose.icons.dropdown.RAndBDynamicLine
+import ktak.compose.icons.dropdown.RAndBLine
+import ktak.compose.icons.dropdown.RotationLock
+import ktak.compose.icons.dropdown.RotationLockAlt
+import ktak.compose.icons.dropdown.Square
+import ktak.compose.icons.dropdown.ThreeDimensional
+import ktak.compose.icons.dropdown.ThreeDimensionalLock
+import ktak.compose.icons.dropdown.ThreeDimensionalLockAlt
 
 /**
  * A standardized set of icons to be utilized within the dropdown child menu for the toolbar component.

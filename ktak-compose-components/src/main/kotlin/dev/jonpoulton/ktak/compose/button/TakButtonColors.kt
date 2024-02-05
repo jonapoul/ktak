@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.button
+package ktak.compose.button
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
@@ -6,7 +6,7 @@ import androidx.compose.runtime.Stable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.graphics.Color
-import dev.jonpoulton.ktak.compose.core.TakColors
+import ktak.compose.core.TakColors
 
 public interface TakButtonColors {
   @Stable

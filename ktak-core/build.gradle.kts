@@ -9,5 +9,5 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.ktak.core"
+  namespace = "ktak.core"
 }

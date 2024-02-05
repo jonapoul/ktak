@@ -10,7 +10,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.ktak.compose.core"
+  namespace = "ktak.compose.core"
 }
 
 dependencies {

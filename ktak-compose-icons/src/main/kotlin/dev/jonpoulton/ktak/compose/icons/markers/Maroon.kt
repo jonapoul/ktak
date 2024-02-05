@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.icons.markers
+package ktak.compose.icons.markers
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
@@ -9,9 +9,9 @@ import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.ktak.compose.icons.MarkersTakIcons
-import dev.jonpoulton.ktak.compose.icons.PreviewIcon
-import dev.jonpoulton.ktak.compose.preview.PreviewDark
+import ktak.compose.icons.MarkersTakIcons
+import ktak.compose.icons.PreviewIcon
+import ktak.compose.preview.PreviewDark
 
 public val MarkersTakIcons.Maroon: ImageVector
   get() {

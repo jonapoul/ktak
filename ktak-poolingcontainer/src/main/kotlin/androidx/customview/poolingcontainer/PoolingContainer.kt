@@ -7,7 +7,7 @@ import android.annotation.SuppressLint
 import android.view.View
 import android.view.ViewParent
 import androidx.annotation.UiThread
-import dev.jonpoulton.ktak.poolingcontainer.R
+import ktak.poolingcontainer.R
 
 /**
  * This whole file is a copypaste from the same file in androidx.customview:customview-poolingcontainer:1.0.0 but with

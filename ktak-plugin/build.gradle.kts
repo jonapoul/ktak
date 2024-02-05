@@ -9,7 +9,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.ktak.plugin"
+  namespace = "ktak.plugin"
 }
 
 dependencies {

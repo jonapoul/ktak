@@ -10,7 +10,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.ktak.compose.preview"
+  namespace = "ktak.compose.preview"
 
   buildFeatures {
     androidResources = true

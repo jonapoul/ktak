@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.core
+package ktak.core
 
 import android.widget.Toast
 import androidx.annotation.StringRes

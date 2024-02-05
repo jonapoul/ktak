@@ -1,9 +1,9 @@
-package dev.jonpoulton.ktak.dagger
+package ktak.dagger
 
 import android.content.SharedPreferences
 import dagger.Module
 import dagger.Provides
-import dev.jonpoulton.ktak.core.AppContext
+import ktak.core.AppContext
 import javax.inject.Singleton
 
 @Module

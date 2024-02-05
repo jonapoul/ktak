@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.core
+package ktak.compose.core
 
 import androidx.compose.runtime.Composable
 

@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.core
+package ktak.compose.core
 
 import android.content.Context
 import android.content.ContextWrapper
@@ -6,9 +6,9 @@ import android.content.res.Resources
 import androidx.compose.runtime.ProvidableCompositionLocal
 import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.ui.text.font.createFontFamilyResolver
-import dev.jonpoulton.ktak.core.AppContext
-import dev.jonpoulton.ktak.core.PluginContext
-import dev.jonpoulton.ktak.core.TakContexts
+import ktak.core.AppContext
+import ktak.core.PluginContext
+import ktak.core.TakContexts
 
 /**
  * This class is a workaround for the fact that ComposeView needs the plugin to load resources, but also uses

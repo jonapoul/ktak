@@ -1,7 +1,7 @@
-package dev.jonpoulton.ktak.plugin
+package ktak.plugin
 
 import android.annotation.SuppressLint
-import dev.jonpoulton.ktak.core.PluginContext
+import ktak.core.PluginContext
 import timber.log.Timber
 import java.io.File
 

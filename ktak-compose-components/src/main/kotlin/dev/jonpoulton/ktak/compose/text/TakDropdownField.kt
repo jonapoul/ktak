@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.text
+package ktak.compose.text
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -28,17 +28,17 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.ktak.compose.core.TakTextStyles
-import dev.jonpoulton.ktak.compose.icons.TakIcons
-import dev.jonpoulton.ktak.compose.icons.utility.CheckEmpty
-import dev.jonpoulton.ktak.compose.icons.utility.CheckSelected
-import dev.jonpoulton.ktak.compose.icons.utility.Collapse
-import dev.jonpoulton.ktak.compose.icons.utility.Expand
-import dev.jonpoulton.ktak.compose.icons.utility.Walking
-import dev.jonpoulton.ktak.compose.preview.PreviewDark
-import dev.jonpoulton.ktak.compose.preview.TakPreview
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
+import ktak.compose.core.TakTextStyles
+import ktak.compose.icons.TakIcons
+import ktak.compose.icons.utility.CheckEmpty
+import ktak.compose.icons.utility.CheckSelected
+import ktak.compose.icons.utility.Collapse
+import ktak.compose.icons.utility.Expand
+import ktak.compose.icons.utility.Walking
+import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.TakPreview
 
 @Composable
 public fun TakDropdownField(

@@ -1,18 +1,18 @@
 @file:Suppress("MatchingDeclarationName")
 
-package dev.jonpoulton.ktak.compose.icons
+package ktak.compose.icons
 
 import android.content.res.Configuration
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import dev.jonpoulton.ktak.compose.icons.mapcontrol.Compass
-import dev.jonpoulton.ktak.compose.icons.mapcontrol.LockOnSelf
-import dev.jonpoulton.ktak.compose.icons.mapcontrol.LockOnSelfActive
-import dev.jonpoulton.ktak.compose.icons.mapcontrol.LockOnSelfActiveAlt
-import dev.jonpoulton.ktak.compose.icons.mapcontrol.ThreeDimensionalCompass
-import dev.jonpoulton.ktak.compose.icons.mapcontrol.ThreeDimensionalCompassDirection
-import dev.jonpoulton.ktak.compose.icons.mapcontrol.ThreeDimensionalCompassTilt
-import dev.jonpoulton.ktak.compose.icons.mapcontrol.ZoomControl
+import ktak.compose.icons.mapcontrol.Compass
+import ktak.compose.icons.mapcontrol.LockOnSelf
+import ktak.compose.icons.mapcontrol.LockOnSelfActive
+import ktak.compose.icons.mapcontrol.LockOnSelfActiveAlt
+import ktak.compose.icons.mapcontrol.ThreeDimensionalCompass
+import ktak.compose.icons.mapcontrol.ThreeDimensionalCompassDirection
+import ktak.compose.icons.mapcontrol.ThreeDimensionalCompassTilt
+import ktak.compose.icons.mapcontrol.ZoomControl
 
 /**
  * A standardized set of icons that appear on map in the main nav stack.

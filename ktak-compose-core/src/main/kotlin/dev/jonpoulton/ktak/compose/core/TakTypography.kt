@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.core
+package ktak.compose.core
 
 import android.content.res.Configuration
 import androidx.compose.material.MaterialTheme
@@ -14,7 +14,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
-import dev.jonpoulton.ktak.res.R as TakR
+import ktak.res.R as TakR
 
 public val TakTypography: Typography
   @Composable
@@ -31,9 +31,12 @@ public val TakTypography: Typography
 
 @Stable
 public object TakFonts {
-  @Stable public val Bold: Font = Font(TakR.font.nunito_bold, weight = FontWeight.Bold)
-  @Stable public val Regular: Font = Font(TakR.font.nunito_regular, weight = FontWeight.Normal)
-  @Stable public val Family: FontFamily = FontFamily(Bold, Regular)
+  @Stable
+  public val Bold: Font = Font(TakR.font.nunito_bold, weight = FontWeight.Bold)
+  @Stable
+  public val Regular: Font = Font(TakR.font.nunito_regular, weight = FontWeight.Normal)
+  @Stable
+  public val Family: FontFamily = FontFamily(Bold, Regular)
 }
 
 @Stable

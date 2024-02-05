@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.slider
+package ktak.compose.slider
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.padding
@@ -14,13 +14,13 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.ktak.compose.preview.PreviewDark
-import dev.jonpoulton.ktak.compose.preview.TakPreview
-import dev.jonpoulton.ktak.compose.slider.TakSliderTextPosition.AboveThumb
-import dev.jonpoulton.ktak.compose.slider.TakSliderTextPosition.BelowThumb
-import dev.jonpoulton.ktak.compose.slider.TakSliderTextPosition.None
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
+import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.TakPreview
+import ktak.compose.slider.TakSliderTextPosition.AboveThumb
+import ktak.compose.slider.TakSliderTextPosition.BelowThumb
+import ktak.compose.slider.TakSliderTextPosition.None
 
 @Composable
 internal fun LinearTrack(

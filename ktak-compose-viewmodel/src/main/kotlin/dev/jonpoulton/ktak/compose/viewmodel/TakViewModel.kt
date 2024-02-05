@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.viewmodel
+package ktak.compose.viewmodel
 
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.HasDefaultViewModelProviderFactory

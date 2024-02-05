@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.button
+package ktak.compose.button
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -12,12 +12,12 @@ import androidx.compose.runtime.Stable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.ktak.compose.core.TakTextStyles
-import dev.jonpoulton.ktak.compose.preview.PreviewCallback
-import dev.jonpoulton.ktak.compose.preview.PreviewDark
-import dev.jonpoulton.ktak.compose.preview.TakPreview
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
+import ktak.compose.core.TakTextStyles
+import ktak.compose.preview.PreviewCallback
+import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.TakPreview
 
 @Composable
 public fun TakButtonGroup(

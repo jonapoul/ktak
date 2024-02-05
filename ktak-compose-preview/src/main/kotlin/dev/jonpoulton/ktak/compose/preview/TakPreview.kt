@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.preview
+package ktak.compose.preview
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -13,11 +13,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import dev.jonpoulton.ktak.compose.core.LocalTakComposeContext
-import dev.jonpoulton.ktak.compose.core.TakComposeContext
-import dev.jonpoulton.ktak.compose.core.TakTheme
-import dev.jonpoulton.ktak.core.AppContext
-import dev.jonpoulton.ktak.core.PluginContext
+import ktak.compose.core.LocalTakComposeContext
+import ktak.compose.core.TakComposeContext
+import ktak.compose.core.TakTheme
+import ktak.core.AppContext
+import ktak.core.PluginContext
 
 @Composable
 public fun TakPreview(modifier: Modifier = Modifier, content: @Composable () -> Unit): Unit = TakTheme {

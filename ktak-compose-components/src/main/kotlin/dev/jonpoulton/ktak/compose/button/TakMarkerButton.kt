@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.button
+package ktak.compose.button
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -14,13 +14,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.ktak.compose.icons.TakIcons
-import dev.jonpoulton.ktak.compose.icons.markers.Blue
-import dev.jonpoulton.ktak.compose.icons.markers.Neutral
-import dev.jonpoulton.ktak.compose.icons.markers.Purple
-import dev.jonpoulton.ktak.compose.preview.PreviewCallback
-import dev.jonpoulton.ktak.compose.preview.PreviewDark
-import dev.jonpoulton.ktak.compose.preview.TakPreview
+import ktak.compose.icons.TakIcons
+import ktak.compose.icons.markers.Blue
+import ktak.compose.icons.markers.Neutral
+import ktak.compose.icons.markers.Purple
+import ktak.compose.preview.PreviewCallback
+import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.TakPreview
 
 @Composable
 public fun TakMarkerButton(

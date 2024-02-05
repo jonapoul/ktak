@@ -24,7 +24,7 @@ val shouldRunOnCheck = project == rootProject
 
 koverReport {
   filters {
-    includes { packages("dev.jonpoulton.ktak") }
+    includes { packages("ktak") }
     excludes {
       classes(
         "*Hilt_*",

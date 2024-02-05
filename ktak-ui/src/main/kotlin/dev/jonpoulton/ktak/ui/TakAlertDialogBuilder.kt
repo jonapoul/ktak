@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.ui
+package ktak.ui
 
 import android.app.AlertDialog
 import android.content.Context
@@ -9,9 +9,9 @@ import androidx.annotation.LayoutRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import com.atakmap.android.maps.MapView
-import dev.jonpoulton.ktak.core.AppContext
-import dev.jonpoulton.ktak.core.PluginContext
-import dev.jonpoulton.ktak.core.TakContexts
+import ktak.core.AppContext
+import ktak.core.PluginContext
+import ktak.core.TakContexts
 
 public class TakAlertDialogBuilder : AlertDialog.Builder {
   private val pluginContext: PluginContext

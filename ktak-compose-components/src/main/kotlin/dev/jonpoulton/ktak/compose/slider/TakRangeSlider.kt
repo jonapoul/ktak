@@ -8,7 +8,7 @@
   "INVISIBLE_REFERENCE",
 )
 
-package dev.jonpoulton.ktak.compose.slider
+package ktak.compose.slider
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.foundation.focusable
@@ -35,11 +35,11 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.ktak.compose.core.TakTypography
-import dev.jonpoulton.ktak.compose.preview.PreviewDark
-import dev.jonpoulton.ktak.compose.preview.TakPreview
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.coroutines.launch
+import ktak.compose.core.TakTypography
+import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.TakPreview
 import kotlin.math.floor
 
 @Composable

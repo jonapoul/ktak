@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.ktak.compose.viewmodel"
+  namespace = "ktak.compose.viewmodel"
 }
 
 dependencies {

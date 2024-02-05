@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.icons
+package ktak.compose.icons
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -14,7 +14,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.jonpoulton.ktak.compose.preview.TakPreview
+import ktak.compose.preview.TakPreview
 
 @Composable
 internal fun PreviewIconGrid(icons: List<ImageVector>) = TakPreview {

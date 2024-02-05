@@ -9,7 +9,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.ktak.poolingcontainer"
+  namespace = "ktak.poolingcontainer"
 
   buildFeatures {
     resValues = true

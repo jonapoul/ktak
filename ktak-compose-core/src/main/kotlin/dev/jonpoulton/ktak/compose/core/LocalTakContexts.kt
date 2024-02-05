@@ -1,8 +1,8 @@
-package dev.jonpoulton.ktak.compose.core
+package ktak.compose.core
 
 import androidx.compose.runtime.ProvidableCompositionLocal
 import androidx.compose.runtime.compositionLocalOf
-import dev.jonpoulton.ktak.core.TakContexts
+import ktak.core.TakContexts
 
 public val LocalTakContexts: ProvidableCompositionLocal<TakContexts> = compositionLocalOf {
   error("CompositionLocal TakContexts not present")

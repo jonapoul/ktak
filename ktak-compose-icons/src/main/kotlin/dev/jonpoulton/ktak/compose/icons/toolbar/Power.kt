@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.icons.toolbar
+package ktak.compose.icons.toolbar
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType.Companion.EvenOdd
@@ -8,7 +8,7 @@ import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.ktak.compose.icons.ToolbarTakIcons
+import ktak.compose.icons.ToolbarTakIcons
 
 public val ToolbarTakIcons.Power: ImageVector
   get() {

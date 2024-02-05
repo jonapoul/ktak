@@ -1,11 +1,11 @@
-package dev.jonpoulton.ktak.plugin
+package ktak.plugin
 
 import com.atakmap.android.maps.MapView
-import dev.jonpoulton.ktak.core.AppContext
-import dev.jonpoulton.ktak.core.PluginContext
-import dev.jonpoulton.ktak.core.TakContexts
 import gov.tak.api.plugin.IPlugin
 import gov.tak.api.plugin.IServiceController
+import ktak.core.AppContext
+import ktak.core.PluginContext
+import ktak.core.TakContexts
 import timber.log.Timber
 
 public abstract class TakPlugin(serviceController: IServiceController) : IPlugin {

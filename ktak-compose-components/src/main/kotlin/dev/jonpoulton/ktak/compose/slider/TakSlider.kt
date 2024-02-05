@@ -5,7 +5,7 @@
   "INVISIBLE_REFERENCE",
 )
 
-package dev.jonpoulton.ktak.compose.slider
+package ktak.compose.slider
 
 import androidx.compose.foundation.focusable
 import androidx.compose.foundation.gestures.Orientation
@@ -29,9 +29,9 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.ktak.compose.preview.PreviewDark
-import dev.jonpoulton.ktak.compose.preview.TakPreview
 import kotlinx.coroutines.launch
+import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.TakPreview
 import kotlin.math.max
 import kotlin.math.min
 

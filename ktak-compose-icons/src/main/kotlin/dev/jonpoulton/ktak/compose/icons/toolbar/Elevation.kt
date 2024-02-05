@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.icons.toolbar
+package ktak.compose.icons.toolbar
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
@@ -9,9 +9,9 @@ import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.ktak.compose.icons.PreviewIcon
-import dev.jonpoulton.ktak.compose.icons.ToolbarTakIcons
-import dev.jonpoulton.ktak.compose.preview.PreviewDark
+import ktak.compose.icons.PreviewIcon
+import ktak.compose.icons.ToolbarTakIcons
+import ktak.compose.preview.PreviewDark
 
 public val ToolbarTakIcons.Elevation: ImageVector
   get() {

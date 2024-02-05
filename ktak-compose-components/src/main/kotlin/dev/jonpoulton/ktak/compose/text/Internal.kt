@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.text
+package ktak.compose.text
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable

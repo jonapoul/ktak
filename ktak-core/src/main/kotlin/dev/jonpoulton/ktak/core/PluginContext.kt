@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.core
+package ktak.core
 
 import android.content.Context
 import android.content.ContextWrapper

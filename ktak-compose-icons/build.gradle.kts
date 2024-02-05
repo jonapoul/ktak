@@ -10,7 +10,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.ktak.compose.icons"
+  namespace = "ktak.compose.icons"
 
   buildFeatures {
     resValues = true

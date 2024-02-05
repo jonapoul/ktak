@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.toggle
+package ktak.compose.toggle
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -6,8 +6,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import dev.jonpoulton.ktak.compose.preview.PreviewDark
-import dev.jonpoulton.ktak.compose.preview.TakPreview
+import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.TakPreview
 
 @Composable
 public fun TakToggleSmall(

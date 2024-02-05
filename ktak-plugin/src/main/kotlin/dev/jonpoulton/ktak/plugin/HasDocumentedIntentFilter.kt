@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.plugin
+package ktak.plugin
 
 import com.atakmap.android.ipc.AtakBroadcast.DocumentedIntentFilter
 

@@ -1,11 +1,11 @@
-package dev.jonpoulton.ktak.ui
+package ktak.ui
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.ImageButton
 import com.atakmap.android.maps.MapView
-import dev.jonpoulton.ktak.core.toast
+import ktak.core.toast
 
 @SuppressLint("AppCompatCustomView")
 public class LongPressableImageButton @JvmOverloads constructor(

@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.dialog
+package ktak.compose.dialog
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -6,8 +6,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import dev.jonpoulton.ktak.compose.core.LocalMapView
-import dev.jonpoulton.ktak.compose.core.LocalTakComposeContext
+import ktak.compose.core.LocalMapView
+import ktak.compose.core.LocalTakComposeContext
 
 /**
  * Use this in conjunction with the various DialogCard composables, e.g.:

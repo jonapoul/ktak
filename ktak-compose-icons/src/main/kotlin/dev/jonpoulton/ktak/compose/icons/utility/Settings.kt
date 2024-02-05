@@ -1,12 +1,12 @@
-package dev.jonpoulton.ktak.compose.icons.utility
+package ktak.compose.icons.utility
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
-import dev.jonpoulton.ktak.compose.core.takVectorResource
-import dev.jonpoulton.ktak.compose.icons.PreviewIcon
-import dev.jonpoulton.ktak.compose.icons.R
-import dev.jonpoulton.ktak.compose.icons.UtilityTakIcons
-import dev.jonpoulton.ktak.compose.preview.PreviewDark
+import ktak.compose.core.takVectorResource
+import ktak.compose.icons.PreviewIcon
+import ktak.compose.icons.R
+import ktak.compose.icons.UtilityTakIcons
+import ktak.compose.preview.PreviewDark
 
 public val UtilityTakIcons.Settings: ImageVector
   @Composable

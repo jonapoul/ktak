@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.text
+package ktak.compose.text
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -24,13 +24,13 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.ktak.compose.core.TakTextStyles
-import dev.jonpoulton.ktak.compose.icons.TakIcons
-import dev.jonpoulton.ktak.compose.icons.input.Message
-import dev.jonpoulton.ktak.compose.icons.utility.Walking
-import dev.jonpoulton.ktak.compose.preview.PreviewCallback
-import dev.jonpoulton.ktak.compose.preview.PreviewDark
-import dev.jonpoulton.ktak.compose.preview.TakPreview
+import ktak.compose.core.TakTextStyles
+import ktak.compose.icons.TakIcons
+import ktak.compose.icons.input.Message
+import ktak.compose.icons.utility.Walking
+import ktak.compose.preview.PreviewCallback
+import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.TakPreview
 
 @Composable
 public fun TakMessageTextInput(

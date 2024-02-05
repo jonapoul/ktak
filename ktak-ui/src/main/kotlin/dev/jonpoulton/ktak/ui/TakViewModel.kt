@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.ui
+package ktak.ui
 
 import androidx.annotation.CallSuper
 import androidx.lifecycle.ViewModel

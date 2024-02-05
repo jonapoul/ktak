@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.icons
+package ktak.compose.icons
 
 public object TakIcons {
   public val Dropdown: DropdownTakIcons = DropdownTakIcons

@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.toolbar
+package ktak.compose.toolbar
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.ColumnScope
@@ -31,14 +31,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.ktak.compose.button.TakIconButtonLegacy
-import dev.jonpoulton.ktak.compose.core.TakColors
-import dev.jonpoulton.ktak.compose.core.TakLegacyColors
-import dev.jonpoulton.ktak.compose.core.TakTypography
-import dev.jonpoulton.ktak.compose.menu.TakDropdownMenuItem
-import dev.jonpoulton.ktak.compose.preview.PreviewCallback
-import dev.jonpoulton.ktak.compose.preview.PreviewDark
-import dev.jonpoulton.ktak.compose.preview.TakPreview
+import ktak.compose.button.TakIconButtonLegacy
+import ktak.compose.core.TakColors
+import ktak.compose.core.TakLegacyColors
+import ktak.compose.core.TakTypography
+import ktak.compose.menu.TakDropdownMenuItem
+import ktak.compose.preview.PreviewCallback
+import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.TakPreview
 
 @Composable
 public fun TakToolbar(

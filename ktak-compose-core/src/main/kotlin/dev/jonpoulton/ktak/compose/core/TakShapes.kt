@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.core
+package ktak.compose.core
 
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Shapes

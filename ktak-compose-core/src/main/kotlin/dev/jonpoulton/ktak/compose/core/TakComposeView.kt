@@ -1,6 +1,6 @@
 @file:Suppress("FunctionName")
 
-package dev.jonpoulton.ktak.compose.core
+package ktak.compose.core
 
 import androidx.compose.material.Colors
 import androidx.compose.material.Shapes
@@ -10,9 +10,9 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.ViewCompositionStrategy
-import dev.jonpoulton.ktak.core.AppContext
-import dev.jonpoulton.ktak.core.PluginContext
-import dev.jonpoulton.ktak.core.TakContexts
+import ktak.core.AppContext
+import ktak.core.PluginContext
+import ktak.core.TakContexts
 
 public fun TakComposeView(contexts: TakContexts): ComposeView {
   val composeContext = TakComposeContext(contexts)

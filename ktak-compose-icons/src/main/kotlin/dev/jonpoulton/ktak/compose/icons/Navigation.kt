@@ -1,34 +1,34 @@
 @file:Suppress("MatchingDeclarationName")
 
-package dev.jonpoulton.ktak.compose.icons
+package ktak.compose.icons
 
 import android.content.res.Configuration
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import dev.jonpoulton.ktak.compose.icons.navigation.BloodhoundNavLit
-import dev.jonpoulton.ktak.compose.icons.navigation.BloodhoundNavUnlit
-import dev.jonpoulton.ktak.compose.icons.navigation.BloodhoundRoute
-import dev.jonpoulton.ktak.compose.icons.navigation.BloodhoundRouteDisabled
-import dev.jonpoulton.ktak.compose.icons.navigation.CheckpointRerouteActive
-import dev.jonpoulton.ktak.compose.icons.navigation.CheckpointRerouteInactive
-import dev.jonpoulton.ktak.compose.icons.navigation.CheckpointRight
-import dev.jonpoulton.ktak.compose.icons.navigation.CheckpointSlowDown
-import dev.jonpoulton.ktak.compose.icons.navigation.CheckpointSpeedUp
-import dev.jonpoulton.ktak.compose.icons.navigation.CheckpointStop
-import dev.jonpoulton.ktak.compose.icons.navigation.CheckpointStraight
-import dev.jonpoulton.ktak.compose.icons.navigation.CheckpointVeerLeft
-import dev.jonpoulton.ktak.compose.icons.navigation.CheckpointVeerRight
-import dev.jonpoulton.ktak.compose.icons.navigation.RouteNavigationDanger
-import dev.jonpoulton.ktak.compose.icons.navigation.RouteNavigationHardLeft
-import dev.jonpoulton.ktak.compose.icons.navigation.RouteNavigationHardRight
-import dev.jonpoulton.ktak.compose.icons.navigation.RouteNavigationLeft
-import dev.jonpoulton.ktak.compose.icons.navigation.RouteNavigationNoEntry
-import dev.jonpoulton.ktak.compose.icons.navigation.RoverReceptionDisabled
-import dev.jonpoulton.ktak.compose.icons.navigation.RoverReceptionEnabled
-import dev.jonpoulton.ktak.compose.icons.navigation.RoverReceptionEnabled1
-import dev.jonpoulton.ktak.compose.icons.navigation.RoverReceptionEnabled2
-import dev.jonpoulton.ktak.compose.icons.navigation.RoverReceptionEnabled3
-import dev.jonpoulton.ktak.compose.icons.navigation.RoverReceptionOff
+import ktak.compose.icons.navigation.BloodhoundNavLit
+import ktak.compose.icons.navigation.BloodhoundNavUnlit
+import ktak.compose.icons.navigation.BloodhoundRoute
+import ktak.compose.icons.navigation.BloodhoundRouteDisabled
+import ktak.compose.icons.navigation.CheckpointRerouteActive
+import ktak.compose.icons.navigation.CheckpointRerouteInactive
+import ktak.compose.icons.navigation.CheckpointRight
+import ktak.compose.icons.navigation.CheckpointSlowDown
+import ktak.compose.icons.navigation.CheckpointSpeedUp
+import ktak.compose.icons.navigation.CheckpointStop
+import ktak.compose.icons.navigation.CheckpointStraight
+import ktak.compose.icons.navigation.CheckpointVeerLeft
+import ktak.compose.icons.navigation.CheckpointVeerRight
+import ktak.compose.icons.navigation.RouteNavigationDanger
+import ktak.compose.icons.navigation.RouteNavigationHardLeft
+import ktak.compose.icons.navigation.RouteNavigationHardRight
+import ktak.compose.icons.navigation.RouteNavigationLeft
+import ktak.compose.icons.navigation.RouteNavigationNoEntry
+import ktak.compose.icons.navigation.RoverReceptionDisabled
+import ktak.compose.icons.navigation.RoverReceptionEnabled
+import ktak.compose.icons.navigation.RoverReceptionEnabled1
+import ktak.compose.icons.navigation.RoverReceptionEnabled2
+import ktak.compose.icons.navigation.RoverReceptionEnabled3
+import ktak.compose.icons.navigation.RoverReceptionOff
 
 /**
  * A standardized set of icons to be utilized within the in route navigation feature.

@@ -1,12 +1,12 @@
-package dev.jonpoulton.ktak.compose.icons.sidemenu
+package ktak.compose.icons.sidemenu
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
-import dev.jonpoulton.ktak.compose.core.takVectorResource
-import dev.jonpoulton.ktak.compose.icons.PreviewIcon
-import dev.jonpoulton.ktak.compose.icons.R
-import dev.jonpoulton.ktak.compose.icons.SideMenuTakIcons
-import dev.jonpoulton.ktak.compose.preview.PreviewDark
+import ktak.compose.core.takVectorResource
+import ktak.compose.icons.PreviewIcon
+import ktak.compose.icons.R
+import ktak.compose.icons.SideMenuTakIcons
+import ktak.compose.preview.PreviewDark
 
 public val SideMenuTakIcons.Edit: ImageVector
   @Composable

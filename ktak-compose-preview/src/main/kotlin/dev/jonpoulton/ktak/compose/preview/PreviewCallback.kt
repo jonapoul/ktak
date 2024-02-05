@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.preview
+package ktak.compose.preview
 
 public val PreviewCallback: () -> Unit = {}
 public val PreviewCallback1: (any: Any?) -> Unit = {}

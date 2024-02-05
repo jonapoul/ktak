@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.icons.radial
+package ktak.compose.icons.radial
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
@@ -10,9 +10,9 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.group
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.ktak.compose.icons.PreviewIcon
-import dev.jonpoulton.ktak.compose.icons.RadialTakIcons
-import dev.jonpoulton.ktak.compose.preview.PreviewDark
+import ktak.compose.icons.PreviewIcon
+import ktak.compose.icons.RadialTakIcons
+import ktak.compose.preview.PreviewDark
 
 public val RadialTakIcons.DistanceLock: ImageVector
   get() {

@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.dialog
+package ktak.compose.dialog
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -24,15 +24,15 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.jonpoulton.ktak.compose.button.DefaultTakButtonColors
-import dev.jonpoulton.ktak.compose.button.TakButtonColors
-import dev.jonpoulton.ktak.compose.core.TakColors
-import dev.jonpoulton.ktak.compose.core.TakFonts
-import dev.jonpoulton.ktak.compose.icons.TakIcons
-import dev.jonpoulton.ktak.compose.icons.sidemenu.Close
-import dev.jonpoulton.ktak.compose.icons.sidemenu.Confirm
-import dev.jonpoulton.ktak.compose.preview.PreviewDark
-import dev.jonpoulton.ktak.compose.preview.TakPreview
+import ktak.compose.button.DefaultTakButtonColors
+import ktak.compose.button.TakButtonColors
+import ktak.compose.core.TakColors
+import ktak.compose.core.TakFonts
+import ktak.compose.icons.TakIcons
+import ktak.compose.icons.sidemenu.Close
+import ktak.compose.icons.sidemenu.Confirm
+import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.TakPreview
 
 @Immutable
 public interface TakDialogButton {

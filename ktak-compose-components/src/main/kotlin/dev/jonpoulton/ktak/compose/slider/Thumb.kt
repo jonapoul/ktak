@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.slider
+package ktak.compose.slider
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -36,8 +36,8 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.ktak.compose.preview.PreviewDark
-import dev.jonpoulton.ktak.compose.preview.TakPreview
+import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.TakPreview
 import kotlin.math.roundToInt
 
 @Composable

@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.toggle
+package ktak.compose.toggle
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.Stable

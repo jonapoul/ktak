@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.dialog
+package ktak.compose.dialog
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Box
@@ -12,7 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.ktak.compose.core.TakColors
+import ktak.compose.core.TakColors
 
 @Composable
 public fun TakDialogCard(

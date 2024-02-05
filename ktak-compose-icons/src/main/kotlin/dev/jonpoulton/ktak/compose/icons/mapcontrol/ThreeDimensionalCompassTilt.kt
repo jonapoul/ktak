@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.icons.mapcontrol
+package ktak.compose.icons.mapcontrol
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
@@ -9,10 +9,10 @@ import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.ktak.compose.core.TakColors
-import dev.jonpoulton.ktak.compose.icons.MapControlTakIcons
-import dev.jonpoulton.ktak.compose.icons.PreviewIcon
-import dev.jonpoulton.ktak.compose.preview.PreviewDark
+import ktak.compose.core.TakColors
+import ktak.compose.icons.MapControlTakIcons
+import ktak.compose.icons.PreviewIcon
+import ktak.compose.preview.PreviewDark
 
 public val MapControlTakIcons.ThreeDimensionalCompassTilt: ImageVector
   get() {

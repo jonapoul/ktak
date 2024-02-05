@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.preview
+package ktak.compose.preview
 
 import android.content.res.Configuration
 import androidx.compose.ui.tooling.preview.Preview

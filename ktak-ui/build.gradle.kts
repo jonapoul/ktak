@@ -11,7 +11,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.ktak.ui"
+  namespace = "ktak.ui"
 
   buildFeatures {
     resValues = true

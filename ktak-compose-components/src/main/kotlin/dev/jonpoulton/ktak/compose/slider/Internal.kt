@@ -8,7 +8,7 @@
   "ReturnCount",
 )
 
-package dev.jonpoulton.ktak.compose.slider
+package ktak.compose.slider
 
 import android.annotation.SuppressLint
 import androidx.compose.animation.core.Animatable
@@ -69,8 +69,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.util.fastFirstOrNull
 import androidx.compose.ui.util.lerp
-import dev.jonpoulton.ktak.compose.core.TakColors
-import dev.jonpoulton.ktak.compose.core.TakFonts
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.toImmutableList
@@ -78,6 +76,8 @@ import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
+import ktak.compose.core.TakColors
+import ktak.compose.core.TakFonts
 import kotlin.math.abs
 import kotlin.math.roundToInt
 import kotlin.math.sign

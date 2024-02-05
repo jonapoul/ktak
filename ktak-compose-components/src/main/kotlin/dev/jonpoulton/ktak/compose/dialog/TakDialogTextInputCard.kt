@@ -1,4 +1,4 @@
-package dev.jonpoulton.ktak.compose.dialog
+package ktak.compose.dialog
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -18,15 +18,15 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.ktak.compose.icons.TakIcons
-import dev.jonpoulton.ktak.compose.icons.utility.Add
-import dev.jonpoulton.ktak.compose.icons.utility.Watercraft
-import dev.jonpoulton.ktak.compose.preview.PreviewCallback
-import dev.jonpoulton.ktak.compose.preview.PreviewDark
-import dev.jonpoulton.ktak.compose.preview.TakPreview
-import dev.jonpoulton.ktak.compose.text.DefaultTakTextInputColors
-import dev.jonpoulton.ktak.compose.text.TakTextInput
-import dev.jonpoulton.ktak.compose.text.TakTextInputColors
+import ktak.compose.icons.TakIcons
+import ktak.compose.icons.utility.Add
+import ktak.compose.icons.utility.Watercraft
+import ktak.compose.preview.PreviewCallback
+import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.TakPreview
+import ktak.compose.text.DefaultTakTextInputColors
+import ktak.compose.text.TakTextInput
+import ktak.compose.text.TakTextInputColors
 
 @Composable
 public fun TakDialogTextInputCard(

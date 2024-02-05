@@ -9,7 +9,7 @@ plugins {
 }
 
 android {
-  namespace = "dev.jonpoulton.ktak.dagger"
+  namespace = "ktak.dagger"
 }
 
 dependencies {
