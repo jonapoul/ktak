@@ -22,7 +22,25 @@ plugins {
   alias(libs.plugins.kover)
 
   // other
+  alias(libs.plugins.dependencyAnalysis)
   alias(libs.plugins.dependencyGuard)
+}
+
+dependencyAnalysis {
+  // See https://github.com/autonomousapps/dependency-analysis-gradle-plugin/wiki/Customizing-plugin-behavior
+  issues {
+    all {
+      ignoreKtx(ignore = true)
+      onRedundantPlugins { severity(value = "warn") }
+      onUnusedDependencies { severity(value = "warn") }
+      onUnusedAnnotationProcessors { severity(value = "fail") }
+    }
+  }
+  dependencies {
+    bundle("kotlin-stdlib") {
+      includeGroup("org.jetbrains.kotlin")
+    }
+  }
 }
 
 dependencyGuard {

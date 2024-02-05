@@ -7,6 +7,7 @@ sdk-target = "33"
 # Plugins
 agp = "7.4.2"
 androidCacheFix = "3.0"
+dependencyAnalysis = "1.20.0"
 dependencyGuard = "0.4.3"
 detekt = "1.23.0"
 dokka = "1.8.20"
@@ -92,6 +93,7 @@ test-turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 [plugins]
 agp = { id = "com.android.library", version.ref = "agp" }
 androidCacheFix = { id = "org.gradle.android.cache-fix", version.ref = "androidCacheFix" }
+dependencyAnalysis = { id = "com.autonomousapps.dependency-analysis", version.ref = "dependencyAnalysis" }
 dependencyGuard = { id = "com.dropbox.dependency-guard", version.ref = "dependencyGuard" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
