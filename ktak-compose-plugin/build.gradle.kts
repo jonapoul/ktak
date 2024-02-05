@@ -1,5 +1,3 @@
-@file:Suppress("DSL_SCOPE_VIOLATION")
-
 plugins {
   kotlin("android")
   id("convention-android")
@@ -15,9 +13,15 @@ android {
 }
 
 dependencies {
+  api(projects.ktakCore)
   api(projects.ktakComposeCore)
-  api(projects.ktakComposeComponents)
-  api(projects.ktakComposeViewmodel)
   api(projects.ktakPlugin)
-  api(libs.androidx.lifecycle.viewmodelCompose)
+  api(libs.androidx.compose.ui.core)
+  api(libs.androidx.compose.material.core)
+
+  debugApi(libs.androidx.compose.runtime)
+  releaseImplementation(libs.androidx.compose.runtime)
+
+  implementation(projects.ktakComposeViewmodel)
+  implementation(libs.androidx.lifecycle.viewmodelCompose)
 }

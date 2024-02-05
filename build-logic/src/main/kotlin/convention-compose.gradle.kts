@@ -24,15 +24,10 @@ extensions.getByType(CommonExtension::class).apply {
 
 val compileOnly by configurations
 val implementation by configurations
-val debugImplementation by configurations
 
 dependencies {
   implementation(platform(libs.androidx.compose.bom))
-  implementation(libs.androidx.compose.foundation)
-  implementation(libs.androidx.compose.material.core)
-  implementation(libs.androidx.compose.ui.core)
   compileOnly(libs.androidx.compose.ui.preview)
-  debugImplementation(libs.androidx.compose.ui.tooling)
 }
 
 tasks.withType<KotlinCompile> {

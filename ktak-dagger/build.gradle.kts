@@ -13,10 +13,10 @@ android {
 }
 
 dependencies {
-  api(projects.ktakPlugin)
+  api(libs.javax.inject)
+  api(libs.dagger.core)
 
   compileOnly(projects.ktakCore)
 
-  implementation(libs.dagger.core)
   kapt(libs.dagger.compiler)
 }

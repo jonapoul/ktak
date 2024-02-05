@@ -31,9 +31,9 @@ dependencyAnalysis {
   issues {
     all {
       ignoreKtx(ignore = true)
-      onRedundantPlugins { severity(value = "warn") }
-      onUnusedDependencies { severity(value = "warn") }
-      onUnusedAnnotationProcessors { severity(value = "fail") }
+
+      // strict mode!
+      onAny { severity(value = "fail") }
     }
   }
   dependencies {

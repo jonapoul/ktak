@@ -18,5 +18,5 @@ android {
 }
 
 dependencies {
-  implementation(libs.androidx.annotation)
+  compileOnly(libs.androidx.annotation)
 }

@@ -1,5 +1,3 @@
-@file:Suppress("UnstableApiUsage", "DSL_SCOPE_VIOLATION")
-
 plugins {
   kotlin("android")
   id("convention-android")
@@ -15,6 +13,16 @@ android {
 
 dependencies {
   api(projects.ktakCore)
+  api(libs.androidx.compose.runtime)
+  api(libs.androidx.compose.ui.core)
+  api(libs.androidx.compose.ui.text)
+  api(libs.androidx.compose.material.core)
+
   implementation(projects.ktakRes)
-  implementation(libs.androidx.compose.ui.fonts)
+  implementation(libs.androidx.annotation)
+  implementation(libs.androidx.compose.ui.graphics)
+  implementation(libs.androidx.compose.ui.unit)
+  implementation(libs.androidx.compose.foundation.core)
+
+  debugRuntimeOnly(libs.androidx.compose.ui.tooling)
 }

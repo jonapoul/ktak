@@ -20,5 +20,6 @@ android {
 
 dependencies {
   api(projects.ktakCore)
+  implementation(libs.kotlinx.coroutines.core)
   implementation(libs.timber)
 }

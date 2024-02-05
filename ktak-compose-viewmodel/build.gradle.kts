@@ -12,6 +12,10 @@ android {
 }
 
 dependencies {
-  api(projects.ktakComposeCore)
-  api(libs.androidx.lifecycle.viewmodelCompose)
+  api(libs.androidx.compose.runtime)
+  api(libs.androidx.lifecycle.viewmodel)
+
+  implementation(libs.androidx.lifecycle.viewmodelCompose)
+
+  debugRuntimeOnly(libs.androidx.compose.ui.tooling)
 }

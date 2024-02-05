@@ -28,7 +28,6 @@ configurations.configureEach {
 
 val compileOnly by configurations
 val testImplementation by configurations
-val androidTestImplementation by configurations
 
 val libs = the<LibrariesForLibs>()
 
@@ -36,5 +35,4 @@ val libs = the<LibrariesForLibs>()
 dependencies {
   compileOnly(libs.atak.sdk)
   testImplementation(libs.atak.sdk)
-  androidTestImplementation(libs.atak.sdk)
 }
