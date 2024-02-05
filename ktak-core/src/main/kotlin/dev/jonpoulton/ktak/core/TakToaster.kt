@@ -2,13 +2,13 @@ package dev.jonpoulton.ktak.core
 
 import android.widget.Toast
 import androidx.annotation.StringRes
-import dev.jonpoulton.alakazam.kotlin.core.MainDispatcher
 import kotlinx.coroutines.withContext
+import kotlin.coroutines.CoroutineContext
 
 public class TakToaster(
   private val appContext: AppContext,
   private val pluginContext: PluginContext,
-  private val main: MainDispatcher,
+  private val main: CoroutineContext,
 ) {
   public fun toast(message: String, length: Int = Toast.LENGTH_LONG) {
     Toast.makeText(appContext, message, length).show()

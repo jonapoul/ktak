@@ -38,7 +38,6 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import dev.jonpoulton.alakazam.kotlin.core.ifTrue
 import dev.jonpoulton.ktak.compose.core.TakColors
 import dev.jonpoulton.ktak.compose.preview.PreviewCallback
 import dev.jonpoulton.ktak.compose.preview.PreviewDark
@@ -96,7 +95,7 @@ public fun TakTextButtonLegacy(
       }
 
       Text(
-        text = text.ifTrue(forceUppercase) { uppercase() },
+        text = if (forceUppercase) text.uppercase() else text,
         modifier = Modifier
           .align(Alignment.CenterVertically)
           .weight(1f)

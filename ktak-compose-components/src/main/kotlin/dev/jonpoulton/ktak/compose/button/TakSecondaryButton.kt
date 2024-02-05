@@ -25,7 +25,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.jonpoulton.alakazam.kotlin.core.ifTrue
 import dev.jonpoulton.ktak.compose.core.TakColors
 import dev.jonpoulton.ktak.compose.core.TakTextStyles
 import dev.jonpoulton.ktak.compose.preview.PreviewCallback
@@ -63,7 +62,7 @@ public fun TakSecondaryButton(
     contentAlignment = Alignment.Center,
   ) {
     Text(
-      text = text.ifTrue(forceUppercase) { uppercase() },
+      text = if (forceUppercase) text.uppercase() else text,
       modifier = Modifier
         .fillMaxWidth()
         .wrapContentHeight(),

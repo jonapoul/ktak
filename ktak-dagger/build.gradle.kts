@@ -16,8 +16,6 @@ dependencies {
   api(projects.ktakPlugin)
 
   compileOnly(projects.ktakCore)
-  compileOnly(libs.alakazam.kotlin.core)
-  compileOnly(libs.flowpreferences)
 
   implementation(libs.dagger.core)
   kapt(libs.dagger.compiler)

@@ -24,7 +24,7 @@ val shouldRunOnCheck = project == rootProject
 
 koverReport {
   filters {
-    includes { packages("dev.jonpoulton.alakazam") }
+    includes { packages("dev.jonpoulton.ktak") }
     excludes {
       classes(
         "*Hilt_*",
@@ -77,7 +77,6 @@ val testImplementation = configurations.findByName("testImplementation")
 
 dependencies {
   testImplementation?.let { testImplementation ->
-    testImplementation(libs.test.alakazam.core)
     testImplementation(libs.test.junit)
     testImplementation(libs.test.kotlin.common)
     testImplementation(libs.test.kotlin.junit)

@@ -20,7 +20,6 @@ dependencies {
   implementation(libs.kotlinx.immutable)
 
   // only used for previews
-  compileOnly(libs.alakazam.kotlin.core)
   compileOnly(projects.ktakComposeIcons)
   compileOnly(projects.ktakComposePreview)
 }

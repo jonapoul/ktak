@@ -11,7 +11,3 @@ plugins {
 android {
   namespace = "dev.jonpoulton.ktak.core"
 }
-
-dependencies {
-  implementation(libs.alakazam.kotlin.core)
-}
