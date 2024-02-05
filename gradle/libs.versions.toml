@@ -6,6 +6,7 @@ sdk-target = "33"
 
 # Plugins
 agp = "7.4.2"
+dependencyGuard = "0.4.3"
 detekt = "1.23.0"
 dokka = "1.8.20"
 kotlin = "1.8.20"
@@ -41,6 +42,7 @@ turbine = "0.12.3"
 [libraries]
 # Plugins
 plugin-agp = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+plugin-dependencyGuard = { module = "com.dropbox.dependency-guard:com.dropbox.dependency-guard.gradle.plugin", version.ref = "dependencyGuard" }
 plugin-detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 plugin-dokka = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokka" }
 plugin-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
@@ -87,6 +89,7 @@ test-turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 
 [plugins]
 agp = { id = "com.android.library", version.ref = "agp" }
+dependencyGuard = { id = "com.dropbox.dependency-guard", version.ref = "dependencyGuard" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

@@ -19,4 +19,11 @@ plugins {
 
   // convention-test.gradle.kts
   alias(libs.plugins.kover)
+
+  // other
+  alias(libs.plugins.dependencyGuard)
+}
+
+dependencyGuard {
+  configuration("classpath")
 }

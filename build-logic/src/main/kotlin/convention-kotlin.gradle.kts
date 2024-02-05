@@ -4,6 +4,10 @@ import org.gradle.accessors.dm.LibrariesForLibs
 import org.jetbrains.kotlin.gradle.dsl.KotlinTopLevelExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+plugins {
+  id("convention-dependency-guard")
+}
+
 tasks.withType<KotlinCompile> {
   kotlinOptions {
     jvmTarget = "11"

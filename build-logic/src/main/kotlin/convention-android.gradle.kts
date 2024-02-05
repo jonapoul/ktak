@@ -5,6 +5,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 
 plugins {
   id("com.android.library")
+  id("convention-dependency-guard")
 }
 
 val libs = the<LibrariesForLibs>()
