@@ -21,6 +21,7 @@ import ktak.compose.core.setTakContent
 import ktak.compose.viewmodel.LocalViewModelFactory
 import ktak.core.TakContexts
 import ktak.plugin.HasDocumentedIntentFilter
+import timber.log.Timber
 
 public abstract class TakComposeDropDownReceiver(
   private val contexts: TakContexts,
@@ -37,6 +38,7 @@ public abstract class TakComposeDropDownReceiver(
 
   @CallSuper
   override fun disposeImpl() {
+    Timber.v("disposeImpl")
     viewModelStore.clear()
   }
 
@@ -47,6 +49,7 @@ public abstract class TakComposeDropDownReceiver(
     stateListener: DropDown.OnStateListener? = null,
     screen: TakScreen,
   ) {
+    Timber.v("showDropDown $dimensions $ignoreBackButton $switchable $stateListener $screen")
     navStack.add(screen)
     composeView = TakComposeView(composeContext)
     composeScreen(screen)
@@ -63,16 +66,19 @@ public abstract class TakComposeDropDownReceiver(
   }
 
   override fun navigateForward(screen: TakScreen) {
+    Timber.v("navigateForward $screen")
     navStack.add(screen)
     composeScreen(screen)
   }
 
   override fun navigateReplace(screen: TakScreen) {
+    Timber.v("navigateReplace $screen")
     navStack.removeLast()
     navigateForward(screen)
   }
 
   override fun navigateBack(forceNavBack: Boolean) {
+    Timber.v("navigateBack $forceNavBack")
     when (navStack.size) {
       0 -> error("Can't navigate back, nav stack is empty!")
       1 -> close()
@@ -90,11 +96,13 @@ public abstract class TakComposeDropDownReceiver(
   }
 
   override fun onBackButtonPressed(): Boolean {
+    Timber.v("onBackButtonPressed")
     navigateBack()
     return true // ignore the signal
   }
 
   protected fun composeScreen(screen: TakScreen) {
+    Timber.v("composeScreen $screen")
     composeView?.setTakContent(composeContext, colors) {
       CompositionLocalProvider(
         LocalViewModelStoreOwner provides this,
