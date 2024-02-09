@@ -33,8 +33,10 @@ public val TakTypography: Typography
 public object TakFonts {
   @Stable
   public val Bold: Font = Font(TakR.font.nunito_bold, weight = FontWeight.Bold)
+
   @Stable
   public val Regular: Font = Font(TakR.font.nunito_regular, weight = FontWeight.Normal)
+
   @Stable
   public val Family: FontFamily = FontFamily(Bold, Regular)
 }
