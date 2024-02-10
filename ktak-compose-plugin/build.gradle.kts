@@ -15,6 +15,7 @@ android {
 dependencies {
   api(projects.ktakCore)
   api(projects.ktakComposeCore)
+  api(projects.ktakLifecycle)
   api(projects.ktakPlugin)
   api(libs.androidx.compose.ui.core)
   api(libs.androidx.compose.material.core)
@@ -24,4 +25,5 @@ dependencies {
 
   implementation(projects.ktakComposeViewmodel)
   implementation(libs.androidx.lifecycle.viewmodelCompose)
+  implementation(libs.timber)
 }

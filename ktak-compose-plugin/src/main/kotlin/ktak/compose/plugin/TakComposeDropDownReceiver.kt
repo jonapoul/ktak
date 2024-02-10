@@ -9,17 +9,18 @@ import androidx.lifecycle.ViewModelStore
 import androidx.lifecycle.ViewModelStoreOwner
 import androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner
 import com.atakmap.android.dropdown.DropDown
-import com.atakmap.android.dropdown.DropDownReceiver
 import com.atakmap.android.maps.MapView
 import ktak.compose.core.LocalTakContexts
 import ktak.compose.core.TakColors
 import ktak.compose.core.TakComposeContext
+import ktak.compose.core.TakComposeHost
 import ktak.compose.core.TakComposeView
 import ktak.compose.core.TakScreen
 import ktak.compose.core.TakScreenNavigator
 import ktak.compose.core.setTakContent
 import ktak.compose.viewmodel.LocalViewModelFactory
 import ktak.core.TakContexts
+import ktak.lifecycle.TakLifecycleDropDownReceiver
 import ktak.plugin.HasDocumentedIntentFilter
 import timber.log.Timber
 
@@ -27,19 +28,28 @@ public abstract class TakComposeDropDownReceiver(
   private val contexts: TakContexts,
   mapView: MapView,
   protected val viewModelFactory: ViewModelProvider.Factory,
-) : DropDownReceiver(mapView), ViewModelStoreOwner, TakScreenNavigator, HasDocumentedIntentFilter {
+  key: String,
+) : TakLifecycleDropDownReceiver(mapView, key),
+  ViewModelStoreOwner,
+  TakScreenNavigator,
+  HasDocumentedIntentFilter,
+  TakComposeHost {
+
   override val viewModelStore: ViewModelStore = ViewModelStore()
 
   protected open val colors: Colors = TakColors.colors
   protected val navStack: MutableList<TakScreen> = arrayListOf()
 
-  protected val composeContext: TakComposeContext = TakComposeContext(contexts)
+  override val composeContext: TakComposeContext = TakComposeContext(contexts)
   protected var composeView: ComposeView? = null
 
   @CallSuper
   override fun disposeImpl() {
+    super.disposeImpl()
     Timber.v("disposeImpl")
     viewModelStore.clear()
+    navStack.clear()
+    composeView = null
   }
 
   protected fun showDropDown(
@@ -51,7 +61,7 @@ public abstract class TakComposeDropDownReceiver(
   ) {
     Timber.v("showDropDown $dimensions $ignoreBackButton $switchable $stateListener $screen")
     navStack.add(screen)
-    composeView = TakComposeView(composeContext)
+    composeView = TakComposeView(host = this)
     composeScreen(screen)
     showDropDown(
       composeView,
@@ -90,8 +100,8 @@ public abstract class TakComposeDropDownReceiver(
   }
 
   override fun close() {
-    navStack.clear()
-    composeView = null
+    Timber.v("close")
+    disposeImpl()
     closeDropDown()
   }
 

@@ -10,47 +10,83 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.ViewCompositionStrategy
+import androidx.lifecycle.Lifecycle
 import ktak.core.AppContext
 import ktak.core.PluginContext
 import ktak.core.TakContexts
 
-public fun TakComposeView(contexts: TakContexts): ComposeView {
-  val composeContext = TakComposeContext(contexts)
-  return TakComposeView(composeContext)
-}
+public fun TakComposeView(
+  host: TakComposeHost,
+): ComposeView = TakComposeView(
+  composeContext = host.composeContext,
+  lifecycle = host.lifecycle,
+)
 
 public fun TakComposeView(
-  contexts: TakContexts,
+  host: TakComposeHost,
   content: @Composable () -> Unit,
 ): ComposeView = TakComposeView(
-  composeContext = TakComposeContext(contexts),
+  composeContext = host.composeContext,
+  lifecycle = host.lifecycle,
   content = content,
 )
 
-public fun TakComposeView(pluginContext: PluginContext, appContext: AppContext): ComposeView {
-  val composeContext = TakComposeContext(pluginContext, appContext)
-  return TakComposeView(composeContext)
-}
+public fun TakComposeView(
+  contexts: TakContexts,
+  lifecycle: Lifecycle?,
+): ComposeView = TakComposeView(
+  composeContext = TakComposeContext(contexts),
+  lifecycle = lifecycle,
+)
+
+public fun TakComposeView(
+  contexts: TakContexts,
+  lifecycle: Lifecycle?,
+  content: @Composable () -> Unit,
+): ComposeView = TakComposeView(
+  composeContext = TakComposeContext(contexts),
+  lifecycle = lifecycle,
+  content = content,
+)
 
 public fun TakComposeView(
   pluginContext: PluginContext,
   appContext: AppContext,
+  lifecycle: Lifecycle?,
+): ComposeView = TakComposeView(
+  composeContext = TakComposeContext(pluginContext, appContext),
+  lifecycle = lifecycle,
+)
+
+public fun TakComposeView(
+  pluginContext: PluginContext,
+  appContext: AppContext,
+  lifecycle: Lifecycle?,
   content: @Composable () -> Unit,
 ): ComposeView = TakComposeView(
   composeContext = TakComposeContext(pluginContext, appContext),
+  lifecycle = lifecycle,
   content = content,
 )
 
-public fun TakComposeView(composeContext: TakComposeContext): ComposeView {
-  val view = ComposeView(composeContext)
-  view.setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
-  return view
+public fun TakComposeView(
+  composeContext: TakComposeContext,
+  lifecycle: Lifecycle?,
+): ComposeView = ComposeView(composeContext).apply {
+  val strategy = if (lifecycle == null) {
+    ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed
+  } else {
+    ViewCompositionStrategy.DisposeOnLifecycleDestroyed(lifecycle)
+  }
+  setViewCompositionStrategy(strategy)
 }
 
-public fun TakComposeView(composeContext: TakComposeContext, content: @Composable () -> Unit): ComposeView {
-  val view = TakComposeView(composeContext)
-  view.setTakContent(composeContext, content = content)
-  return view
+public fun TakComposeView(
+  composeContext: TakComposeContext,
+  lifecycle: Lifecycle?,
+  content: @Composable () -> Unit,
+): ComposeView = TakComposeView(composeContext, lifecycle).apply {
+  setTakContent(composeContext, content = content)
 }
 
 public fun ComposeView.setTakContent(

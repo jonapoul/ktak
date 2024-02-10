@@ -17,6 +17,7 @@ dependencies {
   api(libs.androidx.compose.ui.core)
   api(libs.androidx.compose.ui.text)
   api(libs.androidx.compose.material.core)
+  api(libs.androidx.lifecycle.common)
 
   implementation(projects.ktakRes)
   implementation(libs.androidx.annotation)
