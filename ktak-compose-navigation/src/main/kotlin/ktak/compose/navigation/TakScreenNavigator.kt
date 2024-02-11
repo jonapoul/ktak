@@ -1,4 +1,4 @@
-package ktak.compose.core
+package ktak.compose.navigation
 
 import androidx.compose.runtime.Stable
 

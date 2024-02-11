@@ -108,15 +108,3 @@ public fun ComposeView.setTakContent(
     }
   }
 }
-
-public fun ComposeView.setTakContent(
-  composeContext: TakComposeContext,
-  colors: Colors = TakColors.colors,
-  shapes: @Composable () -> Shapes = { TakShapes },
-  typography: @Composable () -> Typography = { TakTypography },
-  screen: TakScreen,
-) {
-  setTakContent(composeContext, colors, shapes, typography) {
-    screen.Compose()
-  }
-}

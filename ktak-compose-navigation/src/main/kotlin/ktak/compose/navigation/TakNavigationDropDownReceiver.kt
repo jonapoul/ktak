@@ -1,59 +1,33 @@
-package ktak.compose.plugin
+package ktak.compose.navigation
 
 import androidx.annotation.CallSuper
-import androidx.compose.material.Colors
-import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.ui.platform.ComposeView
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelStore
-import androidx.lifecycle.ViewModelStoreOwner
-import androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner
 import com.atakmap.android.dropdown.DropDown
 import com.atakmap.android.maps.MapView
-import ktak.compose.core.LocalTakContexts
-import ktak.compose.core.TakColors
-import ktak.compose.core.TakComposeContext
-import ktak.compose.core.TakComposeHost
+import ktak.compose.core.TakComposeDropDownReceiver
 import ktak.compose.core.TakComposeView
-import ktak.compose.core.TakScreen
-import ktak.compose.core.TakScreenNavigator
-import ktak.compose.core.setTakContent
-import ktak.compose.viewmodel.LocalViewModelFactory
+import ktak.compose.core.TakDimensions
 import ktak.core.TakContexts
-import ktak.lifecycle.TakLifecycleDropDownReceiver
-import ktak.plugin.HasDocumentedIntentFilter
 import timber.log.Timber
 
-public abstract class TakComposeDropDownReceiver(
-  private val contexts: TakContexts,
+public abstract class TakNavigationDropDownReceiver(
+  contexts: TakContexts,
   mapView: MapView,
-  protected val viewModelFactory: ViewModelProvider.Factory,
+  viewModelFactory: ViewModelProvider.Factory,
   key: String,
-) : TakLifecycleDropDownReceiver(mapView, key),
-  ViewModelStoreOwner,
-  TakScreenNavigator,
-  HasDocumentedIntentFilter,
-  TakComposeHost {
-
-  override val viewModelStore: ViewModelStore = ViewModelStore()
-
-  protected open val colors: Colors = TakColors.colors
+) : TakComposeDropDownReceiver(contexts, mapView, viewModelFactory, key), TakScreenNavigator {
   protected val navStack: MutableList<TakScreen> = arrayListOf()
-
-  override val composeContext: TakComposeContext = TakComposeContext(contexts)
-  protected var composeView: ComposeView? = null
 
   @CallSuper
   override fun disposeImpl() {
     super.disposeImpl()
     Timber.v("disposeImpl")
-    viewModelStore.clear()
     navStack.clear()
     composeView = null
   }
 
   protected fun showDropDown(
-    dimensions: TakScreen.Dimensions = TakScreen.HalfScreen,
+    dimensions: TakDimensions = TakDimensions.HalfScreen,
     ignoreBackButton: Boolean = false,
     switchable: Boolean = false,
     stateListener: DropDown.OnStateListener? = null,
@@ -113,14 +87,6 @@ public abstract class TakComposeDropDownReceiver(
 
   protected fun composeScreen(screen: TakScreen) {
     Timber.v("composeScreen $screen")
-    composeView?.setTakContent(composeContext, colors) {
-      CompositionLocalProvider(
-        LocalViewModelStoreOwner provides this,
-        LocalViewModelFactory provides viewModelFactory,
-        LocalTakContexts provides contexts,
-      ) {
-        screen.Compose()
-      }
-    }
+    composeContent { screen.Compose() }
   }
 }
