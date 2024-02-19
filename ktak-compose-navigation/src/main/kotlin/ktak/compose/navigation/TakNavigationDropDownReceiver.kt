@@ -16,7 +16,7 @@ public abstract class TakNavigationDropDownReceiver(
   viewModelFactory: ViewModelProvider.Factory,
   key: String,
 ) : TakComposeDropDownReceiver(contexts, mapView, viewModelFactory, key), TakScreenNavigator {
-  protected val navStack: MutableList<TakScreen> = arrayListOf()
+  protected val navStack: MutableMap<TakScreenKey, TakScreenState> = hashMapOf()
 
   @CallSuper
   override fun disposeImpl() {
@@ -34,7 +34,7 @@ public abstract class TakNavigationDropDownReceiver(
     screen: TakScreen,
   ) {
     Timber.v("showDropDown $dimensions $ignoreBackButton $switchable $stateListener $screen")
-    navStack.add(screen)
+    navStack[screen.key] = TakScreenState(screen, state = null)
     composeView = TakComposeView(host = this)
     composeScreen(screen)
     showDropDown(
@@ -51,7 +51,7 @@ public abstract class TakNavigationDropDownReceiver(
 
   override fun navigateForward(screen: TakScreen) {
     Timber.v("navigateForward $screen")
-    navStack.add(screen)
+    navStack[screen.key] = TakScreenState(screen, state = null)
     composeScreen(screen)
   }
 
