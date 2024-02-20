@@ -5,6 +5,7 @@ import androidx.lifecycle.LifecycleOwner
 import com.atakmap.android.dropdown.DropDownManager
 import com.atakmap.android.dropdown.DropDownReceiver
 import com.atakmap.android.maps.MapView
+import timber.log.Timber
 
 public abstract class TakLifecycleDropDownReceiver(
   mapView: MapView,
@@ -20,11 +21,13 @@ public abstract class TakLifecycleDropDownReceiver(
   }
 
   init {
+    Timber.v("Registering lifecycle $lifecycle")
     DropDownManager.getInstance().addStateListener(key, lifecycle)
   }
 
   @CallSuper
   override fun disposeImpl() {
+    Timber.v("Unregistering lifecycle $lifecycle")
     DropDownManager.getInstance().removeStateListener(key, lifecycle)
   }
 }

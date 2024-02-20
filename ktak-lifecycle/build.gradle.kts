@@ -14,4 +14,5 @@ android {
 
 dependencies {
   api(libs.androidx.lifecycle.common)
+  implementation(libs.timber)
 }
