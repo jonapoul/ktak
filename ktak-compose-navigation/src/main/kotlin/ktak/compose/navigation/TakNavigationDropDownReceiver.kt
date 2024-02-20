@@ -3,11 +3,12 @@ package ktak.compose.navigation
 import android.annotation.SuppressLint
 import androidx.annotation.CallSuper
 import androidx.compose.runtime.Composable
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import com.atakmap.android.dropdown.DropDown
 import com.atakmap.android.maps.MapView
 import ktak.compose.core.TakComposeDropDownReceiver
-import ktak.compose.core.TakComposeView
+import ktak.compose.core.TakComposeFragment
 import ktak.compose.core.TakDimensions
 import ktak.core.TakContexts
 import timber.log.Timber
@@ -16,8 +17,7 @@ public abstract class TakNavigationDropDownReceiver(
   contexts: TakContexts,
   mapView: MapView,
   viewModelFactory: ViewModelProvider.Factory,
-  key: String,
-) : TakComposeDropDownReceiver(contexts, mapView, viewModelFactory, key), TakScreenNavigator {
+) : TakComposeDropDownReceiver(contexts, mapView, viewModelFactory), TakScreenNavigator {
   protected val navStack: MutableList<TakScreen> = arrayListOf()
 
   @CallSuper
@@ -25,7 +25,6 @@ public abstract class TakNavigationDropDownReceiver(
     super.disposeImpl()
     Timber.v("disposeImpl")
     navStack.clear()
-    composeView = null
   }
 
   protected fun showDropDown(
@@ -36,11 +35,12 @@ public abstract class TakNavigationDropDownReceiver(
     screen: TakScreen,
   ) {
     Timber.v("showDropDown $dimensions $ignoreBackButton $switchable $stateListener $screen")
+    lifecycle.currentState = Lifecycle.State.CREATED
     navStack.add(screen)
-    composeView = TakComposeView(host = this)
+    fragment = TakComposeFragment(mapView, host = this)
     composeScreen(screen)
     showDropDown(
-      composeView,
+      fragment,
       dimensions.lwFraction,
       dimensions.lhFraction,
       dimensions.pwFraction,
@@ -62,7 +62,7 @@ public abstract class TakNavigationDropDownReceiver(
     ignoreBackButton: Boolean,
     switchable: Boolean,
     stateListener: DropDown.OnStateListener?,
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
   ): Unit = error("Invalid method")
 
   override fun navigateForward(screen: TakScreen) {

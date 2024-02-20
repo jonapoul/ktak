@@ -2,6 +2,7 @@
 
 package ktak.compose.core
 
+import android.view.View
 import androidx.compose.material.Colors
 import androidx.compose.material.Shapes
 import androidx.compose.material.Typography
@@ -86,25 +87,32 @@ public fun TakComposeView(
   lifecycle: Lifecycle?,
   content: @Composable () -> Unit,
 ): ComposeView = TakComposeView(composeContext, lifecycle).apply {
-  setTakContent(composeContext, content = content)
+  setContent {
+    TakContent(
+      composeContext = composeContext,
+      mapView = rootView,
+      content = content,
+    )
+  }
 }
 
-public fun ComposeView.setTakContent(
+@Composable
+public fun TakContent(
   composeContext: TakComposeContext,
+  mapView: View,
   colors: Colors = TakColors.colors,
   shapes: @Composable () -> Shapes = { TakShapes },
   typography: @Composable () -> Typography = { TakTypography },
   content: @Composable () -> Unit,
 ) {
-  setContent {
-    TakTheme(colors, shapes(), typography()) {
-      CompositionLocalProvider(
-        LocalContext provides composeContext,
-        LocalTakComposeContext provides composeContext,
-        LocalMapView provides rootView,
-      ) {
-        content()
-      }
+  TakTheme(colors, shapes(), typography()) {
+    CompositionLocalProvider(
+      LocalContext provides composeContext,
+      LocalTakComposeContext provides composeContext,
+      LocalTakContexts provides composeContext.contexts,
+      LocalMapView provides mapView,
+    ) {
+      content()
     }
   }
 }

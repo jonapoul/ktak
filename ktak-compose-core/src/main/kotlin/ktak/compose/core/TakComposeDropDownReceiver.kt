@@ -4,7 +4,7 @@ import androidx.annotation.CallSuper
 import androidx.compose.material.Colors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.ui.platform.ComposeView
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStore
 import androidx.lifecycle.ViewModelStoreOwner
@@ -18,28 +18,26 @@ import ktak.plugin.HasDocumentedIntentFilter
 import timber.log.Timber
 
 public abstract class TakComposeDropDownReceiver(
-  private val contexts: TakContexts,
+  contexts: TakContexts,
   mapView: MapView,
   protected val viewModelFactory: ViewModelProvider.Factory,
-  key: String,
-) : TakLifecycleDropDownReceiver(mapView, key),
+) : TakLifecycleDropDownReceiver(mapView),
   ViewModelStoreOwner,
   HasDocumentedIntentFilter,
   TakComposeHost {
 
   override val viewModelStore: ViewModelStore = ViewModelStore()
+  override val composeContext: TakComposeContext = TakComposeContext(contexts)
 
   protected open val colors: Colors = TakColors.colors
 
-  override val composeContext: TakComposeContext = TakComposeContext(contexts)
-  protected var composeView: ComposeView? = null
+  protected lateinit var fragment: TakComposeFragment
 
   @CallSuper
   override fun disposeImpl() {
-    super.disposeImpl()
     Timber.v("disposeImpl")
+    lifecycle.currentState = Lifecycle.State.DESTROYED
     viewModelStore.clear()
-    composeView = null
   }
 
   @CallSuper
@@ -51,10 +49,11 @@ public abstract class TakComposeDropDownReceiver(
     content: @Composable () -> Unit,
   ) {
     Timber.v("showDropDown $dimensions $ignoreBackButton $switchable $stateListener")
-    composeView = TakComposeView(host = this, content)
+    lifecycle.currentState = Lifecycle.State.INITIALIZED
+    fragment = TakComposeFragment(mapView, host = this)
     composeContent(content)
     showDropDown(
-      composeView,
+      fragment,
       dimensions.lwFraction,
       dimensions.lhFraction,
       dimensions.pwFraction,
@@ -67,11 +66,10 @@ public abstract class TakComposeDropDownReceiver(
 
   protected fun composeContent(content: @Composable () -> Unit) {
     Timber.v("composeContent $content")
-    composeView?.setTakContent(composeContext, colors) {
+    fragment.setTakContent(colors) {
       CompositionLocalProvider(
         LocalViewModelStoreOwner provides this,
         LocalViewModelFactory provides viewModelFactory,
-        LocalTakContexts provides contexts,
       ) {
         content()
       }

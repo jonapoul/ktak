@@ -1,8 +1,7 @@
 package ktak.compose.core
 
-import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleOwner
 
-public interface TakComposeHost {
-  public val lifecycle: Lifecycle
+public interface TakComposeHost : LifecycleOwner {
   public val composeContext: TakComposeContext
 }

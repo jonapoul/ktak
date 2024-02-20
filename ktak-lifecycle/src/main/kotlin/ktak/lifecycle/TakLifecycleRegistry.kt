@@ -14,7 +14,7 @@ public class TakLifecycleRegistry(
 
   override fun onDropDownClose() {
     Timber.v("onDropDownClose")
-    currentState = State.DESTROYED
+    currentState = State.INITIALIZED
   }
 
   override fun onDropDownSizeChanged(width: Double, height: Double) {
@@ -23,6 +23,6 @@ public class TakLifecycleRegistry(
 
   override fun onDropDownVisible(visible: Boolean) {
     Timber.v("onDropDownVisible $visible")
-    currentState = if (visible) State.RESUMED else State.CREATED
+    currentState = if (visible) State.RESUMED else State.STARTED
   }
 }
