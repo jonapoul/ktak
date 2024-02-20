@@ -1,6 +1,8 @@
 package ktak.compose.navigation
 
+import android.annotation.SuppressLint
 import androidx.annotation.CallSuper
+import androidx.compose.runtime.Composable
 import androidx.lifecycle.ViewModelProvider
 import com.atakmap.android.dropdown.DropDown
 import com.atakmap.android.maps.MapView
@@ -16,7 +18,7 @@ public abstract class TakNavigationDropDownReceiver(
   viewModelFactory: ViewModelProvider.Factory,
   key: String,
 ) : TakComposeDropDownReceiver(contexts, mapView, viewModelFactory, key), TakScreenNavigator {
-  protected val navStack: MutableMap<TakScreenKey, TakScreenState> = hashMapOf()
+  protected val navStack: MutableList<TakScreen> = arrayListOf()
 
   @CallSuper
   override fun disposeImpl() {
@@ -34,7 +36,7 @@ public abstract class TakNavigationDropDownReceiver(
     screen: TakScreen,
   ) {
     Timber.v("showDropDown $dimensions $ignoreBackButton $switchable $stateListener $screen")
-    navStack[screen.key] = TakScreenState(screen, state = null)
+    navStack.add(screen)
     composeView = TakComposeView(host = this)
     composeScreen(screen)
     showDropDown(
@@ -49,9 +51,23 @@ public abstract class TakNavigationDropDownReceiver(
     )
   }
 
+  @SuppressLint("MissingSuperCall")
+  @Suppress("DeprecatedCallableAddReplaceWith")
+  @Deprecated(
+    message = "Use the showDropDown method with TakScreen",
+    level = DeprecationLevel.ERROR,
+  )
+  override fun showDropDown(
+    dimensions: TakDimensions,
+    ignoreBackButton: Boolean,
+    switchable: Boolean,
+    stateListener: DropDown.OnStateListener?,
+    content: @Composable () -> Unit
+  ): Unit = error("Invalid method")
+
   override fun navigateForward(screen: TakScreen) {
     Timber.v("navigateForward $screen")
-    navStack[screen.key] = TakScreenState(screen, state = null)
+    navStack.add(screen)
     composeScreen(screen)
   }
 
