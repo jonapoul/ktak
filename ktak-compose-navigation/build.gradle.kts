@@ -17,7 +17,6 @@ dependencies {
   api(projects.ktakCore)
   api(libs.androidx.compose.runtime)
 
-  implementation(libs.androidx.compose.ui.core)
   implementation(libs.timber)
 
   debugRuntimeOnly(libs.androidx.compose.ui.tooling)

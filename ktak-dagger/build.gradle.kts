@@ -5,7 +5,6 @@ plugins {
   id("convention-atak")
   id("convention-publish")
   id("convention-style")
-  kotlin("kapt")
 }
 
 android {
@@ -13,10 +12,6 @@ android {
 }
 
 dependencies {
-  api(libs.javax.inject)
-  api(libs.dagger.core)
-
+  implementation(libs.javax.inject)
   compileOnly(projects.ktakCore)
-
-  kapt(libs.dagger.compiler)
 }
