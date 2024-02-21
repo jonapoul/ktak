@@ -11,7 +11,6 @@ import androidx.lifecycle.ViewModelStoreOwner
 import androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner
 import com.atakmap.android.dropdown.DropDown
 import com.atakmap.android.maps.MapView
-import ktak.compose.viewmodel.LocalViewModelFactory
 import ktak.core.TakContexts
 import ktak.lifecycle.TakLifecycleDropDownReceiver
 import ktak.plugin.HasDocumentedIntentFilter
