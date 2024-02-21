@@ -4,15 +4,14 @@ import androidx.annotation.CallSuper
 import androidx.compose.material.Colors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
-import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStore
 import androidx.lifecycle.ViewModelStoreOwner
 import androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner
 import com.atakmap.android.dropdown.DropDown
+import com.atakmap.android.dropdown.DropDownReceiver
 import com.atakmap.android.maps.MapView
 import ktak.core.TakContexts
-import ktak.lifecycle.TakLifecycleDropDownReceiver
 import ktak.plugin.HasDocumentedIntentFilter
 import timber.log.Timber
 
@@ -20,22 +19,23 @@ public abstract class TakComposeDropDownReceiver(
   contexts: TakContexts,
   mapView: MapView,
   protected val viewModelFactory: ViewModelProvider.Factory,
-) : TakLifecycleDropDownReceiver(mapView),
+) : DropDownReceiver(mapView),
   ViewModelStoreOwner,
-  HasDocumentedIntentFilter,
-  TakComposeHost {
+  HasDocumentedIntentFilter {
 
   override val viewModelStore: ViewModelStore = ViewModelStore()
-  override val composeContext: TakComposeContext = TakComposeContext(contexts)
+
+  protected val composeContext: TakComposeContext = TakComposeContext(contexts)
 
   protected open val colors: Colors = TakColors.colors
 
   protected lateinit var fragment: TakComposeFragment
 
+  abstract override fun getAssociationKey(): String
+
   @CallSuper
   override fun disposeImpl() {
     Timber.v("disposeImpl")
-    lifecycle.currentState = Lifecycle.State.DESTROYED
     viewModelStore.clear()
   }
 
@@ -48,8 +48,7 @@ public abstract class TakComposeDropDownReceiver(
     content: @Composable () -> Unit,
   ) {
     Timber.v("showDropDown $dimensions $ignoreBackButton $switchable $stateListener")
-    lifecycle.currentState = Lifecycle.State.INITIALIZED
-    fragment = TakComposeFragment(mapView, host = this)
+    fragment = TakComposeFragment(mapView, composeContext)
     composeContent(content)
     showDropDown(
       fragment,

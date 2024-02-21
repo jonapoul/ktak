@@ -3,7 +3,6 @@ package ktak.compose.navigation
 import android.annotation.SuppressLint
 import androidx.annotation.CallSuper
 import androidx.compose.runtime.Composable
-import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import com.atakmap.android.dropdown.DropDown
 import com.atakmap.android.maps.MapView
@@ -35,9 +34,8 @@ public abstract class TakNavigationDropDownReceiver(
     screen: TakScreen,
   ) {
     Timber.v("showDropDown $dimensions $ignoreBackButton $switchable $stateListener $screen")
-    lifecycle.currentState = Lifecycle.State.CREATED
     navStack.add(screen)
-    fragment = TakComposeFragment(mapView, host = this)
+    fragment = TakComposeFragment(mapView, composeContext)
     composeScreen(screen)
     showDropDown(
       fragment,

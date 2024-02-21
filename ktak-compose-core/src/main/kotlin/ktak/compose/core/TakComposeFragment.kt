@@ -15,14 +15,14 @@ import timber.log.Timber
 
 public class TakComposeFragment(
   private val mapView: MapView,
-  private val host: TakComposeHost,
+  private val composeContext: TakComposeContext,
 ) : Fragment() {
 
   public constructor(
     mapView: MapView,
-    host: TakComposeHost,
+    composeContext: TakComposeContext,
     content: @Composable () -> Unit,
-  ) : this(mapView, host) {
+  ) : this(mapView, composeContext) {
     setTakContent(content = content)
   }
 
@@ -31,7 +31,7 @@ public class TakComposeFragment(
 
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
     Timber.v("onCreateView")
-    composeView = TakComposeView(host)
+    composeView = ComposeView(composeContext)
     return composeView
   }
 
@@ -55,7 +55,7 @@ public class TakComposeFragment(
     Timber.v("setTakContent")
     this.content = {
       TakContent(
-        composeContext = host.composeContext,
+        composeContext = composeContext,
         colors = colors,
         shapes = shapes,
         typography = typography,

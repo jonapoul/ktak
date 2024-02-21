@@ -14,7 +14,6 @@ android {
 
 dependencies {
   api(projects.ktakCore)
-  api(projects.ktakLifecycle)
   api(projects.ktakPlugin)
   api(libs.androidx.compose.runtime)
   api(libs.androidx.compose.ui.core)
