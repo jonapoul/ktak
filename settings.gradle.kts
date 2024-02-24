@@ -7,6 +7,7 @@ pluginManagement {
     gradlePluginPortal()
     mavenCentral()
     google()
+    mavenLocal()
   }
 }
 
@@ -18,8 +19,6 @@ dependencyResolutionManagement {
     mavenLocal()
   }
 }
-
-includeBuild("build-logic")
 
 include(":ktak-compose-components")
 include(":ktak-compose-core")

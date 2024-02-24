@@ -1,11 +1,16 @@
+@file:Suppress("DSL_SCOPE_VIOLATION")
+
 plugins {
-  kotlin("android")
-  id("convention-android")
-  id("convention-kotlin")
-  id("convention-atak")
-  id("convention-publish")
-  id("convention-style")
-  id("convention-test")
+  alias(libs.plugins.blueprint.kotlin.android)
+  alias(libs.plugins.blueprint.android.library)
+  alias(libs.plugins.blueprint.atak.library)
+  alias(libs.plugins.blueprint.detekt)
+  alias(libs.plugins.blueprint.kover)
+  alias(libs.plugins.blueprint.ktlint)
+  alias(libs.plugins.blueprint.licensee)
+  alias(libs.plugins.blueprint.publish)
+  alias(libs.plugins.blueprint.spotless)
+  alias(libs.plugins.blueprint.dependencyGuard)
 }
 
 android {

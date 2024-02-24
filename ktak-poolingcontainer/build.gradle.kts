@@ -1,20 +1,19 @@
-@file:Suppress("UnstableApiUsage")
+@file:Suppress("DSL_SCOPE_VIOLATION")
 
 plugins {
-  kotlin("android")
-  id("convention-android")
-  id("convention-kotlin")
-  id("convention-publish")
-  id("convention-style")
+  alias(libs.plugins.blueprint.kotlin.android)
+  alias(libs.plugins.blueprint.android.library)
+  alias(libs.plugins.blueprint.android.resources)
+  alias(libs.plugins.blueprint.detekt)
+  alias(libs.plugins.blueprint.ktlint)
+  alias(libs.plugins.blueprint.licensee)
+  alias(libs.plugins.blueprint.publish)
+  alias(libs.plugins.blueprint.spotless)
+  alias(libs.plugins.blueprint.dependencyGuard)
 }
 
 android {
   namespace = "ktak.poolingcontainer"
-
-  buildFeatures {
-    resValues = true
-    androidResources = true
-  }
 }
 
 dependencies {

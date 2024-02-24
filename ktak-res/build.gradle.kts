@@ -1,16 +1,13 @@
-@file:Suppress("UnstableApiUsage")
+@file:Suppress("DSL_SCOPE_VIOLATION")
 
 plugins {
-  id("convention-android")
-  id("convention-publish")
-  id("convention-style-licensee")
-  id("convention-style-spotless")
+  alias(libs.plugins.blueprint.android.resources)
+  alias(libs.plugins.blueprint.publish)
+  alias(libs.plugins.blueprint.licensee)
+  alias(libs.plugins.blueprint.spotless)
+  alias(libs.plugins.blueprint.dependencyGuard)
 }
 
 android {
   namespace = "ktak.res"
-
-  buildFeatures {
-    resValues = true
-  }
 }
