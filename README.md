@@ -31,5 +31,9 @@ dependencies {
 }
 ```
 
+## Modules
+
+![project-dependency-graph.png](project-dependency-graph.png)
+
 ## TODO
 - Fix janky icons
