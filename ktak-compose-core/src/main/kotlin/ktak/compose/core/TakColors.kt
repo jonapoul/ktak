@@ -7,12 +7,6 @@ import androidx.compose.ui.graphics.Color
 
 @Stable
 public object TakColors {
-  @Stable
-  public val colors: Colors
-    get() = darkColors(
-      // TBC
-    )
-
   /**
    * The primary color leveraged throughout UI elements.
    */
@@ -66,4 +60,18 @@ public object TakColors {
 
   @Stable
   public val Gamma: Color = Color(color = 0xFF9DFFAF)
+
+  @Stable
+  public val colors: Colors = darkColors(
+    background = Ink,
+    onBackground = Cloud,
+    primary = Sand,
+    secondary = Cyber,
+    error = Alert,
+    onError = Cloud,
+    onPrimary = Ink,
+    onSecondary = Ink,
+    surface = Charcoal,
+    onSurface = Cloud,
+  )
 }

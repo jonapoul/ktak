@@ -35,8 +35,11 @@ public abstract class TakNavigationDropDownReceiver(
   ) {
     Timber.v("showDropDown $dimensions $ignoreBackButton $switchable $stateListener $screen")
     navStack.add(screen)
-    fragment = TakComposeFragment(mapView, composeContext)
-    composeScreen(screen)
+    fragment = TakComposeFragment(mapView, composeContext) {
+      ContentWithViewModels {
+        screen.Compose()
+      }
+    }
     showDropDown(
       fragment,
       dimensions.lwFraction,
