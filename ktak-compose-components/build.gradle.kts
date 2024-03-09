@@ -25,6 +25,7 @@ dependencies {
   api(libs.androidx.compose.ui.text)
 
   implementation(projects.ktakComposeCore)
+  implementation(projects.ktakComposeIcons)
   implementation(libs.androidx.compose.animation)
   implementation(libs.androidx.compose.material.icons.core)
   implementation(libs.androidx.compose.material.icons.extended)
@@ -37,6 +38,5 @@ dependencies {
 
   // only used for previews
   debugRuntimeOnly(libs.androidx.compose.ui.tooling)
-  compileOnly(projects.ktakComposeIcons)
   compileOnly(projects.ktakComposePreview)
 }
