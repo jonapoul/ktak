@@ -1,6 +1,7 @@
 package ktak.compose.core
 
 import android.content.res.Resources
+import android.util.TypedValue
 import androidx.annotation.ArrayRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.PluralsRes
@@ -8,9 +9,15 @@ import androidx.annotation.StringRes
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.remember
+import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.painter.BitmapPainter
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.res.vectorResource
+import timber.log.Timber
 
 /**
  * Mostly copies of [androidx.compose.ui.res] methods, but with a [LocalTakComposeContext] instead of a regular
@@ -65,4 +72,43 @@ public fun takVectorResource(@DrawableRes id: Int): ImageVector {
   val res = takResources()
   val theme = context.theme
   return remember(id, res, theme, res.configuration) { ImageVector.vectorResource(theme, res, id) }
+}
+
+@Composable
+public fun takBitmapResource(@DrawableRes id: Int): ImageBitmap {
+  val res = takResources()
+  return try {
+    ImageBitmap.imageResource(res, id)
+  } catch (e: Exception) {
+    Timber.w(e, "Failed loading bitmap resource $id from $res")
+    throw e
+  }
+}
+
+@Composable
+public fun takPainterResource(@DrawableRes id: Int): Painter {
+  val context = LocalTakComposeContext.current
+  val res = takResources()
+  val value = remember { TypedValue() }
+  res.getValue(id, value, true)
+  val path = value.string
+
+  return if (path?.endsWith(".xml") == true) {
+    // Assume .xml suffix implies loading a VectorDrawable resource
+    val imageVector = takVectorResource(id)
+    rememberVectorPainter(imageVector)
+  } else {
+    // Otherwise load the bitmap resource
+    val imageBitmap = remember(path, id, context.theme) { loadBitmap(res, id) }
+    BitmapPainter(imageBitmap)
+  }
+}
+
+private fun loadBitmap(res: Resources, @DrawableRes id: Int): ImageBitmap {
+  return try {
+    ImageBitmap.imageResource(res, id)
+  } catch (e: Exception) {
+    Timber.w(e, "Failed loading bitmap resource $id from $res")
+    throw e
+  }
 }
