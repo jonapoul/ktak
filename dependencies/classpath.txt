@@ -112,9 +112,6 @@ commons-codec:commons-codec:1.16.0
 commons-io:commons-io:2.4
 commons-logging:commons-logging:1.2
 dev.equo.ide:solstice:1.7.3
-dev.jonpoulton.blueprint.guard:dev.jonpoulton.blueprint.guard.gradle.plugin:0.1.0
-dev.jonpoulton.blueprint:core:0.1.0
-dev.jonpoulton.blueprint:guard-gradle-plugin:0.1.0
 dev.zacsweers.moshix:moshi-sealed-reflect:0.19.0
 dev.zacsweers.moshix:moshi-sealed-runtime:0.19.0
 io.github.x-stream:mxparser:1.2.2

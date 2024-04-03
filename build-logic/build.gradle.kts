@@ -1,5 +1,8 @@
+@file:Suppress("DSL_SCOPE_VIOLATION")
+
 plugins {
   `kotlin-dsl`
+  alias(libs.plugins.dependencyGuard)
 }
 
 val javaVersion = properties["javaVersion"].toString()
@@ -13,10 +16,16 @@ kotlinDslPluginOptions {
   jvmTarget.set(javaVersion)
 }
 
+dependencyGuard {
+  configuration("classpath")
+}
+
 dependencies {
+  api(libs.plugin.blueprint.core)
+
   implementation(libs.plugin.agp)
   implementation(libs.plugin.androidCacheFix)
-  implementation(libs.plugin.blueprint.core)
+  implementation(libs.plugin.dependencyGuard)
   implementation(libs.plugin.detekt)
   implementation(libs.plugin.dokka)
   implementation(libs.plugin.kotlin)

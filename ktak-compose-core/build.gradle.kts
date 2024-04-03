@@ -10,7 +10,7 @@ plugins {
   id("convention-licensee")
   id("convention-publish")
   id("convention-spotless")
-  alias(libs.plugins.blueprint.dependencyGuard)
+  id("convention-dependency-guard")
 }
 
 android {

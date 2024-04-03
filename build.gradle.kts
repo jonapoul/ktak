@@ -10,10 +10,14 @@ plugins {
   alias(libs.plugins.publish) apply false
   alias(libs.plugins.spotless) apply false
 
-  alias(libs.plugins.blueprint.dependencyGuard)
+  alias(libs.plugins.dependencyGuard)
   alias(libs.plugins.dependencyAnalysis)
   alias(libs.plugins.doctor)
   alias(libs.plugins.versions)
+}
+
+dependencyGuard {
+  configuration("classpath")
 }
 
 doctor {
