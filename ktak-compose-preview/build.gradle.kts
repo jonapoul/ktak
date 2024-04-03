@@ -1,7 +1,8 @@
 @file:Suppress("DSL_SCOPE_VIOLATION")
 
 plugins {
-  alias(libs.plugins.blueprint.android.library)
+  id("convention-android-lib")
+  id("convention-kotlin")
   alias(libs.plugins.blueprint.android.compose)
   alias(libs.plugins.blueprint.android.resources)
   id("convention-detekt")

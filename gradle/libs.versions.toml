@@ -1,5 +1,7 @@
 [versions]
 # Plugins
+agp = "7.4.2"
+androidCacheFix = "3.0"
 blueprint = "0.1.0"
 dependencyAnalysis = "1.20.0"
 detekt = "1.23.0"
@@ -51,8 +53,12 @@ kotlinx-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immuta
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 
 # Plugins
+plugin-agp = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+plugin-androidCacheFix = { module = "org.gradle.android.cache-fix:org.gradle.android.cache-fix.gradle.plugin", version.ref = "androidCacheFix" }
+plugin-blueprint-core = { module = "dev.jonpoulton.blueprint:core", version.ref = "blueprint" }
 plugin-detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 plugin-dokka = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokka" }
+plugin-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 plugin-ktlint = { module = "org.jlleitschuh.gradle:ktlint-gradle", version.ref = "ktlint-gradle" }
 plugin-licensee = { module = "app.cash.licensee:licensee-gradle-plugin", version.ref = "licensee" }
 plugin-publish = { module = "com.vanniktech:gradle-maven-publish-plugin", version.ref = "publish" }
@@ -60,14 +66,14 @@ plugin-spotless = { module = "com.diffplug.spotless:spotless-plugin-gradle", ver
 
 [plugins]
 blueprint-android-compose = { id = "dev.jonpoulton.blueprint.android.compose", version.ref = "blueprint" }
-blueprint-android-library = { id = "dev.jonpoulton.blueprint.android.library", version.ref = "blueprint" }
 blueprint-android-resources = { id = "dev.jonpoulton.blueprint.android.resources", version.ref = "blueprint" }
 blueprint-dependencyGuard = { id = "dev.jonpoulton.blueprint.guard", version.ref = "blueprint" }
-blueprint-kotlin-android = { id = "dev.jonpoulton.blueprint.kotlin.android", version.ref = "blueprint" }
+agp-lib = { id = "com.android.library", version.ref = "agp" }
 dependencyAnalysis = { id = "com.autonomousapps.dependency-analysis", version.ref = "dependencyAnalysis" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 doctor = { id = "com.osacky.doctor", version.ref = "doctor" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint-gradle" }
 licensee = { id = "app.cash.licensee", version.ref = "licensee" }
 publish = { id = "com.vanniktech.maven.publish", version.ref = "publish" }
