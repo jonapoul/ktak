@@ -1,6 +1,7 @@
 [versions]
 # Plugins
 blueprint = "0.1.0"
+doctor = "0.9.1"
 dokka = "1.8.20"
 kotlin = "1.8.20"
 publish = "0.25.2"
@@ -54,7 +55,7 @@ blueprint-dependencyAnalysis = { id = "dev.jonpoulton.blueprint.analysis", versi
 blueprint-dependencyGuard = { id = "dev.jonpoulton.blueprint.guard", version.ref = "blueprint" }
 blueprint-detekt = { id = "dev.jonpoulton.blueprint.detekt", version.ref = "blueprint" }
 blueprint-diagrams = { id = "dev.jonpoulton.blueprint.diagrams", version.ref = "blueprint" }
-blueprint-doctor = { id = "dev.jonpoulton.blueprint.doctor", version.ref = "blueprint" }
+doctor = { id = "com.osacky.doctor", version.ref = "doctor" }
 blueprint-kotlin-android = { id = "dev.jonpoulton.blueprint.kotlin.android", version.ref = "blueprint" }
 blueprint-kover = { id = "dev.jonpoulton.blueprint.kover", version.ref = "blueprint" }
 blueprint-ktlint = { id = "dev.jonpoulton.blueprint.ktlint", version.ref = "blueprint" }

@@ -16,8 +16,16 @@ plugins {
 
   alias(libs.plugins.blueprint.dependencyGuard)
   alias(libs.plugins.blueprint.dependencyAnalysis)
-  alias(libs.plugins.blueprint.doctor)
+  alias(libs.plugins.doctor)
   alias(libs.plugins.blueprint.diagrams)
   alias(libs.plugins.blueprint.kover)
   alias(libs.plugins.blueprint.versions)
+}
+
+doctor {
+  javaHome {
+    ensureJavaHomeMatches.set(false)
+    ensureJavaHomeIsSet.set(true)
+    failOnError.set(true)
+  }
 }

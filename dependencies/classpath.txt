@@ -82,6 +82,7 @@ com.googlecode.concurrent-trees:concurrent-trees:2.6.1
 com.googlecode.javaewah:JavaEWAH:1.2.3
 com.googlecode.juniversalchardet:juniversalchardet:1.0.3
 com.lordcodes.turtle:turtle:0.8.0
+com.osacky.doctor:com.osacky.doctor.gradle.plugin:0.9.1
 com.osacky.doctor:doctor-plugin:0.9.1
 com.osacky.tagger:tagger-lib:0.2
 com.squareup.moshi:moshi-adapters:1.14.0
@@ -115,7 +116,6 @@ dev.jonpoulton.blueprint.atak.library:dev.jonpoulton.blueprint.atak.library.grad
 dev.jonpoulton.blueprint.atak.plugin:dev.jonpoulton.blueprint.atak.plugin.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.detekt:dev.jonpoulton.blueprint.detekt.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.diagrams:dev.jonpoulton.blueprint.diagrams.gradle.plugin:0.1.0
-dev.jonpoulton.blueprint.doctor:dev.jonpoulton.blueprint.doctor.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.guard:dev.jonpoulton.blueprint.guard.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.kotlin.android:dev.jonpoulton.blueprint.kotlin.android.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.kover:dev.jonpoulton.blueprint.kover.gradle.plugin:0.1.0
@@ -129,7 +129,6 @@ dev.jonpoulton.blueprint:atak-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:core:0.1.0
 dev.jonpoulton.blueprint:detekt-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:diagrams-gradle-plugin:0.1.0
-dev.jonpoulton.blueprint:doctor-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:git:0.1.0
 dev.jonpoulton.blueprint:guard-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:kotlin-gradle-plugin:0.1.0
