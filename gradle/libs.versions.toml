@@ -1,6 +1,7 @@
 [versions]
 # Plugins
 blueprint = "0.1.0"
+dependencyAnalysis = "1.20.0"
 doctor = "0.9.1"
 dokka = "1.8.20"
 kotlin = "1.8.20"
@@ -56,17 +57,16 @@ blueprint-android-library = { id = "dev.jonpoulton.blueprint.android.library", v
 blueprint-android-resources = { id = "dev.jonpoulton.blueprint.android.resources", version.ref = "blueprint" }
 blueprint-atak-library = { id = "dev.jonpoulton.blueprint.atak.library", version.ref = "blueprint" }
 blueprint-atak-plugin = { id = "dev.jonpoulton.blueprint.atak.plugin", version.ref = "blueprint" }
-blueprint-dependencyAnalysis = { id = "dev.jonpoulton.blueprint.analysis", version.ref = "blueprint" }
 blueprint-dependencyGuard = { id = "dev.jonpoulton.blueprint.guard", version.ref = "blueprint" }
 blueprint-detekt = { id = "dev.jonpoulton.blueprint.detekt", version.ref = "blueprint" }
 blueprint-diagrams = { id = "dev.jonpoulton.blueprint.diagrams", version.ref = "blueprint" }
-doctor = { id = "com.osacky.doctor", version.ref = "doctor" }
 blueprint-kotlin-android = { id = "dev.jonpoulton.blueprint.kotlin.android", version.ref = "blueprint" }
 blueprint-kover = { id = "dev.jonpoulton.blueprint.kover", version.ref = "blueprint" }
 blueprint-ktlint = { id = "dev.jonpoulton.blueprint.ktlint", version.ref = "blueprint" }
-licensee = { id = "app.cash.licensee", version.ref = "licensee" }
+dependencyAnalysis = { id = "com.autonomousapps.dependency-analysis", version.ref = "dependencyAnalysis" }
+doctor = { id = "com.osacky.doctor", version.ref = "doctor" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+licensee = { id = "app.cash.licensee", version.ref = "licensee" }
 publish = { id = "com.vanniktech.maven.publish", version.ref = "publish" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
-blueprint-versions = { id = "dev.jonpoulton.blueprint.versions", version.ref = "blueprint" }
 versions = { id = "com.github.ben-manes.versions", version.ref = "versions" }

@@ -1,5 +1,6 @@
 @file:Suppress("DSL_SCOPE_VIOLATION")
 
+import com.autonomousapps.DependencyAnalysisExtension
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
 plugins {
@@ -17,7 +18,7 @@ plugins {
   alias(libs.plugins.spotless) apply false
 
   alias(libs.plugins.blueprint.dependencyGuard)
-  alias(libs.plugins.blueprint.dependencyAnalysis)
+  alias(libs.plugins.dependencyAnalysis)
   alias(libs.plugins.doctor)
   alias(libs.plugins.blueprint.diagrams)
   alias(libs.plugins.blueprint.kover)
@@ -37,3 +38,21 @@ tasks.withType(DependencyUpdatesTask::class.java) {
 }
 
 fun String.isStable(): Boolean = listOf("alpha", "beta", "rc").none { toLowerCase().contains(it) }
+
+extensions.configure(DependencyAnalysisExtension::class.java) {
+  issues {
+    all {
+      ignoreKtx(ignore = true)
+      onAny {
+        severity(value = "fail")
+
+        // https://github.com/autonomousapps/dependency-analysis-gradle-plugin/issues/884
+        exclude("() -> java.io.File?")
+      }
+    }
+  }
+
+  dependencies {
+    bundle(name = "kotlin-stdlib") { includeGroup(group = "org.jetbrains.kotlin") }
+  }
+}
