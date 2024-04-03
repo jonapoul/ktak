@@ -3,7 +3,6 @@
 plugins {
   alias(libs.plugins.agp.lib) apply false
   alias(libs.plugins.blueprint.android.compose) apply false
-  alias(libs.plugins.blueprint.android.resources) apply false
   alias(libs.plugins.detekt) apply false
   alias(libs.plugins.dokka) apply false
   alias(libs.plugins.kotlin) apply false

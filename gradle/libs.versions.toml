@@ -66,7 +66,6 @@ plugin-spotless = { module = "com.diffplug.spotless:spotless-plugin-gradle", ver
 
 [plugins]
 blueprint-android-compose = { id = "dev.jonpoulton.blueprint.android.compose", version.ref = "blueprint" }
-blueprint-android-resources = { id = "dev.jonpoulton.blueprint.android.resources", version.ref = "blueprint" }
 blueprint-dependencyGuard = { id = "dev.jonpoulton.blueprint.guard", version.ref = "blueprint" }
 agp-lib = { id = "com.android.library", version.ref = "agp" }
 dependencyAnalysis = { id = "com.autonomousapps.dependency-analysis", version.ref = "dependencyAnalysis" }

@@ -2,8 +2,8 @@
 
 plugins {
   id("convention-android-lib")
+  id("convention-android-res")
   id("convention-kotlin")
-  alias(libs.plugins.blueprint.android.resources)
   id("convention-atak")
   id("convention-detekt")
   id("convention-ktlint")
