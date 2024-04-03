@@ -16,6 +16,7 @@ kotlinDslPluginOptions {
 dependencies {
   implementation(libs.plugin.dokka)
   implementation(libs.plugin.publish)
+  implementation(libs.plugin.spotless)
 
   // https://stackoverflow.com/a/70878181/15634757
   implementation(files(libs.javaClass.superclass.protectionDomain.codeSource.location))

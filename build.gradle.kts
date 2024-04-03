@@ -12,7 +12,7 @@ plugins {
   alias(libs.plugins.blueprint.licensee) apply false
   alias(libs.plugins.dokka) apply false
   alias(libs.plugins.publish) apply false
-  alias(libs.plugins.blueprint.spotless) apply false
+  alias(libs.plugins.spotless) apply false
 
   alias(libs.plugins.blueprint.dependencyGuard)
   alias(libs.plugins.blueprint.dependencyAnalysis)

@@ -5,6 +5,7 @@ doctor = "0.9.1"
 dokka = "1.8.20"
 kotlin = "1.8.20"
 publish = "0.25.2"
+spotless = "6.23.0"
 
 # Libraries
 androidx-annotation = "1.1.0"
@@ -44,6 +45,7 @@ timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 # Plugins
 plugin-dokka = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokka" }
 plugin-publish = { module = "com.vanniktech:gradle-maven-publish-plugin", version.ref = "publish" }
+plugin-spotless = { module = "com.diffplug.spotless:spotless-plugin-gradle", version.ref = "spotless" }
 
 [plugins]
 blueprint-android-compose = { id = "dev.jonpoulton.blueprint.android.compose", version.ref = "blueprint" }
@@ -62,5 +64,5 @@ blueprint-ktlint = { id = "dev.jonpoulton.blueprint.ktlint", version.ref = "blue
 blueprint-licensee = { id = "dev.jonpoulton.blueprint.licensee", version.ref = "blueprint" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 publish = { id = "com.vanniktech.maven.publish", version.ref = "publish" }
-blueprint-spotless = { id = "dev.jonpoulton.blueprint.spotless", version.ref = "blueprint" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 blueprint-versions = { id = "dev.jonpoulton.blueprint.versions", version.ref = "blueprint" }

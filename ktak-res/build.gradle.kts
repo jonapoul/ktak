@@ -4,7 +4,7 @@ plugins {
   alias(libs.plugins.blueprint.android.resources)
   id("convention-publish")
   alias(libs.plugins.blueprint.licensee)
-  alias(libs.plugins.blueprint.spotless)
+  id("convention-spotless")
   alias(libs.plugins.blueprint.dependencyGuard)
 }
 
