@@ -7,6 +7,7 @@ kotlin = "1.8.20"
 licensee = "1.7.0"
 publish = "0.25.2"
 spotless = "6.23.0"
+versions = "0.46.0"
 
 # Libraries
 androidx-annotation = "1.1.0"
@@ -68,3 +69,4 @@ dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 publish = { id = "com.vanniktech.maven.publish", version.ref = "publish" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 blueprint-versions = { id = "dev.jonpoulton.blueprint.versions", version.ref = "blueprint" }
+versions = { id = "com.github.ben-manes.versions", version.ref = "versions" }

@@ -1,5 +1,7 @@
 @file:Suppress("DSL_SCOPE_VIOLATION")
 
+import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
+
 plugins {
   alias(libs.plugins.blueprint.android.compose) apply false
   alias(libs.plugins.blueprint.android.library) apply false
@@ -19,7 +21,7 @@ plugins {
   alias(libs.plugins.doctor)
   alias(libs.plugins.blueprint.diagrams)
   alias(libs.plugins.blueprint.kover)
-  alias(libs.plugins.blueprint.versions)
+  alias(libs.plugins.versions)
 }
 
 doctor {
@@ -29,3 +31,9 @@ doctor {
     failOnError.set(true)
   }
 }
+
+tasks.withType(DependencyUpdatesTask::class.java) {
+  rejectVersionIf { !candidate.version.isStable() && currentVersion.isStable() }
+}
+
+fun String.isStable(): Boolean = listOf("alpha", "beta", "rc").none { toLowerCase().contains(it) }

@@ -63,6 +63,7 @@ com.fasterxml.jackson.module:jackson-module-kotlin:2.12.7
 com.fasterxml.jackson:jackson-bom:2.12.7
 com.fasterxml.woodstox:woodstox-core:6.2.4
 com.github.ben-manes.caffeine:caffeine:3.1.0
+com.github.ben-manes.versions:com.github.ben-manes.versions.gradle.plugin:0.46.0
 com.github.ben-manes:gradle-versions-plugin:0.46.0
 com.google.android:annotations:4.1.1.4
 com.google.api.grpc:proto-google-common-protos:2.0.1
@@ -122,7 +123,6 @@ dev.jonpoulton.blueprint.guard:dev.jonpoulton.blueprint.guard.gradle.plugin:0.1.
 dev.jonpoulton.blueprint.kotlin.android:dev.jonpoulton.blueprint.kotlin.android.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.kover:dev.jonpoulton.blueprint.kover.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.ktlint:dev.jonpoulton.blueprint.ktlint.gradle.plugin:0.1.0
-dev.jonpoulton.blueprint.versions:dev.jonpoulton.blueprint.versions.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint:analysis-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:android-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:atak-gradle-plugin:0.1.0
@@ -134,7 +134,6 @@ dev.jonpoulton.blueprint:guard-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:kotlin-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:kover-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:ktlint-gradle-plugin:0.1.0
-dev.jonpoulton.blueprint:versions-gradle-plugin:0.1.0
 dev.zacsweers.moshix:moshi-sealed-reflect:0.19.0
 dev.zacsweers.moshix:moshi-sealed-runtime:0.19.0
 gradle.plugin.org.gradle.android:android-cache-fix-gradle-plugin:3.0
