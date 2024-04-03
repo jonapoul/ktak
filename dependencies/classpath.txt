@@ -116,7 +116,6 @@ dev.jonpoulton.blueprint.android.library:dev.jonpoulton.blueprint.android.librar
 dev.jonpoulton.blueprint.android.resources:dev.jonpoulton.blueprint.android.resources.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.atak.library:dev.jonpoulton.blueprint.atak.library.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.atak.plugin:dev.jonpoulton.blueprint.atak.plugin.gradle.plugin:0.1.0
-dev.jonpoulton.blueprint.detekt:dev.jonpoulton.blueprint.detekt.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.guard:dev.jonpoulton.blueprint.guard.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.kotlin.android:dev.jonpoulton.blueprint.kotlin.android.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.kover:dev.jonpoulton.blueprint.kover.gradle.plugin:0.1.0
@@ -124,7 +123,6 @@ dev.jonpoulton.blueprint.ktlint:dev.jonpoulton.blueprint.ktlint.gradle.plugin:0.
 dev.jonpoulton.blueprint:android-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:atak-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:core:0.1.0
-dev.jonpoulton.blueprint:detekt-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:git:0.1.0
 dev.jonpoulton.blueprint:guard-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:kotlin-gradle-plugin:0.1.0
@@ -135,6 +133,7 @@ dev.zacsweers.moshix:moshi-sealed-runtime:0.19.0
 gradle.plugin.org.gradle.android:android-cache-fix-gradle-plugin:3.0
 io.github.x-stream:mxparser:1.2.2
 io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.23.0
+io.gitlab.arturbosch.detekt:io.gitlab.arturbosch.detekt.gradle.plugin:1.23.0
 io.grpc:grpc-api:1.39.0
 io.grpc:grpc-context:1.39.0
 io.grpc:grpc-core:1.39.0

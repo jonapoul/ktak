@@ -2,6 +2,7 @@
 # Plugins
 blueprint = "0.1.0"
 dependencyAnalysis = "1.20.0"
+detekt = "1.23.0"
 doctor = "0.9.1"
 dokka = "1.8.20"
 kotlin = "1.8.20"
@@ -46,6 +47,7 @@ kotlinx-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immuta
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 
 # Plugins
+plugin-detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 plugin-dokka = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokka" }
 plugin-licensee = { module = "app.cash.licensee:licensee-gradle-plugin", version.ref = "licensee" }
 plugin-publish = { module = "com.vanniktech:gradle-maven-publish-plugin", version.ref = "publish" }
@@ -58,11 +60,11 @@ blueprint-android-resources = { id = "dev.jonpoulton.blueprint.android.resources
 blueprint-atak-library = { id = "dev.jonpoulton.blueprint.atak.library", version.ref = "blueprint" }
 blueprint-atak-plugin = { id = "dev.jonpoulton.blueprint.atak.plugin", version.ref = "blueprint" }
 blueprint-dependencyGuard = { id = "dev.jonpoulton.blueprint.guard", version.ref = "blueprint" }
-blueprint-detekt = { id = "dev.jonpoulton.blueprint.detekt", version.ref = "blueprint" }
 blueprint-kotlin-android = { id = "dev.jonpoulton.blueprint.kotlin.android", version.ref = "blueprint" }
 blueprint-kover = { id = "dev.jonpoulton.blueprint.kover", version.ref = "blueprint" }
 blueprint-ktlint = { id = "dev.jonpoulton.blueprint.ktlint", version.ref = "blueprint" }
 dependencyAnalysis = { id = "com.autonomousapps.dependency-analysis", version.ref = "dependencyAnalysis" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 doctor = { id = "com.osacky.doctor", version.ref = "doctor" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 licensee = { id = "app.cash.licensee", version.ref = "licensee" }
