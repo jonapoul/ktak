@@ -5,7 +5,6 @@ plugins {
   alias(libs.plugins.blueprint.android.library)
   alias(libs.plugins.blueprint.atak.library)
   id("convention-detekt")
-  alias(libs.plugins.blueprint.kover)
   id("convention-ktlint")
   id("convention-licensee")
   id("convention-publish")

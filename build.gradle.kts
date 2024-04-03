@@ -20,7 +20,6 @@ plugins {
   alias(libs.plugins.blueprint.dependencyGuard)
   alias(libs.plugins.dependencyAnalysis)
   alias(libs.plugins.doctor)
-  alias(libs.plugins.blueprint.kover)
   alias(libs.plugins.versions)
 }
 

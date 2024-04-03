@@ -8,7 +8,6 @@ plugins {
   id("convention-detekt")
   id("convention-ktlint")
   id("convention-licensee")
-  alias(libs.plugins.blueprint.kover)
   id("convention-publish")
   id("convention-spotless")
   alias(libs.plugins.blueprint.dependencyGuard)
