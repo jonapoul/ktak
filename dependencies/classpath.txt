@@ -85,7 +85,6 @@ com.google.testing.platform:core-proto:0.0.8-alpha08
 com.googlecode.concurrent-trees:concurrent-trees:2.6.1
 com.googlecode.javaewah:JavaEWAH:1.2.3
 com.googlecode.juniversalchardet:juniversalchardet:1.0.3
-com.lordcodes.turtle:turtle:0.8.0
 com.osacky.doctor:com.osacky.doctor.gradle.plugin:0.9.1
 com.osacky.doctor:doctor-plugin:0.9.1
 com.osacky.tagger:tagger-lib:0.2
@@ -114,14 +113,10 @@ dev.equo.ide:solstice:1.7.3
 dev.jonpoulton.blueprint.android.compose:dev.jonpoulton.blueprint.android.compose.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.android.library:dev.jonpoulton.blueprint.android.library.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.android.resources:dev.jonpoulton.blueprint.android.resources.gradle.plugin:0.1.0
-dev.jonpoulton.blueprint.atak.library:dev.jonpoulton.blueprint.atak.library.gradle.plugin:0.1.0
-dev.jonpoulton.blueprint.atak.plugin:dev.jonpoulton.blueprint.atak.plugin.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.guard:dev.jonpoulton.blueprint.guard.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.kotlin.android:dev.jonpoulton.blueprint.kotlin.android.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint:android-gradle-plugin:0.1.0
-dev.jonpoulton.blueprint:atak-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:core:0.1.0
-dev.jonpoulton.blueprint:git:0.1.0
 dev.jonpoulton.blueprint:guard-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:kotlin-gradle-plugin:0.1.0
 dev.zacsweers.moshix:moshi-sealed-reflect:0.19.0

@@ -7,8 +7,6 @@ plugins {
   alias(libs.plugins.blueprint.android.compose) apply false
   alias(libs.plugins.blueprint.android.library) apply false
   alias(libs.plugins.blueprint.android.resources) apply false
-  alias(libs.plugins.blueprint.atak.library) apply false
-  alias(libs.plugins.blueprint.atak.plugin) apply false
   alias(libs.plugins.blueprint.kotlin.android) apply false
   alias(libs.plugins.detekt) apply false
   alias(libs.plugins.dokka) apply false

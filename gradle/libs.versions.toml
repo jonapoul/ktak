@@ -16,6 +16,7 @@ versions = "0.46.0"
 # Libraries
 androidx-annotation = "1.1.0"
 androidx-lifecycle = "2.6.1"
+atak-sdk = "4.10.0.41"
 javax-inject = "1"
 kotlinx-coroutines = "1.6.4"
 kotlinx-immutable = "0.3.5"
@@ -42,6 +43,7 @@ androidx-compose-ui-unit = { module = "androidx.compose.ui:ui-unit" }
 androidx-compose-ui-util = { module = "androidx.compose.ui:ui-util" }
 androidx-lifecycle-common = { module = "androidx.lifecycle:lifecycle-common", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-viewmodelCompose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
+atak-sdk = { module = "com.atakmap.civ.common:api", version.ref = "atak-sdk" }
 javax-inject = { module = "javax.inject:javax.inject", version.ref = "javax-inject" }
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
@@ -60,8 +62,6 @@ plugin-spotless = { module = "com.diffplug.spotless:spotless-plugin-gradle", ver
 blueprint-android-compose = { id = "dev.jonpoulton.blueprint.android.compose", version.ref = "blueprint" }
 blueprint-android-library = { id = "dev.jonpoulton.blueprint.android.library", version.ref = "blueprint" }
 blueprint-android-resources = { id = "dev.jonpoulton.blueprint.android.resources", version.ref = "blueprint" }
-blueprint-atak-library = { id = "dev.jonpoulton.blueprint.atak.library", version.ref = "blueprint" }
-blueprint-atak-plugin = { id = "dev.jonpoulton.blueprint.atak.plugin", version.ref = "blueprint" }
 blueprint-dependencyGuard = { id = "dev.jonpoulton.blueprint.guard", version.ref = "blueprint" }
 blueprint-kotlin-android = { id = "dev.jonpoulton.blueprint.kotlin.android", version.ref = "blueprint" }
 dependencyAnalysis = { id = "com.autonomousapps.dependency-analysis", version.ref = "dependencyAnalysis" }
