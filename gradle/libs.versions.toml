@@ -59,7 +59,6 @@ blueprint-atak-library = { id = "dev.jonpoulton.blueprint.atak.library", version
 blueprint-atak-plugin = { id = "dev.jonpoulton.blueprint.atak.plugin", version.ref = "blueprint" }
 blueprint-dependencyGuard = { id = "dev.jonpoulton.blueprint.guard", version.ref = "blueprint" }
 blueprint-detekt = { id = "dev.jonpoulton.blueprint.detekt", version.ref = "blueprint" }
-blueprint-diagrams = { id = "dev.jonpoulton.blueprint.diagrams", version.ref = "blueprint" }
 blueprint-kotlin-android = { id = "dev.jonpoulton.blueprint.kotlin.android", version.ref = "blueprint" }
 blueprint-kover = { id = "dev.jonpoulton.blueprint.kover", version.ref = "blueprint" }
 blueprint-ktlint = { id = "dev.jonpoulton.blueprint.ktlint", version.ref = "blueprint" }

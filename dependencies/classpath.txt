@@ -105,7 +105,6 @@ com.sun.istack:istack-commons-runtime:3.0.8
 com.sun.xml.fastinfoset:FastInfoset:1.2.16
 com.thoughtworks.xstream:xstream:1.4.19
 com.vanniktech.maven.publish:com.vanniktech.maven.publish.gradle.plugin:0.25.2
-com.vanniktech:gradle-dependency-graph-generator-plugin:0.8.0
 com.vanniktech:gradle-maven-publish-plugin:0.25.2
 com.vanniktech:nexus:0.25.2
 commons-codec:commons-codec:1.16.0
@@ -118,7 +117,6 @@ dev.jonpoulton.blueprint.android.resources:dev.jonpoulton.blueprint.android.reso
 dev.jonpoulton.blueprint.atak.library:dev.jonpoulton.blueprint.atak.library.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.atak.plugin:dev.jonpoulton.blueprint.atak.plugin.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.detekt:dev.jonpoulton.blueprint.detekt.gradle.plugin:0.1.0
-dev.jonpoulton.blueprint.diagrams:dev.jonpoulton.blueprint.diagrams.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.guard:dev.jonpoulton.blueprint.guard.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.kotlin.android:dev.jonpoulton.blueprint.kotlin.android.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.kover:dev.jonpoulton.blueprint.kover.gradle.plugin:0.1.0
@@ -127,7 +125,6 @@ dev.jonpoulton.blueprint:android-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:atak-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:core:0.1.0
 dev.jonpoulton.blueprint:detekt-gradle-plugin:0.1.0
-dev.jonpoulton.blueprint:diagrams-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:git:0.1.0
 dev.jonpoulton.blueprint:guard-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:kotlin-gradle-plugin:0.1.0
@@ -136,8 +133,6 @@ dev.jonpoulton.blueprint:ktlint-gradle-plugin:0.1.0
 dev.zacsweers.moshix:moshi-sealed-reflect:0.19.0
 dev.zacsweers.moshix:moshi-sealed-runtime:0.19.0
 gradle.plugin.org.gradle.android:android-cache-fix-gradle-plugin:3.0
-guru.nidi.com.kitfox:svgSalamander:1.1.3
-guru.nidi:graphviz-java:0.18.1
 io.github.x-stream:mxparser:1.2.2
 io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.23.0
 io.grpc:grpc-api:1.39.0
@@ -163,13 +158,11 @@ jakarta.activation:jakarta.activation-api:1.2.1
 jakarta.xml.bind:jakarta.xml.bind-api:2.3.2
 javax.annotation:javax.annotation-api:1.3.2
 javax.inject:javax.inject:1
-net.arnx:nashorn-promise:0.1.1
 net.java.dev.jna:jna-platform:5.6.0
 net.java.dev.jna:jna:5.6.0
 net.sf.jopt-simple:jopt-simple:4.9
 net.sf.kxml:kxml2:2.3.0
 org.apache.commons:commons-compress:1.20
-org.apache.commons:commons-exec:1.3
 org.apache.commons:commons-lang3:3.8.1
 org.apache.httpcomponents:httpclient:4.5.13
 org.apache.httpcomponents:httpcore:4.4.13
@@ -249,12 +242,9 @@ org.ow2.asm:asm-tree:9.2
 org.ow2.asm:asm-util:9.2
 org.ow2.asm:asm:9.2
 org.reactivestreams:reactive-streams:1.0.4
-org.slf4j:jcl-over-slf4j:1.7.30
-org.slf4j:jul-to-slf4j:1.7.30
 org.slf4j:slf4j-api:1.7.36
 org.tensorflow:tensorflow-lite-metadata:0.1.0-rc2
 org.tukaani:xz:1.9
-org.webjars.npm:viz.js-graphviz-java:2.1.3
 xerces:xercesImpl:2.12.0
 xml-apis:xml-apis:1.4.01
 xmlpull:xmlpull:1.1.3.1
