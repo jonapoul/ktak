@@ -7,7 +7,7 @@ plugins {
   alias(libs.plugins.blueprint.atak.library)
   alias(libs.plugins.blueprint.detekt)
   alias(libs.plugins.blueprint.ktlint)
-  alias(libs.plugins.blueprint.licensee)
+  id("convention-licensee")
   id("convention-publish")
   id("convention-spotless")
   alias(libs.plugins.blueprint.dependencyGuard)

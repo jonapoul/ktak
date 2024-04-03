@@ -1,5 +1,6 @@
 androidx.databinding:databinding-common:7.4.2
 androidx.databinding:databinding-compiler-common:7.4.2
+app.cash.licensee:app.cash.licensee.gradle.plugin:1.7.0
 app.cash.licensee:licensee-gradle-plugin:1.7.0
 com.android.databinding:baseLibrary:7.4.2
 com.android.tools.analytics-library:crash:30.4.2
@@ -121,7 +122,6 @@ dev.jonpoulton.blueprint.guard:dev.jonpoulton.blueprint.guard.gradle.plugin:0.1.
 dev.jonpoulton.blueprint.kotlin.android:dev.jonpoulton.blueprint.kotlin.android.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.kover:dev.jonpoulton.blueprint.kover.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.ktlint:dev.jonpoulton.blueprint.ktlint.gradle.plugin:0.1.0
-dev.jonpoulton.blueprint.licensee:dev.jonpoulton.blueprint.licensee.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.versions:dev.jonpoulton.blueprint.versions.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint:analysis-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:android-gradle-plugin:0.1.0
@@ -134,7 +134,6 @@ dev.jonpoulton.blueprint:guard-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:kotlin-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:kover-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:ktlint-gradle-plugin:0.1.0
-dev.jonpoulton.blueprint:licensee-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:versions-gradle-plugin:0.1.0
 dev.zacsweers.moshix:moshi-sealed-reflect:0.19.0
 dev.zacsweers.moshix:moshi-sealed-runtime:0.19.0
