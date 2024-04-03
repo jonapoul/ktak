@@ -1,6 +1,5 @@
 @file:Suppress("DSL_SCOPE_VIOLATION")
 
-import com.autonomousapps.DependencyAnalysisExtension
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
 plugins {
@@ -35,7 +34,7 @@ tasks.withType(DependencyUpdatesTask::class.java) {
 
 fun String.isStable(): Boolean = listOf("alpha", "beta", "rc").none { toLowerCase().contains(it) }
 
-extensions.configure(DependencyAnalysisExtension::class.java) {
+dependencyAnalysis {
   issues {
     all {
       ignoreKtx(ignore = true)
