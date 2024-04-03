@@ -119,7 +119,6 @@ dev.jonpoulton.blueprint.atak.plugin:dev.jonpoulton.blueprint.atak.plugin.gradle
 dev.jonpoulton.blueprint.guard:dev.jonpoulton.blueprint.guard.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.kotlin.android:dev.jonpoulton.blueprint.kotlin.android.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.kover:dev.jonpoulton.blueprint.kover.gradle.plugin:0.1.0
-dev.jonpoulton.blueprint.ktlint:dev.jonpoulton.blueprint.ktlint.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint:android-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:atak-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:core:0.1.0
@@ -127,7 +126,6 @@ dev.jonpoulton.blueprint:git:0.1.0
 dev.jonpoulton.blueprint:guard-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:kotlin-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:kover-gradle-plugin:0.1.0
-dev.jonpoulton.blueprint:ktlint-gradle-plugin:0.1.0
 dev.zacsweers.moshix:moshi-sealed-reflect:0.19.0
 dev.zacsweers.moshix:moshi-sealed-runtime:0.19.0
 gradle.plugin.org.gradle.android:android-cache-fix-gradle-plugin:3.0
@@ -231,6 +229,7 @@ org.jetbrains.kotlinx:kover-gradle-plugin:0.7.5
 org.jetbrains:annotations:13.0
 org.jetbrains:markdown-jvm:0.3.1
 org.jetbrains:markdown:0.3.1
+org.jlleitschuh.gradle.ktlint:org.jlleitschuh.gradle.ktlint.gradle.plugin:11.6.1
 org.jlleitschuh.gradle:ktlint-gradle:11.6.1
 org.json:json:20180813
 org.jsoup:jsoup:1.15.3

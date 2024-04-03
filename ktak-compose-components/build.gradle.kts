@@ -4,7 +4,7 @@ plugins {
   alias(libs.plugins.blueprint.android.library)
   alias(libs.plugins.blueprint.android.compose)
   id("convention-detekt")
-  alias(libs.plugins.blueprint.ktlint)
+  id("convention-ktlint")
   id("convention-licensee")
   id("convention-publish")
   id("convention-spotless")

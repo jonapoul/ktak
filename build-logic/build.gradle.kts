@@ -16,6 +16,7 @@ kotlinDslPluginOptions {
 dependencies {
   implementation(libs.plugin.detekt)
   implementation(libs.plugin.dokka)
+  implementation(libs.plugin.ktlint)
   implementation(libs.plugin.licensee)
   implementation(libs.plugin.publish)
   implementation(libs.plugin.spotless)

@@ -9,10 +9,10 @@ plugins {
   alias(libs.plugins.blueprint.android.resources) apply false
   alias(libs.plugins.blueprint.atak.library) apply false
   alias(libs.plugins.blueprint.atak.plugin) apply false
-  alias(libs.plugins.blueprint.ktlint) apply false
   alias(libs.plugins.blueprint.kotlin.android) apply false
   alias(libs.plugins.detekt) apply false
   alias(libs.plugins.dokka) apply false
+  alias(libs.plugins.ktlint) apply false
   alias(libs.plugins.licensee) apply false
   alias(libs.plugins.publish) apply false
   alias(libs.plugins.spotless) apply false
