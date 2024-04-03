@@ -99,6 +99,7 @@ com.sun.activation:javax.activation:1.2.0
 com.sun.istack:istack-commons-runtime:3.0.8
 com.sun.xml.fastinfoset:FastInfoset:1.2.16
 com.thoughtworks.xstream:xstream:1.4.19
+com.vanniktech.maven.publish:com.vanniktech.maven.publish.gradle.plugin:0.25.2
 com.vanniktech:gradle-dependency-graph-generator-plugin:0.8.0
 com.vanniktech:gradle-maven-publish-plugin:0.25.2
 com.vanniktech:nexus:0.25.2
@@ -120,7 +121,6 @@ dev.jonpoulton.blueprint.kotlin.android:dev.jonpoulton.blueprint.kotlin.android.
 dev.jonpoulton.blueprint.kover:dev.jonpoulton.blueprint.kover.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.ktlint:dev.jonpoulton.blueprint.ktlint.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.licensee:dev.jonpoulton.blueprint.licensee.gradle.plugin:0.1.0
-dev.jonpoulton.blueprint.publish:dev.jonpoulton.blueprint.publish.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.spotless:dev.jonpoulton.blueprint.spotless.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint.versions:dev.jonpoulton.blueprint.versions.gradle.plugin:0.1.0
 dev.jonpoulton.blueprint:analysis-gradle-plugin:0.1.0
@@ -136,7 +136,6 @@ dev.jonpoulton.blueprint:kotlin-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:kover-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:ktlint-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:licensee-gradle-plugin:0.1.0
-dev.jonpoulton.blueprint:publish-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:spotless-gradle-plugin:0.1.0
 dev.jonpoulton.blueprint:versions-gradle-plugin:0.1.0
 dev.zacsweers.moshix:moshi-sealed-reflect:0.19.0
@@ -201,6 +200,7 @@ org.gradle.android.cache-fix:org.gradle.android.cache-fix.gradle.plugin:3.0
 org.jdom:jdom2:2.0.6
 org.jetbrains.dokka:dokka-core:1.8.20
 org.jetbrains.dokka:dokka-gradle-plugin:1.8.20
+org.jetbrains.dokka:org.jetbrains.dokka.gradle.plugin:1.8.20
 org.jetbrains.intellij.deps:trove4j:1.0.20200330
 org.jetbrains.kotlin:kotlin-android-extensions:1.8.20
 org.jetbrains.kotlin:kotlin-annotation-processing-gradle:1.8.20

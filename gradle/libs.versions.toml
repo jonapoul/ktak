@@ -1,7 +1,9 @@
 [versions]
 # Plugins
 blueprint = "0.1.0"
+dokka = "1.8.20"
 kotlin = "1.8.20"
+publish = "0.25.2"
 
 # Libraries
 androidx-annotation = "1.1.0"
@@ -38,6 +40,10 @@ kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-c
 kotlinx-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinx-immutable" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 
+# Plugins
+plugin-dokka = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokka" }
+plugin-publish = { module = "com.vanniktech:gradle-maven-publish-plugin", version.ref = "publish" }
+
 [plugins]
 blueprint-android-compose = { id = "dev.jonpoulton.blueprint.android.compose", version.ref = "blueprint" }
 blueprint-android-library = { id = "dev.jonpoulton.blueprint.android.library", version.ref = "blueprint" }
@@ -53,6 +59,7 @@ blueprint-kotlin-android = { id = "dev.jonpoulton.blueprint.kotlin.android", ver
 blueprint-kover = { id = "dev.jonpoulton.blueprint.kover", version.ref = "blueprint" }
 blueprint-ktlint = { id = "dev.jonpoulton.blueprint.ktlint", version.ref = "blueprint" }
 blueprint-licensee = { id = "dev.jonpoulton.blueprint.licensee", version.ref = "blueprint" }
-blueprint-publish = { id = "dev.jonpoulton.blueprint.publish", version.ref = "blueprint" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+publish = { id = "com.vanniktech.maven.publish", version.ref = "publish" }
 blueprint-spotless = { id = "dev.jonpoulton.blueprint.spotless", version.ref = "blueprint" }
 blueprint-versions = { id = "dev.jonpoulton.blueprint.versions", version.ref = "blueprint" }

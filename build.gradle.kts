@@ -10,7 +10,8 @@ plugins {
   alias(libs.plugins.blueprint.ktlint) apply false
   alias(libs.plugins.blueprint.kotlin.android) apply false
   alias(libs.plugins.blueprint.licensee) apply false
-  alias(libs.plugins.blueprint.publish) apply false
+  alias(libs.plugins.dokka) apply false
+  alias(libs.plugins.publish) apply false
   alias(libs.plugins.blueprint.spotless) apply false
 
   alias(libs.plugins.blueprint.dependencyGuard)
