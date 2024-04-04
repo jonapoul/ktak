@@ -20,6 +20,8 @@ dependencyResolutionManagement {
   }
 }
 
+includeBuild("build-logic")
+
 include(":ktak-compose-components")
 include(":ktak-compose-core")
 include(":ktak-compose-icons")
