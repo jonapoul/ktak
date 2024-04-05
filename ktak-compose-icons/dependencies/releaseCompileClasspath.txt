@@ -14,7 +14,6 @@ androidx.compose.ui:ui-tooling-preview:1.3.3
 androidx.compose.ui:ui-unit:1.3.3
 androidx.compose.ui:ui:1.3.3
 androidx.compose:compose-bom:2023.01.00
-androidx.lifecycle:lifecycle-common:2.6.1
 com.atakmap.civ.common:api:4.10.0.41
 com.jakewharton.timber:timber:5.0.1
 org.jetbrains.kotlin:kotlin-stdlib-common:1.8.20
