@@ -18,10 +18,10 @@ androidx.lifecycle:lifecycle-common-java8:2.6.1
 androidx.lifecycle:lifecycle-common:2.6.1
 androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1
 androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1
-com.atakmap.civ.common:api:4.10.0.41
+com.atakmap.civ.common:api:5.1.0.5
 com.jakewharton.timber:timber:5.0.1
-org.jetbrains.kotlin:kotlin-stdlib-common:1.8.20
-org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.20
-org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20
-org.jetbrains.kotlin:kotlin-stdlib:1.8.20
+org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22
+org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22
+org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22
+org.jetbrains.kotlin:kotlin-stdlib:1.8.22
 org.jetbrains:annotations:20.1.0
