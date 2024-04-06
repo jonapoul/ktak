@@ -13,10 +13,5 @@ android {
     jniLibs {
       useLegacyPackaging = true
     }
-
-    resources {
-      pickFirsts.addAll(listOf("MANIFEST.MF"))
-      excludes.addAll(listOf("META-INF/*"))
-    }
   }
 }
