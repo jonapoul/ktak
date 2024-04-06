@@ -56,7 +56,6 @@ internal fun DrawScope.bottomBorder(color: Color, thicknessPx: Float) {
   )
 }
 
-
 internal fun DrawScope.topBorder(color: Color, thicknessPx: Float) {
   drawRect(
     color = color,

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <!-- https://slackhq.github.io/compose-lints/rules/ -->
+    <issue id="ComposeCompositionLocalUsage" severity="ignore"/>
+</lint>

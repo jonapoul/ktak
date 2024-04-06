@@ -45,6 +45,7 @@ android {
     checkReleaseBuilds = false
     abortOnError = false
     quiet = true
+    lintConfig = rootProject.file("lint.xml")
   }
 
   testOptions {

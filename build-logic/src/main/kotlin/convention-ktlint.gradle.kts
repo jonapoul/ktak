@@ -1,5 +1,4 @@
 import org.gradle.accessors.dm.LibrariesForLibs
-import org.jlleitschuh.gradle.ktlint.KtlintExtension
 import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
 plugins {
@@ -19,4 +18,10 @@ ktlint {
   reporters {
     reporter(ReporterType.HTML)
   }
+}
+
+val ktlintRuleset by configurations
+
+dependencies {
+  ktlintRuleset(libs.androidx.compose.twitter.ktlint)
 }

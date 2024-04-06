@@ -29,14 +29,14 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import ktak.compose.core.TakTextStyles
+import ktak.compose.preview.DarkPreview
 import ktak.compose.preview.PreviewCallback
-import ktak.compose.preview.PreviewDark
 import ktak.compose.preview.TakPreview
 
 @Composable
 public fun TakPrimaryButton(
-  modifier: Modifier = Modifier,
   text: String,
+  modifier: Modifier = Modifier,
   icon: ImageVector? = null,
   isError: Boolean = false,
   isDisabled: Boolean = false,
@@ -86,7 +86,7 @@ public fun TakPrimaryButton(
   }
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun RegularWithIcon() = TakPreview {
   TakPrimaryButton(
@@ -96,7 +96,7 @@ private fun RegularWithIcon() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun RegularWithoutIcon() = TakPreview {
   TakPrimaryButton(
@@ -106,7 +106,7 @@ private fun RegularWithoutIcon() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun RegularWithPadding() = TakPreview {
   TakPrimaryButton(
@@ -117,7 +117,7 @@ private fun RegularWithPadding() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun Errored() = TakPreview {
   TakPrimaryButton(
@@ -128,7 +128,7 @@ private fun Errored() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun Disabled() = TakPreview {
   TakPrimaryButton(

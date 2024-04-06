@@ -31,7 +31,7 @@ import ktak.compose.core.TakFonts
 import ktak.compose.icons.TakIcons
 import ktak.compose.icons.sidemenu.Close
 import ktak.compose.icons.sidemenu.Confirm
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 import ktak.compose.preview.TakPreview
 
 @Immutable
@@ -117,7 +117,7 @@ private val ButtonTextStyle = TextStyle(
   color = TakColors.Ink,
 )
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun PreviewDialogButton() = TakPreview {
   Row {

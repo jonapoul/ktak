@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import ktak.compose.icons.PreviewIcon
 import ktak.compose.icons.RaptorXTakIcons
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 
 public val RaptorXTakIcons.ProjectCleaner: ImageVector
   get() {
@@ -133,5 +133,5 @@ public val RaptorXTakIcons.ProjectCleaner: ImageVector
 private var nullableIcon: ImageVector? = null
 
 @Composable
-@PreviewDark
+@DarkPreview
 private fun Preview() = PreviewIcon(icon = RaptorXTakIcons.ProjectCleaner)

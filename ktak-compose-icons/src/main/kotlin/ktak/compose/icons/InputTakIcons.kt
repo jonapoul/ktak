@@ -5,6 +5,7 @@ package ktak.compose.icons
 import android.content.res.Configuration
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import kotlinx.collections.immutable.persistentListOf
 import ktak.compose.icons.input.Message
 import ktak.compose.icons.input.Search
 
@@ -13,7 +14,7 @@ import ktak.compose.icons.input.Search
  */
 public object InputTakIcons
 
-private val allIcons = listOf(
+private val allIcons = persistentListOf(
   TakIcons.Input.Message,
   TakIcons.Input.Search,
 )

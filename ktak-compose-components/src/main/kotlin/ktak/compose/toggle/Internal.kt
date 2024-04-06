@@ -33,7 +33,6 @@ import kotlin.math.roundToInt
 
 @Composable
 internal fun TakToggleCommon(
-  modifier: Modifier = Modifier,
   thumbOffset: Dp,
   isChecked: Boolean,
   isEnabled: Boolean,
@@ -41,6 +40,7 @@ internal fun TakToggleCommon(
   colors: TakToggleColors,
   dimensions: TakToggleDimensions,
   thumbContents: (@Composable BoxScope.() -> Unit)?,
+  modifier: Modifier = Modifier,
 ) {
   val pxToMove = with(LocalDensity.current) { thumbOffset.toPx().roundToInt() }
   val offset by animateIntOffsetAsState(
@@ -104,11 +104,7 @@ internal fun TakToggleThumb(
 }
 
 @Composable
-internal fun TakToggleTrack(
-  dimensions: TakToggleDimensions,
-  trackColor: Color,
-  borderColor: Color,
-) {
+internal fun TakToggleTrack(dimensions: TakToggleDimensions, trackColor: Color, borderColor: Color) {
   Box(
     modifier = Modifier
       .size(width = dimensions.trackWidth, height = dimensions.height)

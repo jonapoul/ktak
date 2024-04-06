@@ -5,6 +5,7 @@ package ktak.compose.icons
 import android.content.res.Configuration
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import kotlinx.collections.immutable.persistentListOf
 import ktak.compose.icons.utility.Add
 import ktak.compose.icons.utility.Aircraft
 import ktak.compose.icons.utility.BulkSelectionEmpty
@@ -56,7 +57,7 @@ public object UtilityTakIcons
 
 private val allIcons
   @Composable
-  get() = listOf(
+  get() = persistentListOf(
     TakIcons.Utility.Add,
     TakIcons.Utility.Aircraft,
     TakIcons.Utility.BulkSelectionEmpty,

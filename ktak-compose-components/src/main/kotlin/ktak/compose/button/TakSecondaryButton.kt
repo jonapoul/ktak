@@ -27,14 +27,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ktak.compose.core.TakColors
 import ktak.compose.core.TakTextStyles
+import ktak.compose.preview.DarkPreview
 import ktak.compose.preview.PreviewCallback
-import ktak.compose.preview.PreviewDark
 import ktak.compose.preview.TakPreview
 
 @Composable
 public fun TakSecondaryButton(
-  modifier: Modifier = Modifier,
   text: String,
+  modifier: Modifier = Modifier,
   isDisabled: Boolean = false,
   forceUppercase: Boolean = true,
   paddingValues: PaddingValues = DefaultPadding,
@@ -76,7 +76,7 @@ public fun TakSecondaryButton(
 
 private val DefaultPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun RegularWithIcon() = TakPreview {
   TakSecondaryButton(
@@ -85,7 +85,7 @@ private fun RegularWithIcon() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun WithoutForcedUppercase() = TakPreview {
   TakSecondaryButton(
@@ -95,7 +95,7 @@ private fun WithoutForcedUppercase() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun NoPadding() = TakPreview {
   TakSecondaryButton(
@@ -105,7 +105,7 @@ private fun NoPadding() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun SpecificSize() = TakPreview {
   TakSecondaryButton(
@@ -117,7 +117,7 @@ private fun SpecificSize() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun RegularWithPadding() = TakPreview {
   TakSecondaryButton(
@@ -127,7 +127,7 @@ private fun RegularWithPadding() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun DifferentColor() = TakPreview {
   TakSecondaryButton(
@@ -137,7 +137,7 @@ private fun DifferentColor() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun Disabled() = TakPreview {
   TakSecondaryButton(

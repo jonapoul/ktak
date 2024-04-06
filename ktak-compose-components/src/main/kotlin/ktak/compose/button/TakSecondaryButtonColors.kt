@@ -9,6 +9,7 @@ import androidx.compose.ui.graphics.Color
 import ktak.compose.core.TakColors
 import ktak.compose.core.TakLegacyColors
 
+@Stable
 public interface TakSecondaryButtonColors {
   @Stable
   @Composable
@@ -23,7 +24,6 @@ public interface TakSecondaryButtonColors {
   public fun borderColor(enabled: Boolean, pressed: Boolean): State<Color>
 }
 
-@Stable
 @Immutable
 public data class DefaultTakSecondaryButtonColors(
   val normalBackgroundColor: Color = Color.Transparent,

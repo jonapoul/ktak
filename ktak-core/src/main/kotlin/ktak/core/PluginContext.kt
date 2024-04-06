@@ -7,6 +7,6 @@ import gov.tak.api.plugin.IServiceController
 
 public class PluginContext(context: Context) : ContextWrapper(context) {
   public constructor(serviceController: IServiceController) : this(
-    context = serviceController.getService(PluginContextProvider::class.java).pluginContext
+    context = serviceController.getService(PluginContextProvider::class.java).pluginContext,
   )
 }

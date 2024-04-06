@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 import ktak.compose.preview.TakPreview
 import ktak.compose.slider.TakSliderTextPosition.AboveThumb
 import ktak.compose.slider.TakSliderTextPosition.BelowThumb
@@ -24,10 +24,10 @@ import ktak.compose.slider.TakSliderTextPosition.None
 
 @Composable
 internal fun LinearTrack(
-  modifier: Modifier,
   positionFraction: Float,
   enabled: Boolean,
   textPosition: TakSliderTextPosition,
+  modifier: Modifier = Modifier,
   stepFractions: ImmutableList<Float> = persistentListOf(),
   dimensions: TakSliderDimensions = DefaultTakSliderDimensions(),
   colors: TakSliderColors = DefaultTakSliderColors(),
@@ -55,11 +55,11 @@ internal fun LinearTrack(
 
 @Composable
 internal fun RangeTrack(
-  modifier: Modifier,
   fractionStart: Float,
   fractionEnd: Float,
   enabled: Boolean,
   tickFractions: ImmutableList<Float>,
+  modifier: Modifier = Modifier,
   topPadding: Dp = 0.dp,
   bottomPadding: Dp = 0.dp,
   dimensions: TakSliderDimensions = DefaultTakSliderDimensions(),
@@ -132,7 +132,7 @@ private val DefaultPreviewModifier = Modifier
   .wrapContentHeight()
   .padding(10.dp)
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun LinearTrackFull() = TakPreview {
   LinearTrack(
@@ -143,7 +143,7 @@ private fun LinearTrackFull() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun LinearTrackDisabled() = TakPreview {
   LinearTrack(
@@ -154,7 +154,7 @@ private fun LinearTrackDisabled() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun TrackEmpty() = TakPreview {
   RangeTrack(
@@ -166,7 +166,7 @@ private fun TrackEmpty() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun TrackHalfway() = TakPreview {
   RangeTrack(
@@ -178,7 +178,7 @@ private fun TrackHalfway() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun TrackHalfwayDisabled() = TakPreview {
   RangeTrack(
@@ -190,7 +190,7 @@ private fun TrackHalfwayDisabled() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun TrackFull() = TakPreview {
   RangeTrack(
@@ -202,7 +202,7 @@ private fun TrackFull() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun RangePartial() = TakPreview {
   RangeTrack(
@@ -214,7 +214,7 @@ private fun RangePartial() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun RangeStepped() = TakPreview {
   RangeTrack(

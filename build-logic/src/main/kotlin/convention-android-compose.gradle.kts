@@ -38,8 +38,10 @@ tasks.withType(KotlinCompile::class.java) {
 
 val compileOnly by configurations
 val implementation by configurations
+val lintChecks by configurations
 
 dependencies {
   implementation(platform(libs.androidx.compose.bom))
   compileOnly(libs.androidx.compose.ui.preview)
+  lintChecks(libs.androidx.compose.lint)
 }

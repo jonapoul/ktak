@@ -29,17 +29,17 @@ import androidx.compose.ui.unit.dp
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import ktak.compose.core.TakTextStyles
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 import ktak.compose.preview.TakPreview
 
 @Composable
 public fun TakSegmentedControl(
+  activeButtonId: TakSegmentedControlButtonId,
+  buttons: ImmutableList<TakSegmentedControlButton>,
   modifier: Modifier = Modifier,
   isDisabled: Boolean = false,
   colors: TakSegmentedControlColors = DefaultTakSegmentedControlColors(),
   textStyle: TextStyle = TakTextStyles.H4,
-  activeButtonId: TakSegmentedControlButtonId,
-  buttons: ImmutableList<TakSegmentedControlButton>,
 ) {
   Row(
     modifier = Modifier.wrapContentHeight(),
@@ -82,9 +82,9 @@ public class TakSegmentedControlButton(
 @Stable
 @Composable
 private fun RowScope.TakSegmentedControlButton(
-  modifier: Modifier = Modifier,
   text: String,
   shape: Shape,
+  modifier: Modifier = Modifier,
   isActive: Boolean = false,
   isDisabled: Boolean = false,
   colors: TakSegmentedControlColors = DefaultTakSegmentedControlColors(),
@@ -119,7 +119,7 @@ private fun RowScope.TakSegmentedControlButton(
   }
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun Regular() = TakPreview {
   var activeId by remember { mutableStateOf(1L) }

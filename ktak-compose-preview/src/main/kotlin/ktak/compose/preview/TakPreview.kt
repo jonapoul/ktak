@@ -30,10 +30,10 @@ public fun TakPreview(modifier: Modifier = Modifier, content: @Composable () -> 
 
 @Composable
 @Suppress("MagicNumber")
-public fun TakHalfPreview(content: @Composable () -> Unit): Unit = TakTheme {
+public fun TakHalfPreview(modifier: Modifier = Modifier, content: @Composable () -> Unit): Unit = TakTheme {
   CompositionLocalProvider(LocalTakComposeContext provides previewComposeContext()) {
     Box(
-      modifier = Modifier.fillMaxSize(),
+      modifier = modifier.fillMaxSize(),
       contentAlignment = Alignment.BottomEnd,
     ) {
       Image(

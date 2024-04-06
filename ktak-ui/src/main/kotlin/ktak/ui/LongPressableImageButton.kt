@@ -9,8 +9,8 @@ import ktak.core.toast
 
 @SuppressLint("AppCompatCustomView")
 public class LongPressableImageButton @JvmOverloads constructor(
-    context: Context,
-    attrs: AttributeSet? = null,
+  context: Context,
+  attrs: AttributeSet? = null,
 ) : ImageButton(context, attrs) {
   init {
     setOnLongClickListener {

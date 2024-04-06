@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import ktak.compose.core.TakColors
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 import ktak.compose.preview.TakPreview
 
 @Composable
@@ -25,7 +25,7 @@ public fun TakDialogButtons(
   Row(
     modifier = modifier
       .fillMaxWidth()
-      .height(48.dp)
+      .height(48.dp),
   ) {
     if (negative != null) TakDialogButton(negative, dismissDialog = dismissDialog)
 
@@ -52,7 +52,7 @@ private fun VerticalDivider() {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun PreviewThree() = TakPreview {
   PreviewSandyBox {
@@ -64,7 +64,7 @@ private fun PreviewThree() = TakPreview {
   }
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun PreviewTwo() = TakPreview {
   PreviewSandyBox {
@@ -75,7 +75,7 @@ private fun PreviewTwo() = TakPreview {
   }
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun PreviewOne() = TakPreview {
   PreviewSandyBox {
@@ -85,7 +85,7 @@ private fun PreviewOne() = TakPreview {
   }
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun PreviewNegative() = TakPreview {
   PreviewSandyBox {

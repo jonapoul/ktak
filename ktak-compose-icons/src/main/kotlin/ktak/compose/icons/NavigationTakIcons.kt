@@ -5,6 +5,7 @@ package ktak.compose.icons
 import android.content.res.Configuration
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import kotlinx.collections.immutable.persistentListOf
 import ktak.compose.icons.navigation.BloodhoundNavLit
 import ktak.compose.icons.navigation.BloodhoundNavUnlit
 import ktak.compose.icons.navigation.BloodhoundRoute
@@ -35,7 +36,7 @@ import ktak.compose.icons.navigation.RoverReceptionOff
  */
 public object NavigationTakIcons
 
-private val allIcons = listOf(
+private val allIcons = persistentListOf(
   TakIcons.Navigation.BloodhoundNavLit,
   TakIcons.Navigation.BloodhoundNavUnlit,
   TakIcons.Navigation.BloodhoundRoute,

@@ -6,13 +6,13 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 import ktak.compose.preview.TakPreview
 
 @Composable
 public fun TakToggleSmall(
+  isChecked: Boolean,
   modifier: Modifier = Modifier,
-  isChecked: Boolean = false,
   isEnabled: Boolean = true,
   onCheckedChanged: ((Boolean) -> Unit)? = null,
   colors: TakToggleSmallColors = DefaultTakToggleSmallColors(),
@@ -30,28 +30,28 @@ public fun TakToggleSmall(
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun SmallEnabledUnchecked() = TakPreview {
   var isChecked by remember { mutableStateOf(false) }
   TakToggleSmall(isChecked = isChecked, isEnabled = true, onCheckedChanged = { isChecked = !isChecked })
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun SmallEnabledChecked() = TakPreview {
   var isChecked by remember { mutableStateOf(true) }
   TakToggleSmall(isChecked = isChecked, isEnabled = true, onCheckedChanged = { isChecked = !isChecked })
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun SmallDisabledUnchecked() = TakPreview {
   var isChecked by remember { mutableStateOf(false) }
   TakToggleSmall(isChecked = isChecked, isEnabled = false, onCheckedChanged = { isChecked = !isChecked })
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun SmallDisabledChecked() = TakPreview {
   var isChecked by remember { mutableStateOf(true) }

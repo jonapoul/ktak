@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import ktak.compose.core.TakColors
 import ktak.compose.icons.MarkersTakIcons
 import ktak.compose.icons.PreviewIcon
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 
 public val MarkersTakIcons.PresenceDead: ImageVector
   get() {
@@ -48,5 +48,5 @@ public val MarkersTakIcons.PresenceDead: ImageVector
 private var nullableIcon: ImageVector? = null
 
 @Composable
-@PreviewDark
+@DarkPreview
 private fun Preview() = PreviewIcon(icon = MarkersTakIcons.PresenceDead)

@@ -5,6 +5,7 @@ package ktak.compose.icons
 import android.content.res.Configuration
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import kotlinx.collections.immutable.persistentListOf
 import ktak.compose.icons.markers.AlarmGamma
 import ktak.compose.icons.markers.AlarmNeutron
 import ktak.compose.icons.markers.AltDipGray
@@ -79,7 +80,7 @@ import ktak.compose.icons.markers.Yellow
  */
 public object MarkersTakIcons
 
-private val allIcons = listOf(
+private val allIcons = persistentListOf(
   TakIcons.Markers.AlarmGamma,
   TakIcons.Markers.AlarmNeutron,
   TakIcons.Markers.AltDipGray,

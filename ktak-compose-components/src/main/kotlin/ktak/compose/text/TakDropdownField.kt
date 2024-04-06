@@ -13,7 +13,6 @@ import androidx.compose.material.DropdownMenu
 import androidx.compose.material.DropdownMenuItem
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -37,12 +36,13 @@ import ktak.compose.icons.utility.CheckSelected
 import ktak.compose.icons.utility.Collapse
 import ktak.compose.icons.utility.Expand
 import ktak.compose.icons.utility.Walking
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 import ktak.compose.preview.TakPreview
 
 @Composable
 public fun TakDropdownField(
-  state: MutableState<String?>,
+  value: String?,
+  onValueChanged: (String) -> Unit,
   options: ImmutableList<String>,
   hint: String,
   modifier: Modifier = Modifier,
@@ -54,7 +54,6 @@ public fun TakDropdownField(
   dimensions: TakTextInputDimensions = DefaultTakTextInputDimensions(),
   interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
 ) {
-  val value by state
   require(options.isNotEmpty()) { "Cannot use an empty list for the `options` parameter" }
   require(value == null || value in options) { "The current value $value is not in $options" }
 
@@ -98,7 +97,7 @@ public fun TakDropdownField(
         val padding = calculateTextPadding(dimensions.textPadding, startIcon, endIcon)
         val textColor by colors.textColor(enabled, pressed, error)
         Text(
-          modifier = modifier.padding(padding),
+          modifier = Modifier.padding(padding),
           text = stringValue,
           style = textStyle.copy(color = textColor),
           color = textColor,
@@ -107,7 +106,7 @@ public fun TakDropdownField(
         if (!entered) {
           val hintColor by colors.hintColor(enabled, pressed, error)
           Text(
-            modifier = modifier.padding(padding),
+            modifier = Modifier.padding(padding),
             text = hint,
             style = TakTextStyles.H3,
             color = hintColor,
@@ -130,7 +129,7 @@ public fun TakDropdownField(
           colors = colors,
           textStyle = textStyle,
           onSelected = {
-            state.value = it // set the value
+            onValueChanged(it) // set the value
             expanded = false // also close the dropdown menu
           },
         )
@@ -170,62 +169,66 @@ private fun TakDropdownFieldItem(
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun Empty() = TakPreview {
   val options = persistentListOf("a", "b", "c", "d")
-  val state = remember { mutableStateOf<String?>(null) }
+  var state by remember { mutableStateOf<String?>(null) }
   TakDropdownField(
     modifier = Modifier.width(200.dp),
-    state = state,
+    value = state,
+    onValueChanged = { state = it },
     options = options,
     hint = "Hello world",
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun Disabled() = TakPreview {
   val options = persistentListOf("Alpha", "Bravo", "Charlie", "Delta")
-  val state = remember { mutableStateOf<String?>("Bravo") }
+  var state by remember { mutableStateOf<String?>("Bravo") }
   TakDropdownField(
     modifier = Modifier.width(200.dp),
-    state = state,
+    value = state,
+    onValueChanged = { state = it },
     options = options,
     enabled = false,
     hint = "Hello world",
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun Error() = TakPreview {
   val options = persistentListOf("Alpha", "Bravo", "Charlie", "Delta")
-  val state = remember { mutableStateOf<String?>("Bravo") }
+  var state by remember { mutableStateOf<String?>("Bravo") }
   TakDropdownField(
     modifier = Modifier.width(200.dp),
-    state = state,
+    value = state,
+    onValueChanged = { state = it },
     options = options,
     error = true,
     hint = "Hello world",
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun WithStartIcon() = TakPreview {
   val options = persistentListOf("Alpha", "Bravo", "Charlie", "Delta")
-  val state = remember { mutableStateOf<String?>("Bravo") }
+  var state by remember { mutableStateOf<String?>("Bravo") }
   TakDropdownField(
     modifier = Modifier.width(200.dp),
-    state = state,
+    value = state,
+    onValueChanged = { state = it },
     options = options,
     startIcon = TakIcons.Utility.Walking,
     hint = "Hello world",
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun SelectedItem() = TakPreview {
   TakDropdownFieldItem(
@@ -235,7 +238,7 @@ private fun SelectedItem() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun UnselectedItem() = TakPreview {
   TakDropdownFieldItem(

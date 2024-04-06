@@ -5,6 +5,7 @@ package ktak.compose.icons
 import android.content.res.Configuration
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import kotlinx.collections.immutable.persistentListOf
 import ktak.compose.icons.dropdown.AddHostile
 import ktak.compose.icons.dropdown.Circle
 import ktak.compose.icons.dropdown.Freeform
@@ -29,7 +30,7 @@ import ktak.compose.icons.dropdown.ThreeDimensionalLockAlt
  */
 public object DropdownTakIcons
 
-private val allIcons = listOf(
+private val allIcons = persistentListOf(
   TakIcons.Dropdown.AddHostile,
   TakIcons.Dropdown.Circle,
   TakIcons.Dropdown.Freeform,

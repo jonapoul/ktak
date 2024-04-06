@@ -7,13 +7,13 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 import ktak.compose.preview.TakPreview
 
 @Composable
 public fun TakToggleLarge(
+  isChecked: Boolean,
   modifier: Modifier = Modifier,
-  isChecked: Boolean = false,
   isEnabled: Boolean = true,
   onCheckedChanged: ((Boolean) -> Unit)? = null,
   colors: TakToggleLargeColors = DefaultTakToggleLargeColors(),
@@ -37,31 +37,30 @@ public fun TakToggleLarge(
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun LargeEnabledUnchecked() = TakPreview {
   var isChecked by remember { mutableStateOf(false) }
   TakToggleLarge(isChecked = isChecked, isEnabled = true, onCheckedChanged = { isChecked = !isChecked })
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun LargeEnabledChecked() = TakPreview {
   var isChecked by remember { mutableStateOf(true) }
   TakToggleLarge(isChecked = isChecked, isEnabled = true, onCheckedChanged = { isChecked = !isChecked })
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun LargeDisabledUnchecked() = TakPreview {
   var isChecked by remember { mutableStateOf(false) }
   TakToggleLarge(isChecked = isChecked, isEnabled = false, onCheckedChanged = { isChecked = !isChecked })
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun LargeDisabledChecked() = TakPreview {
   var isChecked by remember { mutableStateOf(true) }
   TakToggleLarge(isChecked = isChecked, isEnabled = false, onCheckedChanged = { isChecked = !isChecked })
 }
-

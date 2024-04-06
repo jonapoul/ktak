@@ -87,18 +87,15 @@ internal fun ButtonWithNoMinimumWidth(
   ) {
     CompositionLocalProvider(LocalContentAlpha provides contentColor.alpha) {
       ProvideTextStyle(
-        value = MaterialTheme.typography.button
+        value = MaterialTheme.typography.button,
       ) {
         Row(
-          Modifier
-            .defaultMinSize(
-              minWidth = minWidth,
-              minHeight = ButtonDefaults.MinHeight
-            )
+          modifier = Modifier
+            .defaultMinSize(minWidth = minWidth, minHeight = ButtonDefaults.MinHeight)
             .padding(contentPadding),
           horizontalArrangement = Arrangement.Center,
           verticalAlignment = Alignment.CenterVertically,
-          content = content
+          content = content,
         )
       }
     }

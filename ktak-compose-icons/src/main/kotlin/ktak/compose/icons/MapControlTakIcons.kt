@@ -5,6 +5,7 @@ package ktak.compose.icons
 import android.content.res.Configuration
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import kotlinx.collections.immutable.persistentListOf
 import ktak.compose.icons.mapcontrol.Compass
 import ktak.compose.icons.mapcontrol.LockOnSelf
 import ktak.compose.icons.mapcontrol.LockOnSelfActive
@@ -19,7 +20,7 @@ import ktak.compose.icons.mapcontrol.ZoomControl
  */
 public object MapControlTakIcons
 
-private val allIcons = listOf(
+private val allIcons = persistentListOf(
   TakIcons.MapControl.ThreeDimensionalCompassDirection,
   TakIcons.MapControl.ZoomControl,
   TakIcons.MapControl.LockOnSelfActiveAlt,

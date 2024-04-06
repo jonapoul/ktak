@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import ktak.compose.icons.PreviewIcon
 import ktak.compose.icons.RaptorXSidebarTakIcons
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 
 public val RaptorXSidebarTakIcons.Explorer: ImageVector
   get() {
@@ -223,7 +223,8 @@ public val RaptorXSidebarTakIcons.Explorer: ImageVector
           strokeLineWidth = 1.0f,
           strokeLineCap = Butt,
           strokeLineJoin = Miter,
-          strokeLineMiter = 4.0f, pathFillType = NonZero,
+          strokeLineMiter = 4.0f,
+          pathFillType = NonZero,
         ) {
           moveTo(28.6735f, 15.1387f)
           horizontalLineTo(9.6635f)
@@ -245,5 +246,5 @@ public val RaptorXSidebarTakIcons.Explorer: ImageVector
 private var nullableIcon: ImageVector? = null
 
 @Composable
-@PreviewDark
+@DarkPreview
 private fun Preview() = PreviewIcon(icon = RaptorXSidebarTakIcons.Explorer)

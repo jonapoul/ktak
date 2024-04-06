@@ -6,7 +6,7 @@ import ktak.compose.core.takVectorResource
 import ktak.compose.icons.PreviewIcon
 import ktak.compose.icons.R
 import ktak.compose.icons.UtilityTakIcons
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 
 public val UtilityTakIcons.Settings: ImageVector
   @Composable
@@ -21,5 +21,5 @@ public val UtilityTakIcons.Settings: ImageVector
 private var nullableIcon: ImageVector? = null
 
 @Composable
-@PreviewDark
+@DarkPreview
 private fun Preview() = PreviewIcon(icon = UtilityTakIcons.Settings)

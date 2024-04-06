@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import ktak.compose.icons.NavigationTakIcons
 import ktak.compose.icons.PreviewIcon
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 
 public val NavigationTakIcons.RouteNavigationHardRight: ImageVector
   get() {
@@ -69,5 +69,5 @@ public val NavigationTakIcons.RouteNavigationHardRight: ImageVector
 private var nullableIcon: ImageVector? = null
 
 @Composable
-@PreviewDark
+@DarkPreview
 private fun Preview() = PreviewIcon(icon = NavigationTakIcons.RouteNavigationHardRight)

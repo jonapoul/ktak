@@ -15,7 +15,7 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import ktak.compose.core.TakColors
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 import ktak.compose.preview.TakPreview
 
 @Composable
@@ -75,7 +75,7 @@ public fun TakDialogLoadingCard(
   }
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun PreviewLoadingCardWithCancelButton() = TakPreview {
   TakDialogLoadingCard(
@@ -85,7 +85,7 @@ private fun PreviewLoadingCardWithCancelButton() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun PreviewNoButtons() = TakPreview {
   TakDialogLoadingCard(

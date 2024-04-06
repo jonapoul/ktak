@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import ktak.compose.core.TakColors
 import ktak.compose.icons.PreviewIcon
 import ktak.compose.icons.SideMenuTakIcons
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 
 public val SideMenuTakIcons.MaxBrightness: ImageVector
   get() {
@@ -236,5 +236,5 @@ public val SideMenuTakIcons.MaxBrightness: ImageVector
 private var nullableIcon: ImageVector? = null
 
 @Composable
-@PreviewDark
+@DarkPreview
 private fun Preview() = PreviewIcon(icon = SideMenuTakIcons.MaxBrightness)

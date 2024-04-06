@@ -14,7 +14,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import ktak.compose.icons.PreviewIcon
 import ktak.compose.icons.RadialTakIcons
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 
 public val RadialTakIcons.ManualPointEntry: ImageVector
   get() {
@@ -154,5 +154,5 @@ public val RadialTakIcons.ManualPointEntry: ImageVector
 private var nullableIcon: ImageVector? = null
 
 @Composable
-@PreviewDark
+@DarkPreview
 private fun Preview() = PreviewIcon(icon = RadialTakIcons.ManualPointEntry)

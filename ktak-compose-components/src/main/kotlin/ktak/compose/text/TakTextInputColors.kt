@@ -45,46 +45,42 @@ public data class DefaultTakTextInputColors(
   val disabledTextColor: Color = TakColors.Ash,
 ) : TakTextInputColors {
   @Composable
-  override fun backgroundColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color> =
-    rememberUpdatedState(
-      newValue = when {
-        !enabled -> disabledBackgroundColor
-        error -> errorBackgroundColor
-        pressed -> pressedBackgroundColor
-        else -> normalBackgroundColor
-      },
-    )
+  override fun backgroundColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color> = rememberUpdatedState(
+    newValue = when {
+      !enabled -> disabledBackgroundColor
+      error -> errorBackgroundColor
+      pressed -> pressedBackgroundColor
+      else -> normalBackgroundColor
+    },
+  )
 
   @Composable
-  override fun borderColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color> =
-    rememberUpdatedState(
-      newValue = when {
-        !enabled -> disabledBorderColor
-        error -> errorBorderColor
-        pressed -> pressedBorderColor
-        else -> normalBorderColor
-      },
-    )
+  override fun borderColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color> = rememberUpdatedState(
+    newValue = when {
+      !enabled -> disabledBorderColor
+      error -> errorBorderColor
+      pressed -> pressedBorderColor
+      else -> normalBorderColor
+    },
+  )
 
   @Composable
-  override fun hintColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color> =
-    rememberUpdatedState(
-      newValue = when {
-        !enabled -> disabledHintColor
-        error -> errorHintColor
-        pressed -> pressedHintColor
-        else -> normalHintColor
-      },
-    )
+  override fun hintColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color> = rememberUpdatedState(
+    newValue = when {
+      !enabled -> disabledHintColor
+      error -> errorHintColor
+      pressed -> pressedHintColor
+      else -> normalHintColor
+    },
+  )
 
   @Composable
-  override fun textColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color> =
-    rememberUpdatedState(
-      newValue = when {
-        !enabled -> disabledTextColor
-        error -> errorTextColor
-        pressed -> pressedTextColor
-        else -> normalTextColor
-      },
-    )
+  override fun textColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color> = rememberUpdatedState(
+    newValue = when {
+      !enabled -> disabledTextColor
+      error -> errorTextColor
+      pressed -> pressedTextColor
+      else -> normalTextColor
+    },
+  )
 }

@@ -3,8 +3,6 @@ package ktak.compose.core
 import android.content.Context
 import android.content.ContextWrapper
 import android.content.res.Resources
-import androidx.compose.runtime.ProvidableCompositionLocal
-import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.ui.text.font.createFontFamilyResolver
 import ktak.core.AppContext
 import ktak.core.PluginContext
@@ -34,8 +32,4 @@ public class TakComposeContext(public val contexts: TakContexts) : ContextWrappe
   ) : ContextWrapper(contexts.app.applicationContext) {
     override fun getResources(): Resources = contexts.plugin.resources
   }
-}
-
-public val LocalTakComposeContext: ProvidableCompositionLocal<TakComposeContext> = compositionLocalOf {
-  error("CompositionLocal TakComposeContext not present")
 }

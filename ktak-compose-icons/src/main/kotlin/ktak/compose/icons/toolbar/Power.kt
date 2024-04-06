@@ -62,4 +62,3 @@ public val ToolbarTakIcons.Power: ImageVector
   }
 
 private var nullableIcon: ImageVector? = null
-

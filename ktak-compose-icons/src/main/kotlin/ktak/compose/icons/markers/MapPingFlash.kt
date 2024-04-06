@@ -13,7 +13,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import ktak.compose.icons.MarkersTakIcons
 import ktak.compose.icons.PreviewIcon
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 
 public val MarkersTakIcons.MapPingFlash: ImageVector
   get() {
@@ -29,8 +29,10 @@ public val MarkersTakIcons.MapPingFlash: ImageVector
     ).apply {
       path(
         fill = radialGradient(
-          0.322917f to Color.Transparent, 1.0f to Color.White,
-          center = Offset(16.0f, 17.0f), radius = 12.0f,
+          0.322917f to Color.Transparent,
+          1.0f to Color.White,
+          center = Offset(16.0f, 17.0f),
+          radius = 12.0f,
         ),
         stroke =
         SolidColor(Color.Black),
@@ -59,5 +61,5 @@ public val MarkersTakIcons.MapPingFlash: ImageVector
 private var nullableIcon: ImageVector? = null
 
 @Composable
-@PreviewDark
+@DarkPreview
 private fun Preview() = PreviewIcon(icon = MarkersTakIcons.MapPingFlash)

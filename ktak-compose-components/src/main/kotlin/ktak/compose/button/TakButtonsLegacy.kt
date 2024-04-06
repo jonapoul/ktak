@@ -39,14 +39,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import ktak.compose.core.TakColors
+import ktak.compose.preview.DarkPreview
 import ktak.compose.preview.PreviewCallback
-import ktak.compose.preview.PreviewDark
 import ktak.compose.preview.TakPreview
 
 @Composable
 public fun TakTextButtonLegacy(
-  modifier: Modifier = Modifier,
   text: String,
+  modifier: Modifier = Modifier,
   icon: ImageVector? = null,
   endIcon: ImageVector? = null,
   tint: Color = Color.White,
@@ -123,9 +123,9 @@ public fun TakTextButtonLegacy(
 
 @Composable
 public fun TakIconButtonLegacy(
-  modifier: Modifier = Modifier,
   icon: ImageVector,
   contentDescription: String,
+  modifier: Modifier = Modifier,
   tint: Color = TakColors.Cloud,
   isDisabled: Boolean = false,
   isChecked: Boolean = false,
@@ -183,23 +183,20 @@ private val CheckedGradient = Brush.verticalGradient(colors = listOf(Color(0xFF7
 private val RoundedEdges = RoundedCornerShape(size = 3.dp)
 private val IconSize = 24.dp
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun RegularIconPreview() = PreviewTakIconButton()
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun CheckedIconPreview() = PreviewTakIconButton(isChecked = true)
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun DisabledIconPreview() = PreviewTakIconButton(isDisabled = true)
 
 @Composable
-private fun PreviewTakIconButton(
-  isChecked: Boolean = false,
-  isDisabled: Boolean = false,
-) = TakPreview {
+private fun PreviewTakIconButton(isChecked: Boolean = false, isDisabled: Boolean = false) = TakPreview {
   TakIconButtonLegacy(
     icon = Icons.Filled.SwapHoriz,
     contentDescription = "Swap",
@@ -209,11 +206,11 @@ private fun PreviewTakIconButton(
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun RegularTextPreview() = PreviewTakTextButton()
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun RegularTextEndIconPreview() = TakPreview {
   TakTextButtonLegacy(
@@ -224,7 +221,7 @@ private fun RegularTextEndIconPreview() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun TinyTextButton() = TakPreview {
   TakTextButtonLegacy(
@@ -234,7 +231,7 @@ private fun TinyTextButton() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun RegularTextButton() = TakPreview {
   TakTextButtonLegacy(
@@ -244,7 +241,7 @@ private fun RegularTextButton() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun RegularTextPreviewFullWidth() = TakPreview {
   TakTextButtonLegacy(
@@ -256,7 +253,7 @@ private fun RegularTextPreviewFullWidth() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun RegularTextPreviewWithMargin() = TakPreview {
   TakTextButtonLegacy(
@@ -268,19 +265,16 @@ private fun RegularTextPreviewWithMargin() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun CheckedTextPreview() = PreviewTakTextButton(isChecked = true)
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun DisabledTextPreview() = PreviewTakTextButton(isDisabled = true)
 
 @Composable
-private fun PreviewTakTextButton(
-  isChecked: Boolean = false,
-  isDisabled: Boolean = false,
-) = TakPreview {
+private fun PreviewTakTextButton(isChecked: Boolean = false, isDisabled: Boolean = false) = TakPreview {
   TakTextButtonLegacy(
     modifier = Modifier,
     text = "Click me",

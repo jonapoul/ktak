@@ -8,6 +8,7 @@ import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.graphics.Color
 import ktak.compose.core.TakColors
 
+@Stable
 public interface TakButtonColors {
   @Stable
   @Composable
@@ -18,7 +19,6 @@ public interface TakButtonColors {
   public fun foregroundColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color>
 }
 
-@Stable
 @Immutable
 public data class DefaultTakButtonColors(
   val normalBackgroundColor: Color = TakColors.Sand,
@@ -32,25 +32,23 @@ public data class DefaultTakButtonColors(
 ) : TakButtonColors {
   @Stable
   @Composable
-  override fun backgroundColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color> =
-    rememberUpdatedState(
-      newValue = when {
-        !enabled -> disabledBackgroundColor
-        pressed -> pressedBackgroundColor
-        error -> errorBackgroundColor
-        else -> normalBackgroundColor
-      },
-    )
+  override fun backgroundColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color> = rememberUpdatedState(
+    newValue = when {
+      !enabled -> disabledBackgroundColor
+      pressed -> pressedBackgroundColor
+      error -> errorBackgroundColor
+      else -> normalBackgroundColor
+    },
+  )
 
   @Stable
   @Composable
-  override fun foregroundColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color> =
-    rememberUpdatedState(
-      newValue = when {
-        !enabled -> disabledForegroundColor
-        pressed -> pressedForegroundColor
-        error -> errorForegroundColor
-        else -> normalForegroundColor
-      },
-    )
+  override fun foregroundColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color> = rememberUpdatedState(
+    newValue = when {
+      !enabled -> disabledForegroundColor
+      pressed -> pressedForegroundColor
+      error -> errorForegroundColor
+      else -> normalForegroundColor
+    },
+  )
 }

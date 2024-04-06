@@ -36,7 +36,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 import ktak.compose.preview.TakPreview
 import kotlin.math.roundToInt
 
@@ -49,11 +49,12 @@ internal fun LinearThumb(
   valueRange: ClosedFloatingPointRange<Float>,
   pixelRange: ClosedFloatingPointRange<Float>,
   textPosition: TakSliderTextPosition,
+  modifier: Modifier = Modifier,
   dimensions: TakSliderDimensions = DefaultTakSliderDimensions(),
   colors: TakSliderColors = DefaultTakSliderColors(),
 ) {
   val thumbRadiusPx = with(LocalDensity.current) { dimensions.thumbRadius.toPx() }
-  Box(Modifier.offset { IntOffset(x = (rawOffset.value - thumbRadiusPx).roundToInt(), y = 0) }) {
+  Box(modifier.offset { IntOffset(x = (rawOffset.value - thumbRadiusPx).roundToInt(), y = 0) }) {
     val thumbIsDragged by interactionSource.collectIsDraggedAsState()
     val thumbIsPressed by interactionSource.collectIsPressedAsState()
     val mappedValue = rawOffset.value.mapToNewRange(inRange = pixelRange, outRange = valueRange)
@@ -130,12 +131,12 @@ internal fun InactiveLinearThumb(
 
 @Composable
 internal fun BoxScope.RangeThumb(
-  modifier: Modifier,
   offset: Dp,
   interactionSource: MutableInteractionSource,
   colors: SliderColors,
   enabled: Boolean,
   thumbSize: Dp,
+  modifier: Modifier = Modifier,
 ) {
   Box(
     Modifier
@@ -175,37 +176,37 @@ internal fun BoxScope.RangeThumb(
   }
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun ThumbInactive() = TakPreview {
   InactiveLinearThumb(value = "123", enabled = true)
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun ThumbInactiveDisabled() = TakPreview {
   InactiveLinearThumb(value = "123", enabled = false)
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun ThumbActiveDisabled() = TakPreview {
   ActiveLinearThumb(value = "123")
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun ThumbActiveAbove() = TakPreview {
   ActiveLinearThumb(value = "123", textPosition = TakSliderTextPosition.AboveThumb)
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun ThumbActiveBelow() = TakPreview {
   ActiveLinearThumb(value = "123", textPosition = TakSliderTextPosition.BelowThumb)
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun ThumbActiveNoText() = TakPreview {
   ActiveLinearThumb(value = "123", textPosition = TakSliderTextPosition.None)

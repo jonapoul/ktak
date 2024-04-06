@@ -36,8 +36,8 @@ import ktak.compose.core.TakColors
 import ktak.compose.core.TakLegacyColors
 import ktak.compose.core.TakTypography
 import ktak.compose.menu.TakDropdownMenuItem
+import ktak.compose.preview.DarkPreview
 import ktak.compose.preview.PreviewCallback
-import ktak.compose.preview.PreviewDark
 import ktak.compose.preview.TakPreview
 
 @Composable
@@ -59,13 +59,14 @@ public fun TakToolbar(
 @Composable
 public fun TakToolbar(
   title: String,
+  modifier: Modifier = Modifier,
   style: TextStyle = TakTypography.h1,
   navigationButton: (@Composable () -> Unit)? = null,
   otherButtons: (@Composable RowScope.() -> Unit)? = null,
   menuOptions: (@Composable ColumnScope.() -> Unit)? = null,
 ) {
   Row(
-    modifier = Modifier
+    modifier = modifier
       .fillMaxWidth()
       .background(Color.Black)
       .padding(2.dp),
@@ -128,10 +129,10 @@ public enum class TakToolbarNavigationButton(
         onClick = { onClick() },
       )
     },
-  )
+  ),
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun PreviewFullWithClose() = TakPreview {
   TakToolbar(
@@ -150,7 +151,7 @@ private fun PreviewFullWithClose() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun PreviewMinimal() = TakPreview {
   TakToolbar(
@@ -162,7 +163,7 @@ private fun PreviewMinimal() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun PreviewWithNoNavButton() = TakPreview {
   TakToolbar(
@@ -175,7 +176,7 @@ private fun PreviewWithNoNavButton() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun PreviewCustomNavButton() = TakPreview {
   TakToolbar(
@@ -190,15 +191,5 @@ private fun PreviewCustomNavButton() = TakPreview {
     title = "Toolbar With Funky Back Button",
     otherButtons = null,
     menuOptions = null,
-  )
-}
-
-@PreviewDark
-@Composable
-private fun PreviewMenuItem() = TakPreview {
-  TakDropdownMenuItem(
-    icon = Icons.Filled.Edit,
-    text = "Some Text",
-    onClick = PreviewCallback,
   )
 }

@@ -118,31 +118,31 @@ public object TakTextStyles {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun PreviewH1() = PreviewTypography(TakTypography.h1)
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun PreviewH2() = PreviewTypography(TakTypography.h2)
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun PreviewH3() = PreviewTypography(TakTypography.h3)
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun PreviewH4() = PreviewTypography(TakTypography.h4)
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun PreviewBody1() = PreviewTypography(TakTypography.body1)
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun PreviewBody2() = PreviewTypography(TakTypography.body2)
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun PreviewSubtitle1() = PreviewTypography(TakTypography.subtitle1)
 
@@ -153,5 +153,9 @@ private fun PreviewTypography(style: TextStyle) = TakTheme {
   }
 }
 
-@Preview(name = "Dark", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
-private annotation class PreviewDark
+@Preview(
+  name = "Dark",
+  showBackground = true,
+  uiMode = Configuration.UI_MODE_NIGHT_YES,
+)
+private annotation class DarkPreview

@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 import ktak.compose.core.TakColors
 import ktak.compose.icons.PreviewIcon
 import ktak.compose.icons.SideMenuTakIcons
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 
 public fun SideMenuTakIcons.Confirm(strokeWidth: Float): ImageVector {
   return ImageVector.Builder(
@@ -53,9 +53,9 @@ public val SideMenuTakIcons.Confirm: ImageVector
 private var nullableIcon: ImageVector? = null
 
 @Composable
-@PreviewDark
+@DarkPreview
 private fun Preview() = PreviewIcon(icon = SideMenuTakIcons.Confirm)
 
 @Composable
-@PreviewDark
+@DarkPreview
 private fun PreviewThicker() = PreviewIcon(icon = SideMenuTakIcons.Confirm(strokeWidth = 4f))

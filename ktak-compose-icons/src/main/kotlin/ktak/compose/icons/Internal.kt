@@ -14,10 +14,11 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kotlinx.collections.immutable.ImmutableList
 import ktak.compose.preview.TakPreview
 
 @Composable
-internal fun PreviewIconGrid(icons: List<ImageVector>) = TakPreview {
+internal fun PreviewIconGrid(icons: ImmutableList<ImageVector>) = TakPreview {
   LazyVerticalGrid(
     columns = GridCells.Adaptive(minSize = 40.dp),
   ) {
@@ -34,7 +35,7 @@ internal fun PreviewIconGrid(icons: List<ImageVector>) = TakPreview {
 }
 
 @Composable
-internal fun PreviewIconGrid(icons: @Composable () -> List<ImageVector>) {
+internal fun PreviewIconGrid(icons: @Composable () -> ImmutableList<ImageVector>) {
   PreviewIconGrid(icons = icons())
 }
 

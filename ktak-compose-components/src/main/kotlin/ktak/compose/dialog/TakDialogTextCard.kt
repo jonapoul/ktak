@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 import ktak.compose.preview.TakPreview
 
 @Composable
@@ -44,7 +44,7 @@ public fun TakDialogTextCard(
   }
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun PreviewTextDialogCard() = TakPreview {
   TakDialogTextCard(
@@ -56,7 +56,7 @@ private fun PreviewTextDialogCard() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun PreviewNoButtons() = TakPreview {
   TakDialogTextCard(

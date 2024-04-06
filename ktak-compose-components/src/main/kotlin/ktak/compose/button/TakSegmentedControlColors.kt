@@ -9,6 +9,7 @@ import androidx.compose.ui.graphics.Color
 import ktak.compose.core.TakColors
 import ktak.compose.core.TakLegacyColors
 
+@Stable
 public interface TakSegmentedControlColors {
   @Stable
   @Composable
@@ -23,7 +24,6 @@ public interface TakSegmentedControlColors {
   public fun borderColor(enabled: Boolean, active: Boolean): State<Color>
 }
 
-@Stable
 @Immutable
 public data class DefaultTakSegmentedControlColors(
   val activeBackgroundColor: Color = TakColors.Sand,

@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import ktak.compose.icons.PreviewIcon
 import ktak.compose.icons.ToolbarTakIcons
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 
 public val ToolbarTakIcons.Export: ImageVector
   get() {
@@ -95,5 +95,5 @@ public val ToolbarTakIcons.Export: ImageVector
 private var nullableIcon: ImageVector? = null
 
 @Composable
-@PreviewDark
+@DarkPreview
 private fun Preview() = PreviewIcon(icon = ToolbarTakIcons.Export)

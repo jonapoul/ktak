@@ -32,8 +32,8 @@ import ktak.compose.icons.TakIcons
 import ktak.compose.icons.sidemenu.Add
 import ktak.compose.icons.sidemenu.Alpha
 import ktak.compose.icons.sidemenu.Settings
+import ktak.compose.preview.DarkPreview
 import ktak.compose.preview.PreviewCallback
-import ktak.compose.preview.PreviewDark
 import ktak.compose.preview.TakPreview
 
 @Composable
@@ -99,30 +99,28 @@ public data class DefaultTakIconButtonColors(
 ) : TakButtonColors {
   @Stable
   @Composable
-  override fun backgroundColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color> =
-    rememberUpdatedState(
-      newValue = when {
-        !enabled -> disabledBackgroundColor
-        pressed -> pressedBackgroundColor
-        error -> errorBackgroundColor
-        else -> normalBackgroundColor
-      },
-    )
+  override fun backgroundColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color> = rememberUpdatedState(
+    newValue = when {
+      !enabled -> disabledBackgroundColor
+      pressed -> pressedBackgroundColor
+      error -> errorBackgroundColor
+      else -> normalBackgroundColor
+    },
+  )
 
   @Stable
   @Composable
-  override fun foregroundColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color> =
-    rememberUpdatedState(
-      newValue = when {
-        !enabled -> disabledForegroundColor
-        pressed -> pressedForegroundColor
-        error -> errorForegroundColor
-        else -> normalForegroundColor
-      },
-    )
+  override fun foregroundColor(enabled: Boolean, pressed: Boolean, error: Boolean): State<Color> = rememberUpdatedState(
+    newValue = when {
+      !enabled -> disabledForegroundColor
+      pressed -> pressedForegroundColor
+      error -> errorForegroundColor
+      else -> normalForegroundColor
+    },
+  )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun Add() = TakPreview {
   TakIconButton(
@@ -132,7 +130,7 @@ private fun Add() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun Alpha() = TakPreview {
   TakIconButton(
@@ -142,7 +140,7 @@ private fun Alpha() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun Settings() = TakPreview {
   TakIconButton(
@@ -152,7 +150,7 @@ private fun Settings() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun SettingsError() = TakPreview {
   TakIconButton(
@@ -163,7 +161,7 @@ private fun SettingsError() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun SettingsDisabled() = TakPreview {
   TakIconButton(

@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.dp
 import ktak.compose.core.TakColors
 import ktak.compose.icons.PreviewIcon
 import ktak.compose.icons.UtilityTakIcons
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 
 public val UtilityTakIcons.User: ImageVector
   get() {
@@ -78,5 +78,5 @@ public val UtilityTakIcons.User: ImageVector
 private var nullableIcon: ImageVector? = null
 
 @Composable
-@PreviewDark
+@DarkPreview
 private fun Preview() = PreviewIcon(icon = UtilityTakIcons.User)

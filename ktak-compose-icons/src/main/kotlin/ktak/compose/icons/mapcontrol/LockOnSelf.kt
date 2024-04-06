@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import ktak.compose.icons.MapControlTakIcons
 import ktak.compose.icons.PreviewIcon
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 
 public val MapControlTakIcons.LockOnSelf: ImageVector
   get() {
@@ -147,5 +147,5 @@ public val MapControlTakIcons.LockOnSelf: ImageVector
 private var nullableIcon: ImageVector? = null
 
 @Composable
-@PreviewDark
+@DarkPreview
 private fun Preview() = PreviewIcon(icon = MapControlTakIcons.LockOnSelf)

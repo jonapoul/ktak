@@ -1,3 +1,5 @@
+import org.gradle.accessors.dm.LibrariesForLibs
+
 plugins {
   id("io.gitlab.arturbosch.detekt")
 }
@@ -12,4 +14,11 @@ tasks.detekt {
   reports {
     html.required.set(true)
   }
+}
+
+val libs = the<LibrariesForLibs>()
+val detektPlugins by configurations
+
+dependencies {
+  detektPlugins(libs.androidx.compose.twitter.detekt)
 }

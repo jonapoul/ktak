@@ -7,6 +7,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
 import timber.log.Timber
 
+@Suppress("UnnecessaryAbstractClass")
 public abstract class TakViewModel : ViewModel() {
   protected val viewModelScope: CoroutineScope = CoroutineScope(context = Dispatchers.Main.immediate)
 

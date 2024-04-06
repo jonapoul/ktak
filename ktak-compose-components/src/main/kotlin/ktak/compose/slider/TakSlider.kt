@@ -18,11 +18,12 @@ import androidx.compose.foundation.layout.requiredSizeIn
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalDensity
@@ -30,45 +31,15 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.launch
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 import ktak.compose.preview.TakPreview
 import kotlin.math.max
 import kotlin.math.min
 
 @Composable
 public fun TakSlider(
-  state: MutableState<Float>,
-  modifier: Modifier = Modifier,
-  enabled: Boolean = true,
-  valueRange: ClosedFloatingPointRange<Float> = DefaultTrackRange,
-  steps: Int = 0,
-  decimalPoints: Int = 1,
-  colors: TakSliderColors = DefaultTakSliderColors(),
-  dimensions: TakSliderDimensions = DefaultTakSliderDimensions(),
-  textPosition: TakSliderTextPosition = TakSliderTextPosition.AboveThumb,
-  interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
-  onValueChangeFinished: (() -> Unit)? = null,
-) {
-  TakSlider(
-    value = state.value,
-    onValueChange = { state.value = it },
-    modifier,
-    enabled,
-    valueRange,
-    steps,
-    decimalPoints,
-    colors,
-    dimensions,
-    textPosition,
-    interactionSource,
-    onValueChangeFinished,
-  )
-}
-
-@Composable
-public fun TakSlider(
   value: Float,
-  onValueChange: (Float) -> Unit,
+  onValueChanged: (Float) -> Unit,
   modifier: Modifier = Modifier,
   enabled: Boolean = true,
   valueRange: ClosedFloatingPointRange<Float> = DefaultTrackRange,
@@ -82,14 +53,14 @@ public fun TakSlider(
 ) {
   require(value in valueRange) { "$value is not in the given range $valueRange" }
   require(decimalPoints >= 0) { "Must have at least 0 decimal places, not $decimalPoints" }
-  val onValueChangeState = rememberUpdatedState(onValueChange)
+  val onValueChangeState = rememberUpdatedState(onValueChanged)
   val tickFractions = remember(steps) { stepsToTickFractions(steps) }
 
   BoxWithConstraints(
     modifier = modifier
-      .minimumTouchTargetSize()
+      .minimumInteractiveComponentSize()
       .requiredSizeIn(minWidth = dimensions.thumbRadius * 2, minHeight = dimensions.thumbRadius * 2)
-      .sliderSemantics(value, enabled, onValueChange, onValueChangeFinished, valueRange, steps)
+      .sliderSemantics(value, enabled, onValueChanged, onValueChangeFinished, valueRange, steps)
       .focusable(enabled, interactionSource),
   ) {
     val isRtl = LocalLayoutDirection.current == LayoutDirection.Rtl
@@ -196,49 +167,53 @@ private val PreviewModifier = Modifier
   .width(500.dp)
   .wrapContentHeight()
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun SliderWithTextAbove() = TakPreview {
-  val state = remember { mutableStateOf(0f) }
+  var state by remember { mutableStateOf(0f) }
   Box(modifier = PreviewModifier) {
     TakSlider(
-      state = state,
+      value = state,
+      onValueChanged = { state = it },
       textPosition = TakSliderTextPosition.AboveThumb,
     )
   }
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun SliderWithTextBelow() = TakPreview {
-  val state = remember { mutableStateOf(1f) }
+  var state by remember { mutableStateOf(1f) }
   Box(modifier = PreviewModifier) {
     TakSlider(
-      state = state,
+      value = state,
+      onValueChanged = { state = it },
       textPosition = TakSliderTextPosition.BelowThumb,
     )
   }
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun SliderWithNoText() = TakPreview {
-  val state = remember { mutableStateOf(0.5f) }
+  var state by remember { mutableStateOf(0.5f) }
   Box(modifier = PreviewModifier) {
     TakSlider(
-      state = state,
+      value = state,
+      onValueChanged = { state = it },
       textPosition = TakSliderTextPosition.None,
     )
   }
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun Disabled() = TakPreview {
-  val state = remember { mutableStateOf(0.5f) }
+  var state by remember { mutableStateOf(0.5f) }
   Box(modifier = PreviewModifier) {
     TakSlider(
-      state = state,
+      value = state,
+      onValueChanged = { state = it },
       enabled = false,
     )
   }

@@ -4,11 +4,8 @@ plugins {
   id("convention-android-lib")
   id("convention-kotlin")
   id("convention-atak")
-  id("convention-detekt")
-  id("convention-ktlint")
-  id("convention-licensee")
   id("convention-publish")
-  id("convention-spotless")
+  id("convention-style")
   id("convention-dependency-guard")
 }
 

@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import ktak.compose.core.TakColors
 import ktak.compose.icons.NavigationTakIcons
 import ktak.compose.icons.PreviewIcon
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 
 public val NavigationTakIcons.RoverReceptionOff: ImageVector
   get() {
@@ -149,5 +149,5 @@ public val NavigationTakIcons.RoverReceptionOff: ImageVector
 private var nullableIcon: ImageVector? = null
 
 @Composable
-@PreviewDark
+@DarkPreview
 private fun Preview() = PreviewIcon(icon = NavigationTakIcons.RoverReceptionOff)

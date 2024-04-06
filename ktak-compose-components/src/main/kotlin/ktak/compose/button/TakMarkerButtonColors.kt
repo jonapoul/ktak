@@ -9,6 +9,7 @@ import androidx.compose.ui.graphics.Color
 import ktak.compose.core.TakColors
 import ktak.compose.core.TakLegacyColors
 
+@Stable
 public interface TakMarkerButtonColors {
   @Stable
   @Composable

@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import ktak.compose.core.TakColors
 import ktak.compose.icons.DropdownTakIcons
 import ktak.compose.icons.PreviewIcon
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 
 public val DropdownTakIcons.RotationLockAlt: ImageVector
   get() {
@@ -78,7 +78,8 @@ public val DropdownTakIcons.RotationLockAlt: ImageVector
       }
       path(
         fill = SolidColor(TakColors.Cyber),
-        stroke = null, fillAlpha = 0.2f,
+        stroke = null,
+        fillAlpha = 0.2f,
         strokeLineWidth = 0.0f,
         strokeLineCap = Butt,
         strokeLineJoin = Miter,
@@ -155,5 +156,5 @@ public val DropdownTakIcons.RotationLockAlt: ImageVector
 private var nullableIcon: ImageVector? = null
 
 @Composable
-@PreviewDark
+@DarkPreview
 private fun Preview() = PreviewIcon(icon = DropdownTakIcons.RotationLockAlt)

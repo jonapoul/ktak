@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import ktak.compose.icons.DropdownTakIcons
 import ktak.compose.icons.PreviewIcon
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 
 public val DropdownTakIcons.ThreeDimensional: ImageVector
   get() {
@@ -116,7 +116,8 @@ public val DropdownTakIcons.ThreeDimensional: ImageVector
       }
       path(
         fill = SolidColor(Color.White),
-        stroke = null, fillAlpha = 0.25f,
+        stroke = null,
+        fillAlpha = 0.25f,
         strokeLineWidth = 0.0f,
         strokeLineCap = Butt,
         strokeLineJoin = Miter,
@@ -190,5 +191,5 @@ public val DropdownTakIcons.ThreeDimensional: ImageVector
 private var nullableIcon: ImageVector? = null
 
 @Composable
-@PreviewDark
+@DarkPreview
 private fun Preview() = PreviewIcon(icon = DropdownTakIcons.ThreeDimensional)

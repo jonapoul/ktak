@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.sizeIn
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -21,10 +22,10 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Remove
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
@@ -35,30 +36,8 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import ktak.compose.core.TakTextStyles
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 import ktak.compose.preview.TakPreview
-
-@Composable
-public fun TakIntegerPicker(
-  state: MutableState<Int>,
-  range: IntRange,
-  modifier: Modifier = Modifier,
-  enabled: Boolean = true,
-  textStyle: TextStyle = TakTextStyles.H1,
-  colors: TakIntegerPickerColors = DefaultTakIntegerPickerColors(),
-  dimensions: TakIntegerPickerDimensions = DefaultTakIntegerPickerDimensions(),
-) {
-  TakIntegerPicker(
-    value = state.value,
-    onValueChanged = { state.value = it },
-    range,
-    modifier,
-    enabled,
-    textStyle,
-    colors,
-    dimensions,
-  )
-}
 
 @Composable
 public fun TakIntegerPicker(
@@ -147,6 +126,7 @@ private fun TakIntegerPickerButton(
       .fillMaxHeight()
       .clickable(interactionSource, indication = null, enabled = enabled, onClick = onClick)
       .padding(dimensions.iconPadding),
+    contentAlignment = Alignment.Center,
   ) {
     Image(
       modifier = Modifier.sizeIn(dimensions.iconSize),
@@ -157,68 +137,86 @@ private fun TakIntegerPickerButton(
   }
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun AtMinimum() = TakPreview {
-  val state = remember { mutableStateOf(0) }
+  var state by remember { mutableStateOf(0) }
   TakIntegerPicker(
     modifier = Modifier.width(200.dp),
-    state = state,
+    value = state,
+    onValueChanged = { state = it },
     range = 0..10,
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun MinPlusOne() = TakPreview {
-  val state = remember { mutableStateOf(1) }
+  var state by remember { mutableStateOf(1) }
   TakIntegerPicker(
     modifier = Modifier.width(200.dp),
-    state = state,
+    value = state,
+    onValueChanged = { state = it },
     range = 0..10,
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun Midway() = TakPreview {
-  val state = remember { mutableStateOf(5) }
+  var state by remember { mutableStateOf(5) }
   TakIntegerPicker(
     modifier = Modifier.width(200.dp),
-    state = state,
+    value = state,
+    onValueChanged = { state = it },
     range = 0..10,
   )
 }
 
-@PreviewDark
+@DarkPreview
+@Composable
+private fun MidwayBigger() = TakPreview {
+  var state by remember { mutableStateOf(5) }
+  TakIntegerPicker(
+    modifier = Modifier.size(width = 300.dp, height = 200.dp),
+    value = state,
+    onValueChanged = { state = it },
+    range = 0..10,
+  )
+}
+
+@DarkPreview
 @Composable
 private fun MaxMinusOne() = TakPreview {
-  val state = remember { mutableStateOf(9) }
+  var state by remember { mutableStateOf(9) }
   TakIntegerPicker(
     modifier = Modifier.width(200.dp),
-    state = state,
+    value = state,
+    onValueChanged = { state = it },
     range = 0..10,
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun AtMaximum() = TakPreview {
-  val state = remember { mutableStateOf(10) }
+  var state by remember { mutableStateOf(10) }
   TakIntegerPicker(
     modifier = Modifier.width(200.dp),
-    state = state,
+    value = state,
+    onValueChanged = { state = it },
     range = 0..10,
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun Disabled() = TakPreview {
-  val state = remember { mutableStateOf(5) }
+  var state by remember { mutableStateOf(5) }
   TakIntegerPicker(
     modifier = Modifier.width(200.dp),
-    state = state,
+    value = state,
+    onValueChanged = { state = it },
     range = 0..10,
     enabled = false,
   )

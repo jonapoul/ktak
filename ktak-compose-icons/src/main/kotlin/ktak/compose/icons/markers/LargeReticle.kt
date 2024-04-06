@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import ktak.compose.core.TakColors
 import ktak.compose.icons.MarkersTakIcons
 import ktak.compose.icons.PreviewIcon
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 
 public val MarkersTakIcons.LargeReticle: ImageVector
   get() {
@@ -29,7 +29,8 @@ public val MarkersTakIcons.LargeReticle: ImageVector
     ).apply {
       path(
         fill = SolidColor(TakColors.Alert),
-        stroke = null, fillAlpha = 0.75f,
+        stroke = null,
+        fillAlpha = 0.75f,
         strokeLineWidth = 0.0f,
         strokeLineCap = Butt,
         strokeLineJoin = Miter,
@@ -393,5 +394,5 @@ public val MarkersTakIcons.LargeReticle: ImageVector
 private var nullableIcon: ImageVector? = null
 
 @Composable
-@PreviewDark
+@DarkPreview
 private fun Preview() = PreviewIcon(icon = MarkersTakIcons.LargeReticle)

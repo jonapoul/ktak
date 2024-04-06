@@ -25,13 +25,13 @@ style:
     ignoreCompanionObjectPropertyDeclaration: true
     ignoreAnnotated:
       - 'Preview'
-      - 'PreviewDark'
-      - 'PreviewTakLandscape'
+      - 'DarkPreview'
+      - 'TakLandscapePreview'
   UnusedPrivateMember:
     ignoreAnnotated:
       - 'Preview'
-      - 'PreviewDark'
-      - 'PreviewTakLandscape'
+      - 'DarkPreview'
+      - 'TakLandscapePreview'
   ForbiddenComment:
     active: false
 

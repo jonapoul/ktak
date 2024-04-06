@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.dp
 import ktak.compose.core.TakLegacyColors
 import ktak.compose.icons.PreviewIcon
 import ktak.compose.icons.UtilityTakIcons
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 
 public val UtilityTakIcons.Walking: ImageVector
   get() {
@@ -37,14 +37,22 @@ public val UtilityTakIcons.Walking: ImageVector
         moveTo(15.551f, 3.249f)
         moveToRelative(-2.7548f, 0.4471f)
         arcToRelative(
-          2.7908f, 2.7908f, 125.7816f,
+          2.7908f,
+          2.7908f,
+          125.7816f,
           true,
-          true, 5.5096f, -0.8942f,
+          true,
+          5.5096f,
+          -0.8942f,
         )
         arcToRelative(
-          2.7908f, 2.7908f, 125.7816f,
+          2.7908f,
+          2.7908f,
+          125.7816f,
           true,
-          true, -5.5096f, 0.8942f,
+          true,
+          -5.5096f,
+          0.8942f,
         )
       }
       path(
@@ -122,5 +130,5 @@ public val UtilityTakIcons.Walking: ImageVector
 private var nullableIcon: ImageVector? = null
 
 @Composable
-@PreviewDark
+@DarkPreview
 private fun Preview() = PreviewIcon(icon = UtilityTakIcons.Walking)

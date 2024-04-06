@@ -8,6 +8,7 @@ import ktak.core.PluginContext
 import ktak.core.TakContexts
 import timber.log.Timber
 
+@Suppress("UnnecessaryAbstractClass")
 public abstract class TakPlugin(serviceController: IServiceController) : IPlugin {
   protected val mapView: MapView = MapView.getMapView()
   protected val pluginContext: PluginContext = PluginContext(serviceController)

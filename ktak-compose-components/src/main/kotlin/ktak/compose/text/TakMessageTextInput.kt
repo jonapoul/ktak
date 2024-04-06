@@ -2,7 +2,6 @@ package ktak.compose.text
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.Box
@@ -13,10 +12,10 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.SolidColor
@@ -28,47 +27,9 @@ import ktak.compose.core.TakTextStyles
 import ktak.compose.icons.TakIcons
 import ktak.compose.icons.input.Message
 import ktak.compose.icons.utility.Walking
+import ktak.compose.preview.DarkPreview
 import ktak.compose.preview.PreviewCallback
-import ktak.compose.preview.PreviewDark
 import ktak.compose.preview.TakPreview
-
-@Composable
-public fun TakMessageTextInput(
-  state: MutableState<String>,
-  hint: String,
-  modifier: Modifier = Modifier,
-  startIcon: ImageVector? = null,
-  endIcon: ImageVector? = TakIcons.Input.Message,
-  enabled: Boolean = true,
-  readOnly: Boolean = false,
-  textStyle: TextStyle = TakTextStyles.H3,
-  error: Boolean = false,
-  colors: TakTextInputColors = DefaultTakTextInputColors(),
-  dimensions: TakTextInputDimensions = DefaultTakTextInputDimensions(),
-  cornerRadius: Dp = 22.dp,
-  textInteractionSource: MutableInteractionSource = remember { MutableInteractionSource() },
-  buttonInteractionSource: MutableInteractionSource = remember { MutableInteractionSource() },
-  onClickSend: () -> Unit,
-) {
-  TakMessageTextInput(
-    value = state.value,
-    onValueChanged = { state.value = it },
-    hint,
-    modifier,
-    startIcon,
-    endIcon,
-    enabled,
-    readOnly,
-    textStyle,
-    error,
-    colors,
-    dimensions,
-    cornerRadius,
-    textInteractionSource,
-    buttonInteractionSource,
-    onClickSend,
-  )
-}
 
 @Composable
 public fun TakMessageTextInput(
@@ -98,13 +59,7 @@ public fun TakMessageTextInput(
   Box(
     modifier = modifier
       .background(backgroundColor, shape)
-      .border(dimensions.borderThicknessSmall, borderColor, shape)
-      .clickable(
-        interactionSource = textInteractionSource,
-        indication = null,
-        enabled = enabled,
-        onClick = { /* TODO */ },
-      ),
+      .border(dimensions.borderThicknessSmall, borderColor, shape),
     contentAlignment = Alignment.Center,
   ) {
     Row {
@@ -118,7 +73,7 @@ public fun TakMessageTextInput(
         BasicTextField(
           value = value,
           onValueChange = onValueChanged,
-          modifier = modifier.padding(padding),
+          modifier = Modifier.padding(padding),
           enabled = enabled,
           readOnly = readOnly,
           textStyle = textStyle.copy(color = textColor),
@@ -130,7 +85,7 @@ public fun TakMessageTextInput(
           // No text to show, so show the hint instead
           val hintColor by colors.hintColor(enabled, pressed, error)
           Text(
-            modifier = modifier.padding(padding),
+            modifier = Modifier.padding(padding),
             text = hint,
             style = TakTextStyles.H3,
             color = hintColor,
@@ -162,63 +117,68 @@ public fun TakMessageTextInput(
   }
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun StartIcon() = TakPreview {
-  val state = remember { mutableStateOf("") }
+  var state by remember { mutableStateOf("") }
   TakMessageTextInput(
     modifier = Modifier.width(200.dp),
-    state = state,
+    value = state,
+    onValueChanged = { state = it },
     hint = "Walking",
     startIcon = TakIcons.Utility.Walking,
     onClickSend = PreviewCallback,
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun EmptySearch() = TakPreview {
-  val state = remember { mutableStateOf("") }
+  var state by remember { mutableStateOf("") }
   TakMessageTextInput(
     modifier = Modifier.width(200.dp),
-    state = state,
+    value = state,
+    onValueChanged = { state = it },
     hint = "Search",
     onClickSend = PreviewCallback,
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun FilledSearch() = TakPreview {
-  val state = remember { mutableStateOf("My message") }
+  var state by remember { mutableStateOf("My message") }
   TakMessageTextInput(
     modifier = Modifier.width(200.dp),
-    state = state,
+    value = state,
+    onValueChanged = { state = it },
     hint = "Search",
     onClickSend = PreviewCallback,
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun ErrorSearch() = TakPreview {
-  val state = remember { mutableStateOf("My message") }
+  var state by remember { mutableStateOf("My message") }
   TakMessageTextInput(
     modifier = Modifier.width(200.dp),
-    state = state,
+    value = state,
+    onValueChanged = { state = it },
     hint = "Search",
     error = true,
     onClickSend = PreviewCallback,
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun ErrorEmpty() = TakPreview {
-  val state = remember { mutableStateOf("") }
+  var state by remember { mutableStateOf("") }
   TakMessageTextInput(
     modifier = Modifier.width(200.dp),
-    state = state,
+    value = state,
+    onValueChanged = { state = it },
     hint = "Search",
     error = true,
     onClickSend = PreviewCallback,

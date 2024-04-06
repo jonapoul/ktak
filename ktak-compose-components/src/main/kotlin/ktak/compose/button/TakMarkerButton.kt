@@ -18,13 +18,14 @@ import ktak.compose.icons.TakIcons
 import ktak.compose.icons.markers.Blue
 import ktak.compose.icons.markers.Neutral
 import ktak.compose.icons.markers.Purple
+import ktak.compose.preview.DarkPreview
 import ktak.compose.preview.PreviewCallback
-import ktak.compose.preview.PreviewDark
 import ktak.compose.preview.TakPreview
 
 @Composable
 public fun TakMarkerButton(
   markerIcon: ImageVector,
+  modifier: Modifier = Modifier,
   isDisabled: Boolean = false,
   colors: TakMarkerButtonColors = DefaultTakMarkerButtonColors(),
   interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
@@ -35,7 +36,7 @@ public fun TakMarkerButton(
   val borderColor by colors.borderColor(!isDisabled, isPressed)
 
   Box(
-    modifier = Modifier
+    modifier = modifier
       .border(1.dp, color = borderColor)
       .background(shape = TakButtonRoundedEdges, color = backgroundColor)
       .clickable(interactionSource, enabled = !isDisabled, onClick = onClick, indication = null),
@@ -48,7 +49,7 @@ public fun TakMarkerButton(
   }
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun Purple() = TakPreview {
   TakMarkerButton(
@@ -57,7 +58,7 @@ private fun Purple() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun Blue() = TakPreview {
   TakMarkerButton(
@@ -66,7 +67,7 @@ private fun Blue() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun Neutral() = TakPreview {
   TakMarkerButton(

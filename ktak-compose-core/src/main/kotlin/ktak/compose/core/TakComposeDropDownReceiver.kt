@@ -49,7 +49,11 @@ public abstract class TakComposeDropDownReceiver(
   ) {
     Timber.v("showDropDown $dimensions $ignoreBackButton $switchable $stateListener")
     fragment = TakComposeFragment(mapView, composeContext) {
-      ContentWithViewModels(content)
+      ContentWithViewModels(
+        viewModelStoreOwner = this,
+        viewModelFactory = viewModelFactory,
+        content = content,
+      )
     }
     showDropDown(
       fragment,
@@ -66,14 +70,22 @@ public abstract class TakComposeDropDownReceiver(
   protected fun composeContent(content: @Composable () -> Unit) {
     Timber.v("composeContent $content")
     fragment.applyTakContent(colors) {
-      ContentWithViewModels(content)
+      ContentWithViewModels(
+        viewModelStoreOwner = this,
+        viewModelFactory = viewModelFactory,
+        content = content,
+      )
     }
   }
 
   @Composable
-  protected fun ContentWithViewModels(content: @Composable () -> Unit) {
+  protected fun ContentWithViewModels(
+    viewModelStoreOwner: ViewModelStoreOwner = this,
+    viewModelFactory: ViewModelProvider.Factory = this.viewModelFactory,
+    content: @Composable () -> Unit,
+  ) {
     CompositionLocalProvider(
-      LocalViewModelStoreOwner provides this,
+      LocalViewModelStoreOwner provides viewModelStoreOwner,
       LocalViewModelFactory provides viewModelFactory,
     ) {
       content()

@@ -11,10 +11,10 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
@@ -27,40 +27,8 @@ import ktak.compose.core.TakTextStyles
 import ktak.compose.icons.TakIcons
 import ktak.compose.icons.input.Search
 import ktak.compose.icons.utility.Walking
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 import ktak.compose.preview.TakPreview
-
-@Composable
-public fun TakTextInput(
-  state: MutableState<String>,
-  hint: String,
-  modifier: Modifier = Modifier,
-  startIcon: ImageVector? = null,
-  endIcon: ImageVector? = null,
-  enabled: Boolean = true,
-  readOnly: Boolean = false,
-  textStyle: TextStyle = TakTextStyles.H3,
-  error: Boolean = false,
-  colors: TakTextInputColors = DefaultTakTextInputColors(),
-  dimensions: TakTextInputDimensions = DefaultTakTextInputDimensions(),
-  interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
-) {
-  TakTextInput(
-    value = state.value,
-    onValueChanged = { state.value = it },
-    hint,
-    modifier,
-    startIcon,
-    endIcon,
-    enabled,
-    readOnly,
-    textStyle,
-    error,
-    colors,
-    dimensions,
-    interactionSource,
-  )
-}
 
 @Composable
 public fun TakTextInput(
@@ -119,7 +87,7 @@ public fun TakTextInput(
         BasicTextField(
           value = value,
           onValueChange = onValueChanged,
-          modifier = modifier.padding(padding),
+          modifier = Modifier.padding(padding),
           enabled = enabled,
           readOnly = readOnly,
           textStyle = textStyle.copy(color = textColor),
@@ -131,7 +99,7 @@ public fun TakTextInput(
           // No text to show, so show the hint instead
           val hintColor by colors.hintColor(enabled, pressed, error)
           Text(
-            modifier = modifier.padding(padding),
+            modifier = Modifier.padding(padding),
             text = hint,
             style = TakTextStyles.H3,
             color = hintColor,
@@ -144,88 +112,95 @@ public fun TakTextInput(
   }
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun StartIcon() = TakPreview {
-  val state = remember { mutableStateOf("") }
+  var state by remember { mutableStateOf("") }
   TakTextInput(
     modifier = Modifier.width(200.dp),
-    state = state,
+    value = state,
+    onValueChanged = { state = it },
     hint = "Walking",
     startIcon = TakIcons.Utility.Walking,
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun StartIconDisabled() = TakPreview {
-  val state = remember { mutableStateOf("") }
+  var state by remember { mutableStateOf("") }
   TakTextInput(
     modifier = Modifier.width(200.dp),
-    state = state,
+    value = state,
+    onValueChanged = { state = it },
     hint = "Walking",
     startIcon = TakIcons.Utility.Walking,
     enabled = false,
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun EmptySearch() = TakPreview {
-  val state = remember { mutableStateOf("") }
+  var state by remember { mutableStateOf("") }
   TakTextInput(
     modifier = Modifier.width(200.dp),
-    state = state,
+    value = state,
+    onValueChanged = { state = it },
     hint = "Search",
     endIcon = TakIcons.Input.Search,
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun FilledSearch() = TakPreview {
-  val state = remember { mutableStateOf("Some text") }
+  var state by remember { mutableStateOf("Some text") }
   TakTextInput(
     modifier = Modifier.width(200.dp),
-    state = state,
+    value = state,
+    onValueChanged = { state = it },
     hint = "Search",
     endIcon = TakIcons.Input.Search,
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun ErrorSearch() = TakPreview {
-  val state = remember { mutableStateOf("Some text") }
+  var state by remember { mutableStateOf("Some text") }
   TakTextInput(
     modifier = Modifier.width(200.dp),
-    state = state,
+    value = state,
+    onValueChanged = { state = it },
     hint = "Search",
     endIcon = TakIcons.Input.Search,
     error = true,
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun ErrorEmpty() = TakPreview {
-  val state = remember { mutableStateOf("") }
+  var state by remember { mutableStateOf("") }
   TakTextInput(
     modifier = Modifier.width(200.dp),
-    state = state,
+    value = state,
+    onValueChanged = { state = it },
     hint = "Search",
     endIcon = TakIcons.Input.Search,
     error = true,
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun Disabled() = TakPreview {
-  val state = remember { mutableStateOf("") }
+  var state by remember { mutableStateOf("") }
   TakTextInput(
     modifier = Modifier.width(200.dp),
-    state = state,
+    value = state,
+    onValueChanged = { state = it },
     hint = "Search",
     endIcon = TakIcons.Input.Search,
     enabled = false,

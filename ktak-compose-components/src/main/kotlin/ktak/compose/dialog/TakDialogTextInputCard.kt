@@ -21,8 +21,8 @@ import androidx.compose.ui.unit.dp
 import ktak.compose.icons.TakIcons
 import ktak.compose.icons.utility.Add
 import ktak.compose.icons.utility.Watercraft
+import ktak.compose.preview.DarkPreview
 import ktak.compose.preview.PreviewCallback
-import ktak.compose.preview.PreviewDark
 import ktak.compose.preview.TakPreview
 import ktak.compose.text.DefaultTakTextInputColors
 import ktak.compose.text.TakTextInput
@@ -73,7 +73,7 @@ public fun TakDialogTextInputCard(
           Text(
             modifier = Modifier.padding(bottom = 10.dp),
             text = description,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
           )
         }
       }
@@ -97,7 +97,7 @@ public fun TakDialogTextInputCard(
   }
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun PreviewInput() = TakPreview {
   var text by remember { mutableStateOf("") }
@@ -113,7 +113,7 @@ private fun PreviewInput() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun PreviewNoButtons() = TakPreview {
   var text by remember { mutableStateOf("") }
@@ -126,7 +126,7 @@ private fun PreviewNoButtons() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun PreviewWithIcon() = TakPreview {
   var text by remember { mutableStateOf("") }
@@ -140,7 +140,7 @@ private fun PreviewWithIcon() = TakPreview {
   )
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun PreviewWithError() = TakPreview {
   var text by remember { mutableStateOf("Invalid text") }

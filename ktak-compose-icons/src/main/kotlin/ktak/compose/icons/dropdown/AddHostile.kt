@@ -1,3 +1,5 @@
+@file:Suppress("UnusedReceiverParameter")
+
 package ktak.compose.icons.dropdown
 
 import androidx.compose.runtime.Composable
@@ -11,7 +13,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 import ktak.compose.icons.DropdownTakIcons
 import ktak.compose.icons.PreviewIcon
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 
 public val DropdownTakIcons.AddHostile: ImageVector
   get() {
@@ -110,5 +112,5 @@ public val DropdownTakIcons.AddHostile: ImageVector
 private var nullableIcon: ImageVector? = null
 
 @Composable
-@PreviewDark
+@DarkPreview
 private fun Preview() = PreviewIcon(icon = DropdownTakIcons.AddHostile)

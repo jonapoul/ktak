@@ -22,7 +22,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material.Text
 import androidx.compose.material.minimumInteractiveComponentSize
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -39,38 +38,9 @@ import androidx.compose.ui.unit.dp
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.coroutines.launch
 import ktak.compose.core.TakTypography
-import ktak.compose.preview.PreviewDark
+import ktak.compose.preview.DarkPreview
 import ktak.compose.preview.TakPreview
 import kotlin.math.floor
-
-@Composable
-public fun TakRangeSlider(
-  state: MutableState<ClosedFloatingPointRange<Float>>,
-  modifier: Modifier = Modifier,
-  enabled: Boolean = true,
-  valueRange: ClosedFloatingPointRange<Float> = DefaultTrackRange,
-  steps: Int = 0,
-  colors: TakSliderColors = DefaultTakSliderColors(),
-  dimensions: TakSliderDimensions = DefaultTakRangeSliderDimensions,
-  startInteractionSource: MutableInteractionSource = remember { MutableInteractionSource() },
-  endInteractionSource: MutableInteractionSource = remember { MutableInteractionSource() },
-  onValueChangeFinished: (() -> Unit)? = null,
-) {
-  var value by state
-  TakRangeSlider(
-    value = value,
-    onValueChange = { value = it },
-    modifier,
-    enabled,
-    valueRange,
-    steps,
-    colors,
-    dimensions,
-    startInteractionSource,
-    endInteractionSource,
-    onValueChangeFinished,
-  )
-}
 
 @Composable
 public fun TakRangeSlider(
@@ -227,7 +197,6 @@ private fun RangeSliderImpl(
   dimensions: TakSliderDimensions = DefaultTakRangeSliderDimensions,
   colors: TakSliderColors = DefaultTakSliderColors(),
 ) {
-
   Box(modifier.then(DefaultSliderConstraints)) {
     val widthDp = with(LocalDensity.current) { width.toDp() }
     val thumbSize = dimensions.thumbRadius * 2
@@ -271,7 +240,7 @@ private fun RangeSliderImpl(
   }
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun Zero() = TakPreview {
   Column(modifier = Modifier.width(500.dp)) {
@@ -284,7 +253,7 @@ private fun Zero() = TakPreview {
   }
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun Half() = TakPreview {
   Column(modifier = Modifier.width(500.dp)) {
@@ -297,7 +266,7 @@ private fun Half() = TakPreview {
   }
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun Full() = TakPreview {
   Column(modifier = Modifier.width(500.dp)) {
@@ -310,8 +279,7 @@ private fun Full() = TakPreview {
   }
 }
 
-
-@PreviewDark
+@DarkPreview
 @Composable
 private fun Partial() = TakPreview {
   Column(modifier = Modifier.width(500.dp)) {

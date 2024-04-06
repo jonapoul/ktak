@@ -5,6 +5,7 @@ package ktak.compose.icons
 import android.content.res.Configuration
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import kotlinx.collections.immutable.persistentListOf
 import ktak.compose.icons.radial.AddHostile
 import ktak.compose.icons.radial.AngleUnits
 import ktak.compose.icons.radial.Back
@@ -86,7 +87,7 @@ import ktak.compose.icons.radial.ViewshedLine
  */
 public object RadialTakIcons
 
-private val allIcons = listOf(
+private val allIcons = persistentListOf(
   TakIcons.Radial.AddHostile,
   TakIcons.Radial.AngleUnits,
   TakIcons.Radial.Back,

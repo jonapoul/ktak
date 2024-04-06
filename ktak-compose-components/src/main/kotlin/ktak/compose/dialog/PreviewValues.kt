@@ -11,17 +11,17 @@ import ktak.compose.icons.utility.Walking
 import ktak.compose.preview.PreviewCallback
 
 internal val PreviewPositiveButton = TakDialogPositiveButton(
-  onClick = PreviewCallback
+  onClick = PreviewCallback,
 )
 
 internal val PreviewNeutralButton = TakDialogNeutralButton(
   text = "FOOBAR",
   icon = TakIcons.Utility.Walking,
-  onClick = PreviewCallback
+  onClick = PreviewCallback,
 )
 
 internal val PreviewNegativeButton = TakDialogNegativeButton(
-  onClick = PreviewCallback
+  onClick = PreviewCallback,
 )
 
 @Composable

@@ -15,17 +15,17 @@ import androidx.compose.ui.unit.dp
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import ktak.compose.core.TakTextStyles
+import ktak.compose.preview.DarkPreview
 import ktak.compose.preview.PreviewCallback
-import ktak.compose.preview.PreviewDark
 import ktak.compose.preview.TakPreview
 
 @Composable
 public fun TakButtonGroup(
+  buttons: ImmutableList<TakGroupedButton>,
   modifier: Modifier = Modifier,
   isDisabled: Boolean = false,
   colors: TakButtonColors = DefaultTakButtonColors(),
   textStyle: TextStyle = TakTextStyles.H2,
-  buttons: ImmutableList<TakGroupedButton>,
 ) {
   Row(
     modifier = Modifier
@@ -74,7 +74,7 @@ public class TakGroupedButton(
   public val onClick: () -> Unit,
 )
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun OneButton() = TakPreview {
   Box(modifier = Modifier.width(300.dp)) {
@@ -88,7 +88,7 @@ private fun OneButton() = TakPreview {
   }
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun TwoButtons() = TakPreview {
   Box(modifier = Modifier.width(300.dp)) {
@@ -103,7 +103,7 @@ private fun TwoButtons() = TakPreview {
   }
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun ThreeButtons() = TakPreview {
   Box(modifier = Modifier.width(300.dp)) {
@@ -119,7 +119,7 @@ private fun ThreeButtons() = TakPreview {
   }
 }
 
-@PreviewDark
+@DarkPreview
 @Composable
 private fun FourButtons() = TakPreview {
   Box(modifier = Modifier.width(300.dp)) {
@@ -135,4 +135,3 @@ private fun FourButtons() = TakPreview {
     )
   }
 }
-

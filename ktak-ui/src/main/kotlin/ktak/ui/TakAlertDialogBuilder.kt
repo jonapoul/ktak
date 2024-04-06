@@ -32,13 +32,12 @@ public class TakAlertDialogBuilder : AlertDialog.Builder {
     this.pluginContext = contexts.plugin
   }
 
-  override fun setView(@LayoutRes layoutResId: Int): TakAlertDialogBuilder =
-    super.setView(
-        LayoutInflater.from(pluginContext)
-            .inflate(layoutResId, null, false)) as TakAlertDialogBuilder
+  override fun setView(@LayoutRes layoutResId: Int): TakAlertDialogBuilder = super.setView(
+    LayoutInflater.from(pluginContext)
+      .inflate(layoutResId, null, false),
+  ) as TakAlertDialogBuilder
 
-  override fun setView(view: View?): TakAlertDialogBuilder =
-    super.setView(view) as TakAlertDialogBuilder
+  override fun setView(view: View?): TakAlertDialogBuilder = super.setView(view) as TakAlertDialogBuilder
 
   override fun setTitle(@StringRes titleId: Int): TakAlertDialogBuilder =
     super.setTitle(pluginContext.getString(titleId)) as TakAlertDialogBuilder
@@ -53,8 +52,8 @@ public class TakAlertDialogBuilder : AlertDialog.Builder {
     super.setIcon(ContextCompat.getDrawable(pluginContext, iconId)) as TakAlertDialogBuilder
 
   public fun setSimplePositiveButton(
-      @StringRes text: Int = android.R.string.ok,
-      onClick: (() -> Unit)? = null,
+    @StringRes text: Int = android.R.string.ok,
+    onClick: (() -> Unit)? = null,
   ): TakAlertDialogBuilder {
     val string = pluginContext.getString(text)
     return if (onClick == null) {
@@ -65,8 +64,8 @@ public class TakAlertDialogBuilder : AlertDialog.Builder {
   }
 
   public fun setSimpleNegativeButton(
-      @StringRes text: Int = android.R.string.cancel,
-      onClick: (() -> Unit)? = null,
+    @StringRes text: Int = android.R.string.cancel,
+    onClick: (() -> Unit)? = null,
   ): TakAlertDialogBuilder {
     val string = pluginContext.getString(text)
     return if (onClick == null) {
@@ -76,10 +75,7 @@ public class TakAlertDialogBuilder : AlertDialog.Builder {
     }
   }
 
-  public fun setSimpleNeutralButton(
-      @StringRes text: Int,
-      onClick: (() -> Unit)? = null,
-  ): TakAlertDialogBuilder {
+  public fun setSimpleNeutralButton(@StringRes text: Int, onClick: (() -> Unit)? = null): TakAlertDialogBuilder {
     val string = pluginContext.getString(text)
     return if (onClick == null) {
       setNeutralButton(string, null) as TakAlertDialogBuilder
