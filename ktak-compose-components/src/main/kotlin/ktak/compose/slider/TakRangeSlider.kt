@@ -20,6 +20,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.requiredSizeIn
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.Text
+import androidx.compose.material.minimumInteractiveComponentSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
@@ -92,7 +93,7 @@ public fun TakRangeSlider(
 
   BoxWithConstraints(
     modifier = modifier
-      .minimumTouchTargetSize()
+      .minimumInteractiveComponentSize()
       .requiredSizeIn(minWidth = thumbRadius * 4, minHeight = thumbRadius * 2),
   ) {
     val isRtl = LocalLayoutDirection.current == LayoutDirection.Rtl
@@ -157,16 +158,16 @@ public fun TakRangeSlider(
     }
 
     val pressDrag = Modifier.rangeSliderPressDragModifier(
-      startInteractionSource,
-      endInteractionSource,
-      rawOffsetStart,
-      rawOffsetEnd,
-      enabled,
-      isRtl,
-      widthPx,
-      valueRange,
-      gestureEndAction,
-      onDrag,
+      startInteractionSource = startInteractionSource,
+      endInteractionSource = endInteractionSource,
+      rawOffsetStart = rawOffsetStart,
+      rawOffsetEnd = rawOffsetEnd,
+      enabled = enabled,
+      isRtl = isRtl,
+      maxPx = widthPx,
+      valueRange = valueRange,
+      gestureEndAction = gestureEndAction,
+      onDrag = onDrag,
     )
 
     // The positions of the thumbs are dependant on each other.
@@ -195,18 +196,18 @@ public fun TakRangeSlider(
     )
 
     RangeSliderImpl(
-      enabled,
-      fractionStart,
-      fractionEnd,
-      tickFractions,
+      enabled = enabled,
+      positionFractionStart = fractionStart,
+      positionFractionEnd = fractionEnd,
+      tickFractions = tickFractions,
       width = maxPx - minPx,
-      startInteractionSource,
-      endInteractionSource,
+      startInteractionSource = startInteractionSource,
+      endInteractionSource = endInteractionSource,
       modifier = pressDrag,
-      startThumbSemantics,
-      endThumbSemantics,
-      dimensions,
-      colors,
+      startThumbSemantics = startThumbSemantics,
+      endThumbSemantics = endThumbSemantics,
+      dimensions = dimensions,
+      colors = colors,
     )
   }
 }
@@ -220,9 +221,9 @@ private fun RangeSliderImpl(
   width: Float,
   startInteractionSource: MutableInteractionSource,
   endInteractionSource: MutableInteractionSource,
-  modifier: Modifier,
-  startThumbSemantics: Modifier,
-  endThumbSemantics: Modifier,
+  modifier: Modifier = Modifier,
+  startThumbSemantics: Modifier = Modifier,
+  endThumbSemantics: Modifier = Modifier,
   dimensions: TakSliderDimensions = DefaultTakRangeSliderDimensions,
   colors: TakSliderColors = DefaultTakSliderColors(),
 ) {
@@ -234,38 +235,38 @@ private fun RangeSliderImpl(
     val offsetEnd = widthDp * positionFractionEnd
 
     RangeTrack(
-      Modifier
+      modifier = Modifier
         .align(Alignment.CenterStart)
         .fillMaxSize(),
-      positionFractionStart,
-      positionFractionEnd,
-      enabled,
-      tickFractions,
+      fractionStart = positionFractionStart,
+      fractionEnd = positionFractionEnd,
+      enabled = enabled,
+      tickFractions = tickFractions,
       dimensions = dimensions,
       colors = colors,
     )
 
     RangeThumb(
-      Modifier
+      modifier = Modifier
         .semantics(mergeDescendants = true) { /* No-op */ }
         .focusable(true, startInteractionSource)
         .then(startThumbSemantics),
-      offsetStart,
-      startInteractionSource,
-      colors,
-      enabled,
-      thumbSize,
+      offset = offsetStart,
+      interactionSource = startInteractionSource,
+      colors = colors,
+      enabled = enabled,
+      thumbSize = thumbSize,
     )
     RangeThumb(
-      Modifier
+      modifier = Modifier
         .semantics(mergeDescendants = true) { /* No-op */ }
         .focusable(true, endInteractionSource)
         .then(endThumbSemantics),
-      offsetEnd,
-      endInteractionSource,
-      colors,
-      enabled,
-      thumbSize,
+      offset = offsetEnd,
+      interactionSource = endInteractionSource,
+      colors = colors,
+      enabled = enabled,
+      thumbSize = thumbSize,
     )
   }
 }

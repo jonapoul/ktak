@@ -41,15 +41,15 @@ internal fun LinearTrack(
     AboveThumb, None -> 0.dp
   }
   RangeTrack(
-    modifier,
+    modifier = modifier,
     fractionStart = 0f,
     fractionEnd = positionFraction,
-    enabled,
-    stepFractions,
-    topPadding,
-    bottomPadding,
-    dimensions,
-    colors,
+    enabled = enabled,
+    tickFractions = stepFractions,
+    topPadding = topPadding,
+    bottomPadding = bottomPadding,
+    dimensions = dimensions,
+    colors = colors,
   )
 }
 
@@ -135,13 +135,23 @@ private val DefaultPreviewModifier = Modifier
 @PreviewDark
 @Composable
 private fun LinearTrackFull() = TakPreview {
-  LinearTrack(DefaultPreviewModifier, positionFraction = 1f, enabled = true, textPosition = BelowThumb)
+  LinearTrack(
+    modifier = DefaultPreviewModifier,
+    positionFraction = 1f,
+    enabled = true,
+    textPosition = BelowThumb,
+  )
 }
 
 @PreviewDark
 @Composable
 private fun LinearTrackDisabled() = TakPreview {
-  LinearTrack(DefaultPreviewModifier, positionFraction = 0.5f, enabled = false, textPosition = AboveThumb)
+  LinearTrack(
+    modifier = DefaultPreviewModifier,
+    positionFraction = 0.5f,
+    enabled = false,
+    textPosition = AboveThumb,
+  )
 }
 
 @PreviewDark

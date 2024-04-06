@@ -18,9 +18,9 @@ import androidx.compose.foundation.MutatorMutex
 import androidx.compose.foundation.gestures.DragScope
 import androidx.compose.foundation.gestures.DraggableState
 import androidx.compose.foundation.gestures.GestureCancellationException
+import androidx.compose.foundation.gestures.awaitEachGesture
 import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.gestures.detectTapGestures
-import androidx.compose.foundation.gestures.forEachGesture
 import androidx.compose.foundation.gestures.horizontalDrag
 import androidx.compose.foundation.interaction.DragInteraction
 import androidx.compose.foundation.interaction.Interaction
@@ -29,7 +29,7 @@ import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.progressSemantics
 import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.LocalMinimumTouchTargetEnforcement
+import androidx.compose.material.LocalMinimumInteractiveComponentEnforcement
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.SideEffect
@@ -55,7 +55,6 @@ import androidx.compose.ui.layout.LayoutModifier
 import androidx.compose.ui.layout.Measurable
 import androidx.compose.ui.layout.MeasureResult
 import androidx.compose.ui.layout.MeasureScope
-import androidx.compose.ui.platform.LocalViewConfiguration
 import androidx.compose.ui.platform.ViewConfiguration
 import androidx.compose.ui.platform.debugInspectorInfo
 import androidx.compose.ui.semantics.disabled
@@ -84,7 +83,7 @@ import kotlin.math.sign
 
 /**
  * Most of this file has been copypasted from private functions in [androidx.compose.material], since we need
- * access to them. Fuck off Google
+ * access to them.
  */
 
 internal val ThumbDefaultElevation = 1.dp
@@ -300,26 +299,24 @@ internal suspend fun animateToTarget(
 
 internal val SliderToTickAnimation = TweenSpec<Float>(durationMillis = 100)
 
-@OptIn(ExperimentalMaterialApi::class)
 @SuppressLint("ModifierFactoryUnreferencedReceiver")
-@Suppress("ModifierInspectorInfo")
-internal fun Modifier.minimumTouchTargetSize(): Modifier = composed(
+@OptIn(ExperimentalMaterialApi::class)
+@Suppress("ModifierInspectorInfo", "ComposeModifierComposed")
+internal fun Modifier.minimumInteractiveComponentSize(): Modifier = composed(
   inspectorInfo = debugInspectorInfo {
-    name = "minimumTouchTargetSize"
-    properties["README"] = "Adds outer padding to measure at least 48.dp (default) in " +
-      "size to disambiguate touch interactions if the element would measure smaller"
-  },
+    name = "minimumInteractiveComponentSize"
+    properties["README"] =
+      "Reserves at least 48.dp in size to disambiguate touch interactions if the element would measure smaller"
+  }
 ) {
-  if (LocalMinimumTouchTargetEnforcement.current) {
-    // LocalViewConfiguration changes across devices / during runtime.
-    val size = LocalViewConfiguration.current.minimumTouchTargetSize
-    MinimumTouchTargetModifier(size)
+  if (LocalMinimumInteractiveComponentEnforcement.current) {
+    MinimumInteractiveComponentSizeModifier(minimumInteractiveComponentSize)
   } else {
     Modifier
   }
 }
 
-internal class MinimumTouchTargetModifier(val size: DpSize) : LayoutModifier {
+private class MinimumInteractiveComponentSizeModifier(val size: DpSize) : LayoutModifier {
   override fun MeasureScope.measure(
     measurable: Measurable,
     constraints: Constraints,
@@ -339,7 +336,7 @@ internal class MinimumTouchTargetModifier(val size: DpSize) : LayoutModifier {
   }
 
   override fun equals(other: Any?): Boolean {
-    val otherModifier = other as? MinimumTouchTargetModifier ?: return false
+    val otherModifier = other as? MinimumInteractiveComponentSizeModifier ?: return false
     return size == otherModifier.size
   }
 
@@ -347,6 +344,8 @@ internal class MinimumTouchTargetModifier(val size: DpSize) : LayoutModifier {
     return size.hashCode()
   }
 }
+
+private val minimumInteractiveComponentSize: DpSize = DpSize(48.dp, 48.dp)
 
 internal fun Modifier.rangeSliderPressDragModifier(
   startInteractionSource: MutableInteractionSource,
@@ -370,56 +369,54 @@ internal fun Modifier.rangeSliderPressDragModifier(
         onDrag,
       )
       coroutineScope {
-        forEachGesture {
-          awaitPointerEventScope {
-            val event = awaitFirstDown(requireUnconsumed = false)
-            val interaction = DragInteraction.Start()
-            var posX = if (isRtl) maxPx - event.position.x else event.position.x
-            val compare = rangeSliderLogic.compareOffsets(posX)
-            var draggingStart = if (compare != 0) {
-              compare < 0
+        awaitEachGesture {
+          val event = awaitFirstDown(requireUnconsumed = false)
+          val interaction = DragInteraction.Start()
+          var posX = if (isRtl) maxPx - event.position.x else event.position.x
+          val compare = rangeSliderLogic.compareOffsets(posX)
+          var draggingStart = if (compare != 0) {
+            compare < 0
+          } else {
+            rawOffsetStart.value > posX
+          }
+
+          awaitSlop(event.id, event.type)?.let {
+            val slop = viewConfiguration.pointerSlop(event.type)
+            val shouldUpdateCapturedThumb = abs(rawOffsetEnd.value - posX) < slop &&
+              abs(rawOffsetStart.value - posX) < slop
+            if (shouldUpdateCapturedThumb) {
+              val dir = it.second
+              draggingStart = if (isRtl) dir >= 0f else dir < 0f
+              posX += it.first.positionChange().x
+            }
+          }
+
+          rangeSliderLogic.captureThumb(
+            draggingStart,
+            posX,
+            interaction,
+            this@coroutineScope,
+          )
+
+          val finishInteraction = try {
+            val success = horizontalDrag(pointerId = event.id) {
+              val deltaX = it.positionChange().x
+              onDrag.value.invoke(draggingStart, if (isRtl) -deltaX else deltaX)
+            }
+            if (success) {
+              DragInteraction.Stop(interaction)
             } else {
-              rawOffsetStart.value > posX
-            }
-
-            awaitSlop(event.id, event.type)?.let {
-              val slop = viewConfiguration.pointerSlop(event.type)
-              val shouldUpdateCapturedThumb = abs(rawOffsetEnd.value - posX) < slop &&
-                abs(rawOffsetStart.value - posX) < slop
-              if (shouldUpdateCapturedThumb) {
-                val dir = it.second
-                draggingStart = if (isRtl) dir >= 0f else dir < 0f
-                posX += it.first.positionChange().x
-              }
-            }
-
-            rangeSliderLogic.captureThumb(
-              draggingStart,
-              posX,
-              interaction,
-              this@coroutineScope,
-            )
-
-            val finishInteraction = try {
-              val success = horizontalDrag(pointerId = event.id) {
-                val deltaX = it.positionChange().x
-                onDrag.value.invoke(draggingStart, if (isRtl) -deltaX else deltaX)
-              }
-              if (success) {
-                DragInteraction.Stop(interaction)
-              } else {
-                DragInteraction.Cancel(interaction)
-              }
-            } catch (e: CancellationException) {
               DragInteraction.Cancel(interaction)
             }
+          } catch (e: CancellationException) {
+            DragInteraction.Cancel(interaction)
+          }
 
-            gestureEndAction.value.invoke(draggingStart)
-            launch {
-              rangeSliderLogic
-                .activeInteraction(draggingStart)
-                .emit(finishInteraction)
-            }
+          gestureEndAction.value.invoke(draggingStart)
+          launch {
+            rangeSliderLogic
+              .activeInteraction(draggingStart)
+              .emit(finishInteraction)
           }
         }
       }

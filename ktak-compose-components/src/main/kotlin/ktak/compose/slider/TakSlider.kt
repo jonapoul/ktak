@@ -136,14 +136,14 @@ public fun TakSlider(
     }
 
     val press = Modifier.sliderTapModifier(
-      draggableState,
-      interactionSource,
-      widthPx,
-      isRtl,
-      rawOffset,
-      gestureEndAction,
-      pressOffset,
-      enabled,
+      draggableState = draggableState,
+      interactionSource = interactionSource,
+      maxPx = widthPx,
+      isRtl = isRtl,
+      rawOffset = rawOffset,
+      gestureEndAction = gestureEndAction,
+      pressOffset = pressOffset,
+      enabled = enabled,
     )
 
     val drag = Modifier.draggable(
@@ -169,24 +169,24 @@ public fun TakSlider(
       },
     ) {
       LinearTrack(
-        Modifier.fillMaxSize(),
-        fraction,
-        enabled,
-        textPosition,
-        tickFractions,
-        dimensions,
-        colors,
+        positionFraction = fraction,
+        enabled = enabled,
+        textPosition = textPosition,
+        modifier = Modifier.fillMaxSize(),
+        stepFractions = tickFractions,
+        dimensions = dimensions,
+        colors = colors,
       )
       LinearThumb(
-        rawOffset,
-        decimalPoints,
-        enabled,
-        interactionSource,
-        valueRange,
-        pixelRange,
-        textPosition,
-        dimensions,
-        colors,
+        rawOffset = rawOffset,
+        decimalPoints = decimalPoints,
+        enabled = enabled,
+        interactionSource = interactionSource,
+        valueRange = valueRange,
+        pixelRange = pixelRange,
+        textPosition = textPosition,
+        dimensions = dimensions,
+        colors = colors,
       )
     }
   }
