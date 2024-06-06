@@ -1,7 +1,7 @@
 @file:Suppress("UnstableApiUsage")
 
-import blueprint.core.intProperty
-import blueprint.core.stringProperty
+import ktak.gradle.intProperty
+import ktak.gradle.stringProperty
 
 plugins {
   id("com.android.library")

@@ -21,8 +21,6 @@ dependencyGuard {
 }
 
 dependencies {
-  api(libs.plugin.blueprint.core)
-
   implementation(libs.plugin.agp)
   implementation(libs.plugin.androidCacheFix)
   implementation(libs.plugin.dependencyGuard)

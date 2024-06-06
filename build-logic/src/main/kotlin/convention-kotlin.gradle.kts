@@ -1,4 +1,4 @@
-import blueprint.core.stringProperty
+import ktak.gradle.stringProperty
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
