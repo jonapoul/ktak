@@ -2,7 +2,6 @@
 
 plugins {
   `kotlin-dsl`
-  alias(libs.plugins.dependencyGuard)
 }
 
 val javaVersion = properties["javaVersion"].toString()
@@ -14,10 +13,6 @@ java {
 
 kotlinDslPluginOptions {
   jvmTarget.set(javaVersion)
-}
-
-dependencyGuard {
-  configuration("classpath")
 }
 
 dependencies {
