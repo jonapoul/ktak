@@ -20,7 +20,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.requiredSizeIn
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.Text
-import androidx.compose.material.minimumInteractiveComponentSize
+import androidx.compose.material.minimumTouchTargetSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -63,7 +63,7 @@ public fun TakRangeSlider(
 
   BoxWithConstraints(
     modifier = modifier
-      .minimumInteractiveComponentSize()
+      .minimumTouchTargetSize()
       .requiredSizeIn(minWidth = thumbRadius * 4, minHeight = thumbRadius * 2),
   ) {
     val isRtl = LocalLayoutDirection.current == LayoutDirection.Rtl

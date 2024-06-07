@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.requiredSizeIn
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.material.minimumTouchTargetSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -58,7 +59,7 @@ public fun TakSlider(
 
   BoxWithConstraints(
     modifier = modifier
-      .minimumInteractiveComponentSize()
+      .minimumTouchTargetSize()
       .requiredSizeIn(minWidth = dimensions.thumbRadius * 2, minHeight = dimensions.thumbRadius * 2)
       .sliderSemantics(value, enabled, onValueChanged, onValueChangeFinished, valueRange, steps)
       .focusable(enabled, interactionSource),
