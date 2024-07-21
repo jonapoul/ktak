@@ -8,6 +8,7 @@ pluginManagement {
     mavenCentral()
     google()
     mavenLocal()
+    maven { url = uri("https://jitpack.io") }
   }
 }
 

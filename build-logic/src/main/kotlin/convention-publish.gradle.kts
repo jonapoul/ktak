@@ -1,5 +1,5 @@
 plugins {
-  id("com.vanniktech.maven.publish")
+  id("dev.jonpoulton.maven.publish")
   id("org.jetbrains.dokka")
 }
 

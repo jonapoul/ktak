@@ -1,5 +1,18 @@
 @file:Suppress("DSL_SCOPE_VIOLATION")
 
+buildscript {
+  repositories {
+    mavenCentral()
+    google()
+    gradlePluginPortal()
+    maven { url = uri("https://jitpack.io") }
+  }
+
+  dependencies {
+    classpath(libs.plugin.publish)
+  }
+}
+
 plugins {
   alias(libs.plugins.agp.lib) apply false
   alias(libs.plugins.detekt) apply false
@@ -7,7 +20,6 @@ plugins {
   alias(libs.plugins.kotlin) apply false
   alias(libs.plugins.ktlint) apply false
   alias(libs.plugins.licensee) apply false
-  alias(libs.plugins.publish) apply false
   alias(libs.plugins.spotless) apply false
 
   alias(libs.plugins.dependencyGuard)
