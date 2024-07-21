@@ -1,24 +1,10 @@
-import ktak.gradle.stringProperty
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import blueprint.recipes.kotlinJvmBlueprint
+import org.gradle.accessors.dm.LibrariesForLibs
 
 plugins {
   kotlin("android")
 }
 
-val javaVersion = stringProperty(key = "javaVersion")
+val libs = the<LibrariesForLibs>()
 
-kotlin {
-  jvmToolchain(javaVersion.toInt())
-  explicitApi()
-}
-
-tasks.withType(KotlinCompile::class.java) {
-  kotlinOptions {
-    jvmTarget = javaVersion
-    freeCompilerArgs += listOf(
-      "-opt-in=kotlin.RequiresOptIn",
-      "-Xjvm-default=all-compatibility",
-      "-Xexplicit-api=strict",
-    )
-  }
-}
+kotlinJvmBlueprint(kotlinVersion = libs.versions.kotlin)

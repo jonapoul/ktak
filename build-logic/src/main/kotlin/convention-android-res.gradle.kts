@@ -1,12 +1,7 @@
-@file:Suppress("UnstableApiUsage")
+import blueprint.recipes.androidResourcesBlueprint
 
 plugins {
   id("convention-android-base")
 }
 
-android {
-  buildFeatures {
-    androidResources = true
-    resValues = true
-  }
-}
+androidResourcesBlueprint(viewBinding = false)

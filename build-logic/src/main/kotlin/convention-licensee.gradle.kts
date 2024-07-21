@@ -1,5 +1,3 @@
-import app.cash.licensee.LicenseeExtension
-
 plugins {
   id("app.cash.licensee")
 }

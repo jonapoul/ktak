@@ -18,6 +18,8 @@ kotlinDslPluginOptions {
 dependencies {
   implementation(libs.plugin.agp)
   implementation(libs.plugin.androidCacheFix)
+  implementation(libs.plugin.blueprint.core)
+  implementation(libs.plugin.blueprint.recipes)
   implementation(libs.plugin.dependencyGuard)
   implementation(libs.plugin.detekt)
   implementation(libs.plugin.dokka)

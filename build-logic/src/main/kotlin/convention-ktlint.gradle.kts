@@ -1,27 +1,9 @@
+import blueprint.recipes.ktlintBlueprint
 import org.gradle.accessors.dm.LibrariesForLibs
-import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
-
-plugins {
-  id("org.jlleitschuh.gradle.ktlint")
-}
 
 val libs = the<LibrariesForLibs>()
 
-ktlint {
-  android.set(true)
-  coloredOutput.set(true)
-  enableExperimentalRules.set(false)
-  ignoreFailures.set(false)
-  verbose.set(true)
-  version.set(libs.versions.ktlint.cli.get())
-
-  reporters {
-    reporter(ReporterType.HTML)
-  }
-}
-
-val ktlintRuleset by configurations
-
-dependencies {
-  ktlintRuleset(libs.androidx.compose.twitter.ktlint)
-}
+ktlintBlueprint(
+  ktlintCliVersion = libs.versions.ktlint.cli,
+  ktlintComposeVersion = libs.versions.androidx.compose.lint.twitter,
+)
