@@ -8,7 +8,7 @@ complexity:
     functionThreshold: 10
     ignoreDefaultParameters: true
   TooManyFunctions:
-    ignorePrivate: true
+    active: false
 exceptions:
   SwallowedException:
     active: false
