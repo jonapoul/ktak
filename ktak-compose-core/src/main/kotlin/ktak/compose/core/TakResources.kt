@@ -3,7 +3,10 @@ package ktak.compose.core
 import android.content.res.Resources
 import android.util.TypedValue
 import androidx.annotation.ArrayRes
+import androidx.annotation.BoolRes
+import androidx.annotation.DimenRes
 import androidx.annotation.DrawableRes
+import androidx.annotation.IntegerRes
 import androidx.annotation.PluralsRes
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Composable
@@ -15,8 +18,12 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.TextUnit
+import androidx.compose.ui.unit.sp
 import timber.log.Timber
 
 /**
@@ -33,9 +40,46 @@ public fun takResources(): Resources {
 
 @Composable
 @ReadOnlyComposable
+public fun takDimensionResource(@DimenRes id: Int): Dp {
+  val density = LocalDensity.current
+  val pxValue = takResources().getDimension(id)
+  return Dp(pxValue / density.density)
+}
+
+@Composable
+@ReadOnlyComposable
+public fun takFontSizeResource(@DimenRes id: Int): TextUnit {
+  val density = LocalDensity.current
+  val pxValue = takResources().getDimension(id)
+  return (pxValue / density.density).sp
+}
+
+@Composable
+@ReadOnlyComposable
 public fun takStringResource(@StringRes id: Int): String {
   val resources = takResources()
   return resources.getString(id)
+}
+
+@Composable
+@ReadOnlyComposable
+public fun takBooleanResource(@BoolRes id: Int): Boolean {
+  val resources = takResources()
+  return resources.getBoolean(id)
+}
+
+@Composable
+@ReadOnlyComposable
+public fun takIntegerResource(@IntegerRes id: Int): Int {
+  val resources = takResources()
+  return resources.getInteger(id)
+}
+
+@Composable
+@ReadOnlyComposable
+public fun takIntegerArrayResource(@ArrayRes id: Int): IntArray {
+  val resources = takResources()
+  return resources.getIntArray(id)
 }
 
 @Composable
@@ -77,12 +121,7 @@ public fun takVectorResource(@DrawableRes id: Int): ImageVector {
 @Composable
 public fun takBitmapResource(@DrawableRes id: Int): ImageBitmap {
   val res = takResources()
-  return try {
-    ImageBitmap.imageResource(res, id)
-  } catch (e: Exception) {
-    Timber.w(e, "Failed loading bitmap resource $id from $res")
-    throw e
-  }
+  return loadBitmap(res, id)
 }
 
 @Composable
