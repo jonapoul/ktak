@@ -34,33 +34,44 @@ import ktak.compose.icons.sidemenu.Confirm
 import ktak.compose.preview.DarkPreview
 import ktak.compose.preview.TakPreview
 
+internal typealias ImageVectorGetter = @Composable () -> ImageVector?
+
 @Immutable
 public interface TakDialogButton {
   public val text: String
-  public val icon: ImageVector?
+  public val icon: ImageVectorGetter
   public val onClick: () -> Unit
 }
 
 @Immutable
 public data class TakDialogPositiveButton(
   override val text: String = "OK",
-  override val icon: ImageVector? = TakIcons.SideMenu.Confirm(strokeWidth = 4f),
+  override val icon: ImageVectorGetter = { TakIcons.SideMenu.Confirm(strokeWidth = 4f) },
   override val onClick: () -> Unit = {},
 ) : TakDialogButton
 
 @Immutable
 public data class TakDialogNeutralButton(
   override val text: String,
-  override val icon: ImageVector?,
+  override val icon: ImageVectorGetter,
   override val onClick: () -> Unit = {},
 ) : TakDialogButton
 
 @Immutable
 public data class TakDialogNegativeButton(
   override val text: String = "Cancel",
-  override val icon: ImageVector? = TakIcons.SideMenu.Close(strokeWidth = 4f),
+  override val icon: ImageVectorGetter = { TakIcons.SideMenu.Close(strokeWidth = 4f) },
   override val onClick: () -> Unit = {},
 ) : TakDialogButton
+
+public fun TakDialogPositiveButton(text: String, icon: ImageVector?, onClick: () -> Unit): TakDialogPositiveButton =
+  TakDialogPositiveButton(text, { icon }, onClick)
+
+public fun TakDialogNeutralButton(text: String, icon: ImageVector?, onClick: () -> Unit): TakDialogNeutralButton =
+  TakDialogNeutralButton(text, { icon }, onClick)
+
+public fun TakDialogNegativeButton(text: String, icon: ImageVector?, onClick: () -> Unit): TakDialogNegativeButton =
+  TakDialogNegativeButton(text, { icon }, onClick)
 
 @Composable
 internal fun RowScope.TakDialogButton(
@@ -87,7 +98,7 @@ internal fun RowScope.TakDialogButton(
     horizontalArrangement = Arrangement.Center,
     verticalAlignment = Alignment.CenterVertically,
   ) {
-    val icon = config.icon
+    val icon = config.icon()
     if (icon != null) {
       Image(
         modifier = Modifier.size(IconSize),

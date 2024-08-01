@@ -1,11 +1,8 @@
-@file:Suppress("DSL_SCOPE_VIOLATION")
-
 plugins {
   id("convention-android-lib")
   id("convention-android-res")
   id("convention-kotlin")
   id("convention-android-compose")
-  id("convention-atak")
   id("convention-publish")
   id("convention-style")
   id("convention-dependency-guard")
@@ -29,6 +26,7 @@ dependencies {
   implementation(libs.androidx.compose.ui.unit)
   implementation(libs.kotlinx.immutable)
 
+  debugImplementation(projects.ktakPoolingcontainer)
   debugRuntimeOnly(libs.androidx.compose.ui.tooling)
   compileOnly(projects.ktakComposePreview)
 }

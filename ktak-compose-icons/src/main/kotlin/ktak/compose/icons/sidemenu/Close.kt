@@ -1,8 +1,12 @@
 @file:Suppress("MagicNumber", "UnusedReceiverParameter", "FunctionName")
+@file:SuppressLint("ComposableNaming")
 
 package ktak.compose.icons.sidemenu
 
+import android.annotation.SuppressLint
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.Stable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
@@ -16,8 +20,10 @@ import ktak.compose.icons.PreviewIcon
 import ktak.compose.icons.SideMenuTakIcons
 import ktak.compose.preview.DarkPreview
 
-public fun SideMenuTakIcons.Close(strokeWidth: Float): ImageVector {
-  return ImageVector.Builder(
+@Stable
+@Composable
+public fun SideMenuTakIcons.Close(strokeWidth: Float): ImageVector = remember(strokeWidth) {
+  ImageVector.Builder(
     name = "Close",
     defaultWidth = 36.dp,
     defaultHeight = 37.dp,
@@ -53,15 +59,8 @@ public fun SideMenuTakIcons.Close(strokeWidth: Float): ImageVector {
 }
 
 public val SideMenuTakIcons.Close: ImageVector
-  get() {
-    if (nullableIcon != null) {
-      return nullableIcon!!
-    }
-    nullableIcon = Close(strokeWidth = 2f)
-    return nullableIcon!!
-  }
-
-private var nullableIcon: ImageVector? = null
+  @Composable
+  get() = Close(strokeWidth = 2f)
 
 @Composable
 @DarkPreview

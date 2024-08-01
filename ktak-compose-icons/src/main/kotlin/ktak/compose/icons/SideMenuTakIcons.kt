@@ -4,6 +4,7 @@ package ktak.compose.icons
 
 import android.content.res.Configuration
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.Stable
 import androidx.compose.ui.tooling.preview.Preview
 import kotlinx.collections.immutable.persistentListOf
 import ktak.compose.icons.sidemenu.Add
@@ -104,6 +105,7 @@ import ktak.compose.icons.sidemenu.Up
  * A standardized set of icons to be utilized for the side menu or dropdown menu component.
  */
 
+@Stable
 public object SideMenuTakIcons
 
 private val allIcons
