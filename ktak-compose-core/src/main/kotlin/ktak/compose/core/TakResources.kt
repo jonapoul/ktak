@@ -143,11 +143,9 @@ public fun takPainterResource(@DrawableRes id: Int): Painter {
   }
 }
 
-private fun loadBitmap(res: Resources, @DrawableRes id: Int): ImageBitmap {
-  return try {
-    ImageBitmap.imageResource(res, id)
-  } catch (e: Exception) {
-    Timber.w(e, "Failed loading bitmap resource $id from $res")
-    throw e
-  }
+private fun loadBitmap(res: Resources, @DrawableRes id: Int): ImageBitmap = try {
+  ImageBitmap.imageResource(res, id)
+} catch (e: Exception) {
+  Timber.w(e, "Failed loading bitmap resource $id from $res")
+  throw e
 }

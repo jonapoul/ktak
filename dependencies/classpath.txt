@@ -214,8 +214,8 @@ org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0
 org.jetbrains:annotations:13.0
 org.jetbrains:markdown-jvm:0.3.1
 org.jetbrains:markdown:0.3.1
-org.jlleitschuh.gradle.ktlint:org.jlleitschuh.gradle.ktlint.gradle.plugin:12.1.0
-org.jlleitschuh.gradle:ktlint-gradle:12.1.0
+org.jlleitschuh.gradle.ktlint:org.jlleitschuh.gradle.ktlint.gradle.plugin:12.1.1
+org.jlleitschuh.gradle:ktlint-gradle:12.1.1
 org.json:json:20180813
 org.jsoup:jsoup:1.15.3
 org.jvnet.staxex:stax-ex:1.8.1
