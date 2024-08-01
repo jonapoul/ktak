@@ -1,5 +1,3 @@
-@file:Suppress("DSL_SCOPE_VIOLATION")
-
 plugins {
   id("convention-android-lib")
   id("convention-kotlin")
