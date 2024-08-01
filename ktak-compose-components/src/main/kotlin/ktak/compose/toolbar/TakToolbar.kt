@@ -31,7 +31,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
-import ktak.compose.button.TakIconButtonLegacy
+import ktak.compose.button.DefaultTakIconButtonColors
+import ktak.compose.button.TakIconButton
 import ktak.compose.core.TakColors
 import ktak.compose.core.TakLegacyColors
 import ktak.compose.core.TakTypography
@@ -90,7 +91,7 @@ public fun TakToolbar(
     if (menuOptions != null) {
       var expanded by remember { mutableStateOf(false) }
 
-      TakIconButtonLegacy(
+      TakIconButton(
         icon = Icons.Filled.MoreVert,
         contentDescription = "Menu",
         onClick = { expanded = true },
@@ -112,10 +113,10 @@ public enum class TakToolbarNavigationButton(
 ) {
   Close(
     content = { onClick ->
-      TakIconButtonLegacy(
+      TakIconButton(
         icon = Icons.Filled.Close,
         contentDescription = "Close",
-        tint = TakColors.Alert,
+        colors = DefaultTakIconButtonColors(normalForegroundColor = TakColors.Alert),
         onClick = { onClick() },
       )
     },
@@ -123,7 +124,7 @@ public enum class TakToolbarNavigationButton(
 
   Back(
     content = { onClick ->
-      TakIconButtonLegacy(
+      TakIconButton(
         icon = Icons.Filled.ArrowBack,
         contentDescription = "Back",
         onClick = { onClick() },
@@ -140,8 +141,8 @@ private fun PreviewFullWithClose() = TakPreview {
     onClickNavigate = PreviewCallback,
     title = "Full Toolbar",
     otherButtons = {
-      TakIconButtonLegacy(icon = Icons.Filled.Settings, contentDescription = "Settings", onClick = PreviewCallback)
-      TakIconButtonLegacy(icon = Icons.Filled.Edit, contentDescription = "Edit", onClick = PreviewCallback)
+      TakIconButton(icon = Icons.Filled.Settings, contentDescription = "Settings", onClick = PreviewCallback)
+      TakIconButton(icon = Icons.Filled.Edit, contentDescription = "Edit", onClick = PreviewCallback)
     },
     menuOptions = {
       TakDropdownMenuItem(icon = Icons.Filled.Deblur, text = "Deblur", onClick = PreviewCallback)
@@ -181,10 +182,10 @@ private fun PreviewWithNoNavButton() = TakPreview {
 private fun PreviewCustomNavButton() = TakPreview {
   TakToolbar(
     navigationButton = {
-      TakIconButtonLegacy(
+      TakIconButton(
         icon = Icons.Outlined.Airplay,
         contentDescription = "Airplay",
-        tint = TakLegacyColors.HansaYellow,
+        colors = DefaultTakIconButtonColors(normalForegroundColor = TakLegacyColors.HansaYellow),
         onClick = { },
       )
     },

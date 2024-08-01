@@ -78,7 +78,7 @@ private val DefaultPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)
 
 @DarkPreview
 @Composable
-private fun RegularWithIcon() = TakPreview {
+private fun Regular() = TakPreview {
   TakSecondaryButton(
     text = "Confirm",
     onClick = PreviewCallback,

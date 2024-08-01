@@ -7,6 +7,7 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
@@ -24,7 +25,9 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalHapticFeedback
+import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import ktak.compose.core.TakColors
 import ktak.compose.core.TakToast
@@ -46,6 +49,8 @@ public fun TakIconButton(
   shape: Shape = RoundedShape,
   colors: TakButtonColors = DefaultTakIconButtonColors(),
   interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
+  contentScale: ContentScale = ContentScale.Fit,
+  iconSize: DpSize = DefaultTakIconButtonSize,
   onClick: () -> Unit,
 ) {
   val isPressed by interactionSource.collectIsPressedAsState()
@@ -60,6 +65,7 @@ public fun TakIconButton(
   ) {
     Image(
       modifier = Modifier
+        .size(iconSize)
         .padding(5.dp)
         .combinedClickable(
           interactionSource,
@@ -73,6 +79,7 @@ public fun TakIconButton(
         ),
       imageVector = icon,
       contentDescription = contentDescription,
+      contentScale = contentScale,
       colorFilter = ColorFilter.tint(foregroundColor),
     )
   }
@@ -82,6 +89,9 @@ public fun TakIconButton(
     isLongPressed = false
   }
 }
+
+private val defaultButtonSize = 36.dp
+public val DefaultTakIconButtonSize: DpSize = DpSize(defaultButtonSize, defaultButtonSize)
 
 private val RoundedShape = RoundedCornerShape(corner = CornerSize(5.dp))
 
@@ -127,6 +137,17 @@ private fun Add() = TakPreview {
     icon = TakIcons.SideMenu.Add,
     contentDescription = "",
     onClick = PreviewCallback,
+  )
+}
+
+@DarkPreview
+@Composable
+private fun AddBigger() = TakPreview {
+  TakIconButton(
+    icon = TakIcons.SideMenu.Add,
+    contentDescription = "",
+    onClick = PreviewCallback,
+    iconSize = DpSize(72.dp, 72.dp),
   )
 }
 
